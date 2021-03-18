@@ -9,19 +9,39 @@
 <header class="Encabezado"> <img class="imagen1" src="encabezado.png">  </header>
 <nav class="nav" > 
   <ul class="Lista"> 
-    <li class="li">INICIO</li>
-    <li class="li">CATEGORIAS</li>
-            <ul class="categorias">
-              <li><a href="#"></a>GENERO</li>
-              <li><a href="#"></a>ESPECIE</li>
-              <li><a href="#"></a>LUGAR DE ORIGEN</li>
-              <li><a href="#"></a>LUGAR DONDE VIVE</li>
-            </ul>
-    <li class="li">¿QUIENES SOMOS?</li>
-    <li class="li">REGISTRARSE</li>  
+    <li class="li"><a href="#"></a>INICIO</li>
+    <li class="li" id="menu"><a href="#"></a>CATEGORIAS</li>
+            <ol class="submenu">
+              <!-- <small>Genero</small> -->
+                <li><a href="#"></a>Femenino</li>
+                <li><a href="#"></a>Masculino</li>
+                <li><a href="#"></a>Genero desconocido</li>
+                <li><a href="#"></a>Sin genero</li>
+               
+            
+              <!-- <small>Estado</small> -->
+                <li><a href="#"></a>Vivo</li>
+                <li><a href="#"></a>Muerto</li>
+                <li><a href="#"></a>Estado desconocido</li>
+               
+              <!-- <small>Especie</small> -->
+                <li><a href="#"></a>Humano</li>
+                <li><a href="#"></a>Humanoide</li>
+                <li><a href="#"></a>Alien</li>
+               
+
+            </ol>
+    <li class="li"><a href="#"></a>¿QUIENES SOMOS?</li>
+    <li class="li"><a href="#"></a>REGISTRARSE</li>  
   </ul>
-  
+  <input type="search" id="input-buscador" class="input-buscador"
+  placeholder="Busca tu personaje">
+
 </nav>
+
+<aside>
+  PERSONAJES MAS POPULARES
+</aside>
 
 <main class="main">
   <img src="principal.jpg" class="principal">

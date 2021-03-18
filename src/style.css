@@ -1,6 +1,8 @@
 *{
     background-color: black;
     text-decoration: none;
+    align-items: flex;
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .Encabezado{
     background-color: black;
@@ -15,21 +17,25 @@
 }
 .nav{
     float:inherit;
-    width: 1200px;
-    background-color:black;
+    height: auto;
+    width: auto;
+    background-color:#211E1E;
+   
+    margin-left: auto;
+    margin-right: auto;
 }
 .Lista{
     width: auto;
     display: inline-flex;
     height: 35px;
     color: white;
-    background-color: black;
     justify-content:space-evenly;
     list-style:none;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     align-items: center;
-    justify-content: center;
+    background: inherit;
+    /* justify-content: center; */
     
     
 }
@@ -46,20 +52,71 @@
     justify-content: center;
     align-items: center;
     float: left;
-    
+    background: inherit;   
    }
-.categorias{
+
+
+  /* **********submenu de categoria ***********/ 
+.submenu{
     list-style:none;
     position: absolute;
-    min-width: 90px;
-    display: none;
-
+    width: auto;
+    display:none;
+    left: 200px;
+    top: 162px;
+    background: inherit;
+    align-items: center;
+    flex-direction: column;
+    /* float:left; */
    }
+ li{
+    /* width: auto; */
+    margin: 2px;
+    padding:15px;
+    background: inherit;
+    justify-content: start;
+    float: left;
+    Width:25%;
+    display:inline-table;
+    
+}
 
+.submenu> li:hover{
+    background:#05e750f5 ;
+    border-radius: 5px;
+}
+
+ .Lista:hover> .submenu {
+    display: block;
+}
+
+
+
+  /* **********MAIN ***********/ 
 .principal{
     display:block;
     margin:auto;
 }
+.main{
+    display: flex;
+}
+aside{
+    position: absolute;
+    top: 250px;
+    left: 30px;
+    width: 260px;
+    height: 500px;
+    background-color: rgb(36, 35, 35);
+    color: white;
+    font-size: inherit;
+}
+#input-buscador{
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    text-indent: 10px¿;
+}
+
     
   
 
