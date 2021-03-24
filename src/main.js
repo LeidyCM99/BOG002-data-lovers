@@ -1,7 +1,5 @@
 import { example } from './data.js';
 
-// console.log(example, data);
-
 import data from './data/rickandmorty/rickandmorty.js';
 
 //  console.log(data.results);
@@ -40,15 +38,6 @@ import data from './data/rickandmorty/rickandmorty.js';
     
 
 
-
-
-
-// for (var i = 0, max = dataresults.length; i < max; i += 1) {
- 
-//     dataresults.push(data[i].name);
- 
-
-//   console.log(dataresults)
  
 
 
