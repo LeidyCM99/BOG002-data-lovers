@@ -4,12 +4,12 @@ import data from './data/rickandmorty/rickandmorty.js';
 let Data = data.results;
 
 
-//***************************************** Boton de busqueda*****************************************
+//***************************************** BOTON DE BUSQUEDA*****************************************
 
 const Busqueda = document.getElementById("input-buscador");
 const Boton = document.getElementById("Buscar");
 
-Boton.addEventListener("click",BuscandoDEntroDeData)
+Boton.addEventListener("click",BuscandoDEntroDeData);
    
 
 function BuscandoDEntroDeData(){
@@ -17,23 +17,25 @@ const Resultado = Busqueda.value;
 //     for(let TodaLaData of Data){
 //         let SacarData = TodaLaData.name;
 
-//         if (SacarLaData.indexOf(Resultado)!==-1){
+//     if (SacarLaData.indexOf(Resultado)!==-1){
 //          console.log(SacarData)
 //         }}}
             
            
 
-//  for(let datos of Data ){
+//     for(let datos of Data ){
 //         let nombre = datos.name;
-//         if (nombre.indexOf(Resultado)!==-1){
+
+//      if (nombre.indexOf(Resultado)!==-1){
             
-//         }
-//     }
+//         }}
 
     console.log(Resultado)}
 
-// *****************************************Lista de links*****************************************
+// *****************************************LISTA DE BOTONES LADO IZQUIERO*****************************************
 
+
+// ****lista de epsodios *****
 let Episodios = document.getElementById("Episodios");
 Episodios.addEventListener("click",
 function(){
@@ -55,95 +57,74 @@ console.log(ArrNuevo.toString())
     
 }})
 
+ // *****lista de nombres de personajes *******
 
-//******************** */ RESULTADOS DE DATA SEGUN NOMBRE, GENERO, ETC ************************************
-//  
+ 
+ let NombreDePersonajes = document.getElementById("ListaPersonajes");
+ NombreDePersonajes.addEventListener("click",
+ function(){
+  for (let i=0;i < Data.length;i++){
+      let categoriaNombre = Data[i].name;
+ 
+      console.log(categoriaNombre)}
+ 
+     })
 
-//  let Data = data.results;
+
+//******************** */ RESULTADOS DE DATA SEGUN ESTADO, GENERO, ETC ************************************
+
+
+
+// ******Nombres de personajes organizados de A-Z*******
+
  const nombrePersonajes=Data.sort((personajes1,personajes2)=>{
- return (personajes1.name<personajes2.name)? -1 :1//
+    return (personajes1.name<personajes2.name)? -1 :1//
  })
 //console.log(nombrePersonajes) a-z
 
- const status=Data.filter(status=> {
-     return status!=="Dead"
- })
-// console.log(status)
  
-let NombreDePersonajes = document.getElementById("ListaPersonajes");
-NombreDePersonajes.addEventListener("click",
-function(){
+
+ // **************Genero del personajes ****************
+
  for (let i=0;i < Data.length;i++){
-     let categoriaNombre = Data[i].name;
-
-     console.log(categoriaNombre)}
-
-    })
-
-
-
-//  for (let i=0;i < Data.length;i++){
-     //let categoriaGenero = Informacion[i].gender;
+     let categoriaGenero = Informacion[i].gender;
 
 
     //console.log(categoriaGenero);
-    // }
+    }
+
+    // **************Especie del personajes ****************
 
  for (let i=0;i < Data.length;i++){
     let categoriaEspecie = Data[i].species;
     //console.log(categoriaEspecie);
     }
-const arrayPersonajes=data.results// en esta variable guardo la data ingresando a results donde esta el array
-//console.log(arrayPersonajes)
-
-let Busqueda = document.getElementById("input-buscador");
-
-console.log(Busqueda.value)
 
 
-// let nuevaTarjeta=document.createElement("div");
-// nuevaTarjeta.classList.add('tarjeta')
-// document.body.appendChild(nuevaTarjeta);
-// }
 
-let nombrePersonajedata="";
-let nombrePersonaje=document.getElementById("nombrePersonaje");
-for(let i=0;i < arrayPersonajes.length; i++){
-   let nombresPersonajes=arrayPersonajes[i].name;
-   nombrePersonajedata=nombrePersonajedata+nombresPersonajes+"\n";
-}
-//console.log(nombrePersonajedata);
-//nombrePersonaje.innerHTML=nombrePersonajedata;
  
+// **************Imagen de los personajes ****************
  
 let imgPersonajeData="";
 let fotoImg=document.getElementById("imgPersonaje");
-  for(let i=0; i < arrayPersonajes.length; i++){
-      let imgPersonajes=arrayPersonajes[i].image;
+  for(let i=0; i < Data.length; i++){
+      let imgPersonajes=Data[i].image;
       imgPersonajeData=imgPersonajeData+imgPersonajes;
  }
  //console.log(imgPersonajeData);
  //fotoImg.innerHTML=imgPersonajeData;
 
- 
- const nombrePersonajes=arrayPersonajes.sort((personajes1,personajes2)=>{// traemos todos los nombres de los personajes y se organizan con sort 
- return (personajes1.name<personajes2.name)? -1 :1 //operador ternario
- })
- //console.log(nombrePersonajes) // esta consola imprime los nombre organizados de la a-z
 
-
-
-// function TarjetasVisibles(){
-//     document.getElementById("contenedorTarjetas").style.display="block"
-// }
  
 
+// **************Estado del personajes ****************
 
-
- const status=arrayPersonajes.filter(status=> {// con filter traemos los datos especificos (aun no filtra correctamente)
+ const status=Data.filter(status=> {// con filter traemos los datos especificos (aun no filtra correctamente)
      return status !="Dead"
  })
-  //console.log(status)
+//   console.log(status)
+
+// **************Creacion de tarjetas opcion 1 ****************
  
 // for (let i=0;i <nombrePersonajes.lenght;i++){
 //      let contenedorPersonajes=document.getElementById("personajes");
@@ -161,5 +142,21 @@ let fotoImg=document.getElementById("imgPersonaje");
 //      contenedorPersonajes.appendChild(nuevoElemento);
 
 // }
+// **************Creacion de tarjetas opcion 2****************
+
+// let nuevaTarjeta=document.createElement("div");
+// nuevaTarjeta.classList.add('tarjeta')
+// document.body.appendChild(nuevaTarjeta);
+// }
+
+// let nombrePersonajedata="";
+// let nombrePersonaje=document.getElementById("nombrePersonaje");
+// for(let i=0;i < Data.length; i++){
+//    let nombresPersonajes=Data[i].name;
+//    nombrePersonajedata=nombrePersonajedata+nombresPersonajes+"\n";
+// }
+//console.log(nombrePersonajedata);
+//nombrePersonaje.innerHTML=nombrePersonajedata;
+
  
 
