@@ -124,6 +124,38 @@
     
 }
 
+.banner{
+    position: relative;
+    width: 100%;
+    height:35vh;
+    background-color: white;
+    background-size: cover; 
+    background-position: center;
+    transition: all 1.s ease-in-out;
+    background-image: url('../src/Img/banner1.png'); 
+    animation: banner 15s infinite linear;
+}
+
+@keyframes banner{
+    0%{background-image: url('../src/Img/banner1.png');
+    }
+    25%{background-image: url('../src/Img/banner1.png');
+    }
+    26%{background-image: url('../src/Img/banner2.png');
+    }
+    50%{background-image: url('../src/Img/banner2.png');
+    }
+    51%{background-image: url('../src/Img/banner3.png');
+    }
+    75%{background-image: url('../src/Img/banner3.png');
+    }
+    76%{background-image: url('../src/Img/Rick-and-Morty.gif');
+    }
+    100%{background-image:url('../src/Img/Rick-and-Morty.gif');
+    }
+
+}
+
 .principal{
  margin-top: 0px;
  margin-left: 180px;
@@ -138,8 +170,8 @@
 
 aside{
     position: relative;
-    padding-top: 95px;
-    margin: 30px;
+    /* padding-top: 95px;
+    margin: 30px; */
     float: left;
     width: auto;
     height: 650px;
@@ -295,3 +327,4 @@ outline:none;
          background:transparent;
 
      }
+
