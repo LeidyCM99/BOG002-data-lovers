@@ -9,50 +9,50 @@ let Data = data.results;
 const Busqueda = document.getElementById("input-buscador");
 const Boton = document.getElementById("Buscar");
 
-// Boton.addEventListener("click",BuscandoDEntroDeData);
+Boton.addEventListener("click",BuscandoDEntroDeData);
    
 
-// function BuscandoDEntroDeData(){
-//     const Resultado = Busqueda.value;
-//     console.log(Resultado)}
+function BuscandoDEntroDeData(){
+    const Resultado = Busqueda.value;
+    console.log(Resultado)}
 
 // *****************************************LISTA DE BOTONES LADO IZQUIERO*****************************************
 
 
 // ****lista de epsodios *****
-// let Episodios = document.getElementById("Episodios");
-// Episodios.addEventListener("click",
-// function(){
-//          let Data = data.results;
-//     for (let i=0;i < Data.length;i++){
-//         let episode = Data[i].episode;
-//         let ArrEpisodios = [episode];
-//         let ArrNuevo = []
+let Episodios = document.getElementById("Episodios");
+Episodios.addEventListener("click",
+function(){
+         let Data = data.results;
+    for (let i=0;i < Data.length;i++){
+        let episode = Data[i].episode;
+        let ArrEpisodios = [episode];
+        let ArrNuevo = []
     
-//         ArrEpisodios.forEach (el => {
-//              if (!(el in Data)) {// comprobamos si el valor existe en el objeto
-//                 Data[el] = true; // si no existe creamos ese valor y lo añadimos al array final, y si sí existe no lo añadimos
-//                 ArrNuevo.push(el);
-//   }
-// })
-// // document.getElementById("ParrafoDePrueba").innerHTML +=  ArrNuevo;
-// // console.log(ArrEpisodios) 
-// console.log(ArrNuevo.toString()) 
+        ArrEpisodios.forEach (el => {
+             if (!(el in Data)) {// comprobamos si el valor existe en el objeto
+                Data[el] = true; // si no existe creamos ese valor y lo añadimos al array final, y si sí existe no lo añadimos
+                ArrNuevo.push(el);
+  }
+})
+// document.getElementById("ParrafoDePrueba").innerHTML +=  ArrNuevo;
+// console.log(ArrEpisodios) 
+console.log(ArrNuevo.toString()) 
     
-// }})
+}})
 
  // *****lista de nombres de personajes *******
 
  
-//  let NombreDePersonajes = document.getElementById("ListaPersonajes");
-//  NombreDePersonajes.addEventListener("click",
-//  function(){
-//   for (let i=0;i < Data.length;i++){
-//       let categoriaNombre = Data[i].name;
+ let NombreDePersonajes = document.getElementById("ListaPersonajes");
+ NombreDePersonajes.addEventListener("click",
+ function(){
+  for (let i=0;i < Data.length;i++){
+      let categoriaNombre = Data[i].name;
  
-//       console.log(categoriaNombre)}
+      console.log(categoriaNombre)}
  
-//      })
+     })
 
 
 //******************** */ RESULTADOS DE DATA SEGUN ESTADO, GENERO, ETC ************************************
@@ -128,16 +128,25 @@ let nuevaTarjeta = document.createElement("div");
         document.body.appendChild(clon);
     
       }
+
+       
+
 let nombrePersonajedata="";
 let nombrePersonaje=document.getElementById("nombrePersonaje");
 
 for(let i=0;i < Data.length; i++){
    let Nombres=Data[i].name;
-   nombrePersonajedata=nombrePersonajedata+"<br>"+Nombres;
-   clonar();
+//    console.log(Nombres)
+   nombrePersonajedata = Nombres;
+  
 }
-console.log(nombrePersonajedata);
+
+// console.log(nombrePersonajedata);
 nombrePersonaje.innerHTML=nombrePersonajedata;
+
+
+    
+
 
 // **************Creacion de tarjetas opcion 2****************
 

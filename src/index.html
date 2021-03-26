@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
 <header>
-  <nav class="nav" > 
-    
+  <nav class="nav" >  
     <ul class="Lista"> 
      
       <li class="li"><a href="#"></a>INICIO</li>
@@ -43,6 +43,7 @@
     <input type="search" id="input-buscador" class="input-buscador"placeholder="Busca tu personaje">
     <input type= "button" id="Buscar" value="BUSCAR" > </input>
   </nav>
+  
 </header>  
 
 
@@ -54,8 +55,7 @@
       por Justin Roiland y Dan Harmon en 2013 para Adult Swim. La serie sigue las desventuras
       de un científico, Rick, y su fácilmente influenciable nieto, Morty, quienes pasan el 
       tiempo entre la vida doméstica y los viajes espaciales, temporales e intergalácticos.
-       Roiland es el encargado de darle voz a los dos personajes principales, y la serie también incluye las voces de Chris Parnell, Spencer Grammer y Sarah Chalke.
-
+       
     </p> 
   </div>
   <div class="Links"> 
@@ -63,6 +63,7 @@
       <li class="ListaDePersonajes" id="ListaPersonajes"><a href="#"></a>Lista de personajes </li>
       <li class="ListaDePersonajes" id="PersonajesPrincipales"><a href="#"></a>Personajes principales</li>
       <li class="ListaDePersonajes" id="Episodios"><a href="#"></a>Episodios</li>
+      <li class="ListaDePersonajes" id="personajesAZ" > <a href="#"></a>  De la A-Z</li>
     </ul>
   </div>
   
@@ -75,12 +76,21 @@
   </div>
 </main>
 
-<!-- PAGINA 2 DE WIKI FANS DE RICK AND MORTY  -->
-<main> 
-  <P id="ParrafoDePrueba">
+<!-- PAGINA 2 FICHAS DE LOS PERSONAJES -->
 
-  </P>
-</main>
+<div  class="contenedorTarjetas" id="contenedorTarjetas" >
+  <div class="tarjeta" id="tarjeta">
+    <img src="Img/foto busqueda.jpg" alt="Buscando personaje" id="imgPersonaje">
+    <span class=caracteristicas id=caracteristicas>
+    <h3 id="nombrePersonaje">Nombre:</h3>
+    <h3 id="lugarDeOrigen">Lugar de Origen:
+    <br id="cantidadDeDeEpisodios">Cant.Episodios:
+    <br id="genero">Genero</h2>
+    </span>
+  </div>  
+  
+</div>
+<footer>Todos los derechos reservados © </footer>
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
