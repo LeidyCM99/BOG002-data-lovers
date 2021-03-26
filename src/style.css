@@ -21,6 +21,7 @@
     
    
 }
+
 .Lista{
     width: auto;
     display: inline-flex;
@@ -116,14 +117,13 @@
     float: center;
     display: flex;
     color: white;
-    font-family: inherit;
+    font-family:  'Hind', sans-serif;
     align-content: center;
     margin: 35px;
     
-
-    
     
 }
+
 .principal{
  margin-top: 0px;
  margin-left: 180px;
@@ -223,8 +223,9 @@ font-size: inherit;
 text-decoration: none;
 outline:none;
 }
-#Buscar:hover,#input-buscador{
+#Buscar,#personajesAZ:hover{
     background:#67bea0 ;
+    border-radius: 5px;
     
 }
 #Buscar:active{
@@ -241,11 +242,11 @@ outline:none;
 
 
 #contenedorTarjetas{
-    display: grid;
+    display: inline-flex;
     grid-template-columns: repeat(3,1fr);
     width: 940 px;
     gap: 15 px;
-    margin:auto;
+    margin:30px;
     justify-items: center;
     align-items: center;
 }
@@ -264,6 +265,7 @@ outline:none;
     box-shadow:1 px 1 px 1 px 1px white(0,0,0,0,0.3);
     text-align:center;
     background:linear-gradient(-135deg,yellow,#437A67,#5BA978);
+    
  }
   
    #tarjeta:hover{
@@ -286,7 +288,7 @@ outline:none;
      transition: all 0.3s ease;
      }  */
 
-     .caracteristicas h1,h2 {
+     .caracteristicas h3 {
          font-size:15px;
          color:white;
          text-align: left;
