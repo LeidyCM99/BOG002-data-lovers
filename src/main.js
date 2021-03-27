@@ -3,7 +3,22 @@ import { example } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 let Data = data.results;
 
+const todosLosPersonajes=data.results;
+for (let i=0;i< todosLosPersonajes.length;i++){
+     let tarjetaPersonaje=document.getElementById('tarjeta');
+     let nuevaTarjeta= document.createElement('div');
+     let nuevaImagen=document.createElement('img');
+     let nuevoNombre=document.createElement('h3')
 
+     nuevaTarjeta.className='tarjeta';
+     nuevaImagen.src=todosLosPersonajes[i].image;
+     nuevoNombre.innerHTML=todosLosPersonajes[i].name;
+
+     nuevaTarjeta.appendChild(nuevaImagen);
+     nuevaTarjeta.appendChild(nuevoNombre);
+     tarjetaPersonaje.appendChild(nuevaTarjeta)
+    }
+            
 //***************************************** BOTON DE BUSQUEDA*****************************************
 
 const Busqueda = document.getElementById("input-buscador");

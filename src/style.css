@@ -1,24 +1,23 @@
 *{  
-    background-image: url(Img/starry-night-sky.jpg);
+    background-color: black;
     text-decoration: none;
     align-items: flex;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
-header{
-    position:relative;
-    z-index: 0;
+.Encabezado{
+    background-color: black;
+    display: flex;
+    
 }
+
 .nav{
     float:inherit;
     height: auto;
     width: auto;
-    background:#437A67;
+    background-color:#437A67;
     position: relative;
-    
     margin-left: auto;
     margin-right: auto;
-    z-index: 10;
     
    
 }
@@ -63,31 +62,51 @@ header{
     list-style:none;
     position: absolute;
     width: auto;
-    display:none;
+    display:flex;
     left: 190px;
     top:60px;
     background: inherit;
     align-items: center;
     flex-direction: column;
-    z-index: 100;
+    z-index: 4;
    }
 
  li{
+    
     margin: 2px;
     padding:15px;
     background: inherit;
     justify-content: start;
     float: left;
     width:25%;
-    display:inline-table;   
-    z-index: 100;
+    display:inline-table;
+    
 }
-.li:hover>#menu{
+
+.submenu> li:hover{
+    background:#67bea0 ;
+    border-radius: 5px;
+}
+.submenu{
+    display: none;
+}
+ #menu:hover> .submenu {
     display: block;
 }
+#Genero, #Especie, #Estado{
+    display: none;
+    background-color: inherit;
+}
+#Genero:hover> li {
+    display: block;
+} 
+ .submenu:hover>#Especie{
+    display: block;
 
-
-
+}
+.submenu:hover> #Estado{
+    display: block;
+}
 
 
 
@@ -101,7 +120,6 @@ header{
     font-family:  'Hind', sans-serif;
     align-content: center;
     margin: 35px;
-    font-weight: lighter;
     
     
 }
@@ -167,7 +185,7 @@ aside{
     
 }
 .About{
-    background: #437A67;
+    background-color: #437A67;
     width: 400px;
     height: 400px;
     margin: 35px;
@@ -180,13 +198,13 @@ h2{
     width: 65px;
     display: inline-flex;
     text-align: center;
-    background: inherit;
+    background-color: inherit;
     
 }
 p{
     width: 250px;
     text-align: center;
-    background: transparent;
+    background-color: transparent;
     position:relative;
     top: 15px;
     display: stretch;
@@ -201,7 +219,7 @@ p{
     
 }
 .ListaDePersonajes{
-    background: #437A67;
+    background-color: #437A67;
     display: flex;
     flex-direction: column;
     width:350px;
@@ -220,15 +238,15 @@ p{
     font-size: 20px;
     text-indent: 10px;
     color: white;
-    background: #77af8c;
+    background-color: #5BA978;
     border: none;
     margin: 15px;
     /* padding: 0px; */ 
     outline:none;
    
 }
-#Buscar{
-background: #437A67;
+#Buscar, #personajesAZ{
+background-color: #437A67;
 color: white;
 height: 35px;
 width: 90px;
@@ -263,8 +281,6 @@ outline:none;
     margin:30px;
     justify-items: center;
     align-items: center;
-    position: relative;
-    top: 700px;
 }
 
 #tarjeta{
@@ -304,17 +320,16 @@ outline:none;
      transition: all 0.3s ease;
      }  */
 
-.caracteristicas h3 {
-     font-size:15px;
-     color:white;
-     text-align: left;
-     background:transparent;
+     h3 {
+         font-size:15px;
+         color:white;
+         text-align: left;
+         background:transparent;
 
      }
-    footer{
-        background-color: rgb(223, 235, 64);
-        align-items: flex-end;
-        position: relative;
-        top: 800px;
-    }
+     img{
+         width: 100px;
+         height: 100px;
+         background:transparent;
+     }
 
