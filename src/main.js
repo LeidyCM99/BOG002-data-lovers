@@ -120,24 +120,43 @@ let fotoImg=document.getElementById("imgPersonaje");
 let nuevaTarjeta = document.createElement("div");
        nuevaTarjeta.classList.add('tarjeta')
        document.body.appendChild(nuevaTarjeta);
-    function clonar() {
+
+    function clonar(Nombre_Tarjeta, Origen, Genero, Imagen, Episodios) {
         var c = document.getElementById("contenedorTarjetas");
         var clon = c.cloneNode("contenedorTarjetas");
         clon.style.display= "inline-flex";
-        clon.style.margin= "30px"
+        clon.style.margin= "30px"        
+        let nombrePersonaje=document.getElementById("nombrePersonaje");
+        nombrePersonaje.innerHTML = "Nombre: "+Nombre_Tarjeta
+            
+        let lugar_personaje=document.getElementById("lugarDeOrigen");
+        lugar_personaje.innerHTML = "Lugar De Origen: "+Origen
+                       
+        let cantidad_episodios=document.getElementById("cantidadDeDeEpisodios");
+        cantidad_episodios.innerHTML = "Cantidad de episodios: "+Episodios
+
+        let genero_tarjeta=document.getElementById("genero");
+        genero_tarjeta.innerHTML = "Genero: "+Genero
+
+        document.getElementById("imgPersonaje").src = Imagen
+
         document.body.appendChild(clon);
     
       }
 
-       
 
 let nombrePersonajedata="";
 let nombrePersonaje=document.getElementById("nombrePersonaje");
 
 for(let i=0;i < Data.length; i++){
    let Nombres=Data[i].name;
-//    console.log(Nombres)
+   let Origen=Data[i].origin.name;
+   let Genero=Data[i].gender;
+   let Episodios=Data[i].episode.length;
+   let imagen=Data[i].image;
+   console.log(imagen)
    nombrePersonajedata = Nombres;
+   clonar(Nombres, Origen, Genero, imagen, Episodios) 
   
 }
 

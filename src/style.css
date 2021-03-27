@@ -1,5 +1,5 @@
 *{  
-    background:black;
+    background-image: url(Img/starry-night-sky.jpg);
     text-decoration: none;
     align-items: flex;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -268,8 +268,8 @@ outline:none;
 }
 
 #tarjeta{
-    height:200px;
-    width: 250px;
+    height:320px;
+    width: 350px;
     overflow: hidden;
     margin:20PX auto;
     padding-top: 10px;
@@ -285,8 +285,8 @@ outline:none;
  }
   
    #tarjeta:hover{
-     height:350px;
-     width: 250px;
+     height:450px;
+     width: 350px;
      border-radius: 5px;
      box-shadow: 10 px 10px 10px 10 px yellow(0,0,0,0.5);
  }
