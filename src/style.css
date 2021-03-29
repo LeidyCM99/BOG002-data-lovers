@@ -162,14 +162,13 @@ border-radius: 5px;
 
   /* **********MAIN ***********/ 
 
-  .main, h1{
-
-    float: center;
-    display: flex;
-    color: white;
-    font-family:  'Hind', sans-serif;
-    align-content: center;
-    margin: 35px;
+.main, h1{
+  float: center;
+  display: flex;
+  color: white;
+  font-family:  'Hind', sans-serif;
+  align-content: center;
+  margin: 35px;
     
     
 }
@@ -219,53 +218,56 @@ border-radius: 5px;
 }
 
 aside{
-    position: flex;
-    /* padding-top: 95px;
-    margin: 30px; */
-    float: left;
-    width: auto;
-    height: 650px;
-    background-color: transparent;
-    color: white;
-    font-size: inherit;
-    /* justify-content: space-between; */
-    display: flex;
-    flex-direction: column;
+ position: flex;
+ /* padding-top: 95px;
+ margin: 30px; */
+ float: left;
+ width: auto;
+ height: 650px;
+ background-color: transparent;
+ color: white;
+ font-size: inherit;
+ /* justify-content: space-between; */
+ display: flex;
+ flex-direction: column;
     
     
 }
 .About{
-    background-color: #437A67;
-    width: 400px;
-    height: 400px;
-    margin: 35px;
-    display: flex;
+ background-color: #437A67;
+ width: 400px;
+ height: 400px;
+ margin: 35px;
+ display: flex;
 }
+
 h2{
-    margin: 15px;
-    padding: 5px;
-    height: 45px;
-    width: 65px;
-    display: inline-flex;
-    text-align: center;
-    background-color: inherit;
+ margin: 15px;
+ padding: 5px;
+ height: 45px;
+ width: 65px;
+ display: inline-flex;
+ text-align: center;
+ background-color: inherit;
     
 }
+
 p{
-    width: 250px;
-    text-align: center;
-    background-color: transparent;
-    position:relative;
-    top: 15px;
-    display: stretch;
+ width: 250px;
+ text-align: center;
+ background-color: transparent;
+ position:relative;
+ top: 15px;
+ display: stretch;
 }
+
 .Links{
-    color: white;
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    width: 400px;
-    height: 400px;
+ color: white;
+ margin: 0px;
+ padding: 0px;
+ display: flex;
+ width: 400px;
+ height: 400px;
     
 }
 .ListaDePersonajes{
@@ -285,10 +287,10 @@ p{
 
 
 #ParrafoDePrueba{
-    color: white;
-    height: 80px;
-    width: 80px;
-    display: flex;}
+ color: white;
+ height: 80px;
+ width: 80px;
+ display: flex;}
 
 /************Tarjetas*************/
 
@@ -339,13 +341,33 @@ width: 10em; height: auto;
     font-size: 25px;
 }
 
-h3 {
-    font-size:15px;
-    font-family: inherit;
-    color:white;
-    text-align: left;
-    background:transparent;
+#imgPersonaje{
+width: 12em; height: auto;
+}
 
-     }
+
+#nombrePersonaje{
+ font-size: 25px;
+}
+
+h3{
+ font-size:18px;
+ font-family: inherit;
+ color:white;
+ margin:10px 10px;
+ text-align: center;
+ background:transparent;
+}
+    
+h4{
+ font-size:18px;
+ font-family: inherit;
+ color:white;
+ text-align: left;
+ margin: 12px;
+ background:transparent;
+}
+        
+    
     
 
