@@ -292,6 +292,19 @@ p{
  width: 80px;
  display: flex;}
 
+#SomosQ{
+ width: 50em;
+ height: 44em;
+ background-color: gray;
+ position: relative;
+ bottom: 5px;
+ left: 30em;
+ color: white;
+ font-size: inherit;
+ justify-content: end;
+ display: none;
+ }
+
 /************Tarjetas*************/
 
 
@@ -306,12 +319,14 @@ p{
     background: transparent;
     
     
+    
 }
 
 #tarjeta{
+    
     /* display: none; */
     height: 252px;
-    width: 200px;
+    width: 205px;
     overflow: hidden;
     margin:20px auto;
     padding-top: 10px;
@@ -327,8 +342,8 @@ p{
  }
   
 #tarjeta:hover{
-     height:390px;
-     width: 200px;
+     height:470px;
+     width: 205px;
      border-radius: 5px;
      box-shadow: 10 px 10px 10px 10 px yellow(0,0,0,0.5);
  }

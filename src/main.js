@@ -4,6 +4,10 @@ import data from './data/rickandmorty/rickandmorty.js';//importamos la data acce
 const Data = data.results;//variable que guarda y accede al array [results]
 
 
+
+
+
+
 //***************************************** BOTON DE BUSQUEDA*****************************************
 
 const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el imput 
@@ -38,6 +42,19 @@ function(){
 })}})
 
 // *****************************************CREACION DE TARJETAS*****************************************
+// BOTON DE QUIENES SOMOS ***********
+
+
+
+let CambioPantalla =  document.getElementById("Somos");
+    CambioPantalla.addEventListener("click",function (){
+
+
+   document.getElementById("tarjeta").style.display = "none";
+   document.getElementById("SomosQ").style.display = "block"; 
+  
+   
+  })
 let nombrePersonajedata="";
 let nombrePersonaje=document.getElementById("contenedorTarjetas");
 
@@ -78,8 +95,5 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
   document.body.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
     
   }
-
-
-
 
 
