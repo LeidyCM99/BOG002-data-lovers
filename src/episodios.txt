@@ -1,0 +1,19 @@
+// *****************************************LISTA DE BOTONES LADO IZQUIERO*****************************************
+
+
+// ****lista de episodios *****
+// let Episodios = document.getElementById("Episodios");//reservamos un id en html
+// Episodios.addEventListener("click",//creamos un evento click
+// function(){
+//     for (let i=0;i < Data.length;i++){//esta función recorre los objetos del array
+//          let episode = Data[i].episode;//ingresa a los datos especificos de episode
+//          let ArrEpisodios = [episode];//guardamos este nuevo array con solo los espisodios
+//          let ArrNuevo = []//creamos esta variable para almacenar el array final    
+//         ArrEpisodios.forEach (episodiosRepetidos => {//este metodo llama la función sobre cada dato del array
+//              if (!(episodiosRepetidos in Data)) {// condicionamos si el objeto es diferente o ya existe en el array
+//                 Data[episodiosRepetidos] = true; // si es diferente lo añadimos al array final, y si ya existe no lo añadimos
+//                 ArrNuevo.push(episodiosRepetidos);//presenta el array con los nuevos valores 
+//           console.log(ArrNuevo)
+           
+//   }
+// })}})

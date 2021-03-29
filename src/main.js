@@ -6,59 +6,39 @@ const Data = data.results;//variable que guarda y accede al array [results]
 
 
 
-
-
 //***************************************** BOTON DE BUSQUEDA*****************************************
 
-const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el imput 
+const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el input 
 const Boton = document.getElementById("Buscar");//enlazamos nuestro boton 
-
 Boton.addEventListener("click",BuscandoDEntroDeData);//le creamos un evento click 
    
 
+
+
 function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
-    const Resultado = Busqueda.value;//traemos el valor buscado
+    const Resultado = Busqueda.value.toUpperCase();//traemos el valor buscado
+    const Tarjeta = document.getElementsByClassName("tarjeta")
+    const contenedor = document.getElementsByClassName("contenedorTarjetas")
+    
+    console.log(Resultado)
 
-    console.log(Resultado)}
-
-// *****************************************LISTA DE BOTONES LADO IZQUIERO*****************************************
-
-
-// ****lista de episodios *****
-let Episodios = document.getElementById("Episodios");//reservamos un id en html
-Episodios.addEventListener("click",//creamos un evento click
-function(){
-    for (let i=0;i < Data.length;i++){//esta función recorre los objetos del array
-         let episode = Data[i].episode;//ingresa a los datos especificos de episode
-         let ArrEpisodios = [episode];//guardamos este nuevo array con solo los espisodios
-         let ArrNuevo = []//creamos esta variable para almacenar el array final    
-        ArrEpisodios.forEach (episodiosRepetidos => {//este metodo llama la función sobre cada dato del array
-             if (!(episodiosRepetidos in Data)) {// condicionamos si el objeto es diferente o ya existe en el array
-                Data[episodiosRepetidos] = true; // si es diferente lo añadimos al array final, y si ya existe no lo añadimos
-                ArrNuevo.push(episodiosRepetidos);//presenta el array con los nuevos valores 
-          console.log(ArrNuevo)
-           
+    for (let i=0;i < Data.length;i++){
+      if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {
+        Tarjeta[i].style.display = "block";
+        
+      } else {
+        Tarjeta[i].style.display = "none";
+      }}
   }
-})}})
+
+
 
 // *****************************************CREACION DE TARJETAS*****************************************
-// BOTON DE QUIENES SOMOS ***********
 
-
-
-let CambioPantalla =  document.getElementById("Somos");
-    CambioPantalla.addEventListener("click",function (){
-
-
-   document.getElementById("tarjeta").style.display = "none";
-   document.getElementById("SomosQ").style.display = "block"; 
-  
-   
-  })
 let nombrePersonajedata="";
 let nombrePersonaje=document.getElementById("contenedorTarjetas");
 
-for(let i=0;i < Data.length; i++){////esta función recorre los objetos del array
+for(let i=0;i < Data.length; i++){////esta función recorre la data
    let Nombres=Data[i].name;//accede a los datos  clasificados en el array en este caso name y los guarda en la nueva variable
    let Origen=Data[i].origin.name;
    let Genero=Data[i].gender;
@@ -66,7 +46,7 @@ for(let i=0;i < Data.length; i++){////esta función recorre los objetos del arra
    let imagen=Data[i].image;
    //nombrePersonajedata = Nombres;
    clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
-  
+  //  BuscandoDEntroDeData()
 }
 
 nombrePersonaje.innerHTML=nombrePersonajedata;
@@ -96,4 +76,12 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
     
   }
 
+// OCULTAR SECCIONES ***********
 
+
+
+let CambioPantalla =  document.getElementById("Somos");
+       CambioPantalla.addEventListener("click",function (){
+          document.getElementById("tarjeta").style.display = "none";
+          document.getElementById("SomosQ").style.display = "block"; 
+  })

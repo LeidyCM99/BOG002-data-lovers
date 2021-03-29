@@ -50,7 +50,13 @@ nav ul{
     background:#67bea0 ;
     border-radius: 5px;
 }
+.gg-home{
+    margin: auto;
+    padding: 5px;
+    display: inline-flex;
+}
 .li{
+    
     padding:10px;
     margin: 40px;
     width: 100%;
