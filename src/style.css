@@ -18,8 +18,6 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    
-   
 }
 
 .Lista{
@@ -112,14 +110,13 @@
 
   /* **********MAIN ***********/ 
 
-  .main, h1{
-
-    float: center;
-    display: flex;
-    color: white;
-    font-family:  'Hind', sans-serif;
-    align-content: center;
-    margin: 35px;
+.main, h1{
+  float: center;
+  display: flex;
+  color: white;
+  font-family:  'Hind', sans-serif;
+  align-content: center;
+  margin: 35px;
     
     
 }
@@ -169,61 +166,64 @@
 }
 
 aside{
-    position: flex;
-    /* padding-top: 95px;
-    margin: 30px; */
-    float: left;
-    width: auto;
-    height: 650px;
-    background-color: transparent;
-    color: white;
-    font-size: inherit;
-    /* justify-content: space-between; */
-    display: flex;
-    flex-direction: column;
+ position: flex;
+ /* padding-top: 95px;
+ margin: 30px; */
+ float: left;
+ width: auto;
+ height: 650px;
+ background-color: transparent;
+ color: white;
+ font-size: inherit;
+ /* justify-content: space-between; */
+ display: flex;
+ flex-direction: column;
     
     
 }
 .About{
-    background-color: #437A67;
-    width: 400px;
-    height: 400px;
-    margin: 35px;
-    display: flex;
+ background-color: #437A67;
+ width: 400px;
+ height: 400px;
+ margin: 35px;
+ display: flex;
 }
+
 h2{
-    margin: 15px;
-    padding: 5px;
-    height: 45px;
-    width: 65px;
-    display: inline-flex;
-    text-align: center;
-    background-color: inherit;
+ margin: 15px;
+ padding: 5px;
+ height: 45px;
+ width: 65px;
+ display: inline-flex;
+ text-align: center;
+ background-color: inherit;
     
 }
+
 p{
-    width: 250px;
-    text-align: center;
-    background-color: transparent;
-    position:relative;
-    top: 15px;
-    display: stretch;
+ width: 250px;
+ text-align: center;
+ background-color: transparent;
+ position:relative;
+ top: 15px;
+ display: stretch;
 }
+
 .Links{
-    color: white;
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    width: 400px;
-    height: 400px;
+ color: white;
+ margin: 0px;
+ padding: 0px;
+ display: flex;
+ width: 400px;
+ height: 400px;
     
 }
 .ListaDePersonajes{
-    background-color: #437A67;
-    display: flex;
-    flex-direction: column;
-    width:350px;
-    margin: 5px;
+ background-color: #437A67;
+ display: flex;
+ flex-direction: column;
+ width:350px;
+ margin: 5px;
 
 }
 
@@ -233,97 +233,108 @@ p{
 }
 
 #input-buscador{
-    width: 300px;
-    height: 35px;
-    font-size: 20px;
-    text-indent: 10px;
-    color: white;
-    background-color: #5BA978;
-    border: none;
-    margin: 15px;
-    /* padding: 0px; */ 
-    outline:none;
+ width: 300px;
+ height: 35px;
+ font-size: 20px;
+ text-indent: 10px;
+ color: white;
+ background-color: #5BA978;
+ border: none;
+ margin: 15px;
+ /* padding: 0px; */ 
+ outline:none;
     
    
 }
 #Buscar{
-background-color: #437A67;
-color: white;
-height: 35px;
-width: 90px;
-border:none;
-font-size: inherit;
-text-decoration: none;
-outline:none;
+ background-color: #437A67;
+ color: white;
+ height: 35px;
+ width: 90px;
+ border:none;
+ font-size: inherit;
+ text-decoration: none;
+ outline:none;
 }
+
 #Buscar,#personajesAZ:hover{
-    background:#67bea0 ;
-    border-radius: 5px;
-    
+ background:#67bea0 ;
+ border-radius: 5px;
 }
+
 #Buscar:active{
-    
-    background-color: teal;
+ background-color: teal;
 }
+
 #ParrafoDePrueba{
-    color: white;
-    height: 80px;
-    width: 80px;
-    display: flex;}
+ color: white;
+ height: 80px;
+ width: 80px;
+ display: flex;}
 
 /************Tarjetas*************/
 
 
 #contenedorTarjetas{
-    display: inline-flex;
-    grid-template-columns: repeat(3,1fr);
-    width: 40 px;
-    gap: 15 px;
-    margin:30px;
-    justify-items: center;
-    align-items: center;
-    background: transparent;
-   
+ display: inline-flex;
+ grid-template-columns: repeat(3,1fr);
+ width: 40 px;
+ gap: 15 px;
+ margin:30px;
+ justify-items: center;
+ align-items: center;
+ background: transparent;
 }
 
 #tarjeta{
-    height: 252px;
-    width: 290px;
-    overflow: hidden;
-    margin:20PX auto;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 0%;
-    border:1px solid white;
-    transition: all .4s ease-in-out;
-    box-shadow:1 px 1 px 1 px 1px white(0,0,0,0,0.3);
-    text-align:center;
-    background:linear-gradient(-135deg,yellow,#437A67,#5BA978);
-    
- }
+ height: 252px;
+ width: 290px;
+ overflow: hidden;
+ margin:20PX auto;
+ padding-top: 10px;
+ padding-left: 10px;
+ padding-right: 10px;
+ border-radius: 0%;
+ border:1px solid white;
+ transition: all .4s ease-in-out;
+ text-align:center;
+ background:linear-gradient(-135deg,yellow,#437A67,#5BA978);
+}
   
 #tarjeta:hover{
-     height:390px;
-     width: 290px;
-     border-radius: 5px;
-     box-shadow: 10 px 10px 10px 10 px yellow(0,0,0,0.5);
- }
-
- #imgPersonaje{
-width: 10em; height: auto;
- }
-#nombrePersonaje{
-    font-size: 25px;
+ height:390px;
+ width: 290px;
+ border-radius: 5px;
+ box-shadow: 10 px 10px 10px 10 px;
 }
 
-h3 {
-    font-size:15px;
-    font-family: inherit;
-    color:white;
-    text-align: left;
-    background:transparent;
+#imgPersonaje{
+width: 12em; height: auto;
+}
 
-     }
+
+#nombrePersonaje{
+ font-size: 25px;
+}
+
+h3{
+ font-size:18px;
+ font-family: inherit;
+ color:white;
+ margin:10px 10px;
+ text-align: center;
+ background:transparent;
+}
+    
+h4{
+ font-size:18px;
+ font-family: inherit;
+ color:white;
+ text-align: left;
+ margin: 12px;
+ background:transparent;
+}
+        
+    
     
 
