@@ -7,86 +7,109 @@
     <title> Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-<header>
-  <nav>  
-    <div class="logo">WIKI RICKOCOSO</div>
-    <ul class="Lista"> 
-      <li class="li"> <i class="gg-home"></i> INICIO</li>
-      <li class="li" id="menu"><a href="#"></a>CATEGORIAS</li>
-            <ul class="submenu">
-              <li class="lista_submenu">Genero</li>
-              
-              <li class="lista_submenu">Estado</li>
 
-              <li class="lista_submenu">Especie</li>
-            </ul>
-      <li class="li" id="Somos" > ¿QUIENES SOMOS?</li>
+
+<body>
+
+  <header>
+       <nav>  
+          <div class="logo">WIKI RICKOCOSO</div>
+             <ul class="Lista"> 
+             <li class="li" id="Home"> <i class="gg-home"></i> INICIO</li>
+             <li class="li" id="menu"><a href="#"></a>CATEGORIAS</li>
+                     <ul class="submenu">
+                     <li class="lista_submenu">Genero</li>
+                     <li class="lista_submenu">Estado</li>
+                     <li class="lista_submenu">Especie</li>
+                     </ul>
+              <li class="li" id="Somos" > ¿QUIENES SOMOS?</li>
+              </ul>
+             <input type="search" id="input-buscador" class="input-buscador"placeholder="Busca tu personaje">
+             <input type= "button" id="Buscar" value="BUSCAR" > </input>
+        </nav> 
+  </header> 
+
+  <!------------------ main  ------------------>
+
+ <main class="main">
+      <section class="banner">
+          <div 
+            class="contenedor-banner">
+          </div>
+      </section>
+
+      <section>
+        <div id="SomosQ"> 
+
+          <img src="Img/rick.png"  id="Rick">
+         
+          ¿QUIENES SOMOS?
+          <br>
+          
+          <h2> www.RICKOCOSO.com</h2>
+          <br>
+         
+         Somos una wiki, pagina tambien conocida como una Data fan, nos encargamos de enseñarte los
+         <br>
+          personajes de Rick and Morty junto con los episodios, lugares de origen y genero.
+          <br>
+          Creada con el proposito de aprender y ser unas buenas desarrolladoras front end con el  acompañamiento del equipo
+           de laboratoria Colombia.
+           <img src="Img/squanchy.png"  id="Squanchy"> 
+        </div>
+      </section>
       
-    </ul>
-    <input type="search" id="input-buscador" class="input-buscador"placeholder="Busca tu personaje">
-    <input type= "button" id="Buscar" value="BUSCAR" > </input>
-  </nav>
+
+                <!--  fichas personajes -->
+
+      <div  class="contenedorTarjetas" id="contenedorTarjetas" >
+
+          <div class="tarjeta" id="tarjeta">
+                <h3 id="nombrePersonaje">Data Fans</h3>
+                <img src="Img/buscar.png.jpg" alt="Buscando personaje" id="imgPersonaje">
+                <span class=caracteristicas id=caracteristicas>
+                   <h4 id="lugarDeOrigen">1.Busca el personaje</h4>
+                   <h4 id="cantidadDeDeEpisodios">2.Despliega la tarjeta</h4> 
+                   <h4 id="genero">3.Datos de tu personaje favorito</h4>
+                </span>
+         </div>  
   
-</header> 
+      </div>
 
-
-<main class="main">
-  <section class="banner">
-    <div class="contenedor-banner">
-    </div>
-  </section>
  </main>
  
 
+ <!------------------ aside ------------------>
 
+<aside id="aside">
 
-<aside>
+    <div class="About">
+        <h2 id="AboutH2">SOBRE RICK AND MORTY</h2>
+         Programa de televisión estadounidense de animación para adultos creada 
+         por Justin Roiland y Dan Harmon en 2013 para Adult Swim. La serie sigue las desventuras
+         de un científico, Rick, y su fácilmente influenciable nieto, Morty, quienes pasan el 
+         tiempo entre la vida doméstica y los viajes espaciales, temporales e intergalácticos.      
+         
+   </div>
 
-  <div class="About">
-     <H2>SOBRE RICK AND MORTY</H2>
-    <p> Programa de televisión estadounidense de animación para adultos creada 
-      por Justin Roiland y Dan Harmon en 2013 para Adult Swim. La serie sigue las desventuras
-      de un científico, Rick, y su fácilmente influenciable nieto, Morty, quienes pasan el 
-      tiempo entre la vida doméstica y los viajes espaciales, temporales e intergalácticos.
-       
-    </p> 
-  </div>
-  <div class="Links"> 
-    <ul id="links"> 
-      <li class="ListaDePersonajes" id="ListaPersonajes">Lista de personajes </li>
-      <li class="ListaDePersonajes" id="PersonajesPrincipales">Personajes principales</li>
-      <li class="ListaDePersonajes" id="Episodios">Episodios</li>
-      <li class="ListaDePersonajes" id="personajesAZ">  De la A-Z</li>
-    </ul>
-  </div>
+   <div class="Links"> 
+      <ul id="links"> 
+         <li class="ListaDePersonajes" id="ListaPersonajes">Lista de personajes </li>
+         <li class="ListaDePersonajes" id="PersonajesPrincipales">Personajes principales</li>
+         <li class="ListaDePersonajes" id="Episodios">Episodios</li>
+         <li class="ListaDePersonajes" id="personajesAZ">  De la A-Z</li>
+      </ul>
+    </div>
   
 </aside>
 
 
-<!-- PAGINA 2 FICHAS DE LOS PERSONAJES -->
-
-<div  class="contenedorTarjetas" id="contenedorTarjetas" >
-  <div class="tarjeta" id="tarjeta">
-    <h3 id="nombrePersonaje">Data Fans</h3>
-    <img src="Img/buscar.png.jpg" alt="Buscando personaje" id="imgPersonaje">
-    <span class=caracteristicas id=caracteristicas>
-    <h4 id="lugarDeOrigen">1.Busca el personaje</h4>
-    <h4 id="cantidadDeDeEpisodios">2.Despliega la tarjeta</h4> 
-    <h4 id="genero">3.Datos de tu personaje favorito</h4>
-    </span>
-  </div>  
-  
-</div>
 
  
-<div id="SomosQ">¿QUIENES SOMOS? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae maxime esse voluptatem aliquam,
-  inventore ad quidem tempora facilis ea? Iure eaque similique vitae non tempore sed aperiam perspiciatis at quidem.
-</div>
-
+ <!------------------ footer ------------------>
 
 <!-- <footer>Todos los derechos reservados © </footer> -->
     <div id="root"></div>
     <script src="main.js" type="module"></script>
-  </body>
+</body>
 </html>

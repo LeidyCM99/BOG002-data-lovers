@@ -76,12 +76,21 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
     
   }
 
-// OCULTAR SECCIONES ***********
+// OCULTAR Y MOSTRAR SECCIONES ***********
 
 
-
-let CambioPantalla =  document.getElementById("Somos");
-       CambioPantalla.addEventListener("click",function (){
+let QuienesSomos=  document.getElementById("Somos");
+    QuienesSomos.addEventListener("click",function (){
           document.getElementById("tarjeta").style.display = "none";
           document.getElementById("SomosQ").style.display = "block"; 
+          document.getElementById("aside").style.display = "none"; 
+          document.querySelector(".banner").style.display = "none";
+  })
+
+  let Home=  document.getElementById("Home");
+    Home.addEventListener("click",function (){
+          document.getElementById("tarjeta").style.display = "block";
+          document.getElementById("SomosQ").style.display = "none"; 
+          document.getElementById("aside").style.display = "block"; 
+          document.querySelector(".banner").style.display = "block";
   })

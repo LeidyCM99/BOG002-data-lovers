@@ -4,18 +4,28 @@
     align-items: flex;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
+body{
+    height: 100vh;
+    overflow-x: hidden;
+    box-sizing: content-box;  
+    
+}
 header{
+    
     width: 100%;
+    /* justify-content: space-between; */
 }
 header nav{
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
     max-width: 5000px;
     background-color:#437A67;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
+    display: inline-flex;
+    padding-right: 10%;
+
+    /* justify-content: space-between; */
     /* position: relative; */
     
 }
@@ -23,28 +33,28 @@ header nav{
     color: white;
     float: initial;
     top:5px;
-    font-size: 30px;
+    font-size: 25px;
     background: inherit;
     width: 75px;
     padding: 1px 15px 1px 15px;
     font-weight: bolder;
-    letter-spacing: 2%;
+    letter-spacing: 5px;
     
 
 }
 nav ul{
     width: 100%;
-    display: inline-flex;
-    height: 35px;
+    display: flex;
+    float: inline-end;
+    height: 30px;
     color: white;
-    justify-content:space-evenly;
     list-style:none;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 18px;
+    font-size: 1rem;
     align-items: center;
     background: transparent; 
     padding-inline-start: 150px;
-    justify-content: space-around;
+    
 }
 .li:hover {
     background:#67bea0 ;
@@ -57,8 +67,8 @@ nav ul{
 }
 .li{
     
-    padding:10px;
-    margin: 40px;
+    padding:13px;
+    margin: 30px;
     width: 100%;
     text-align: center;
     display:flex;
@@ -73,20 +83,18 @@ nav ul{
   /* **********submenu de categoria ***********/ 
 .submenu{
     list-style:none;
-    position: absolute;
-    width: auto;
+    position: relative;
+    width: auto; height: auto;
     display:flex;
-    left: 190px;
-    top:60px;
+    left: auto;
+    top:63px;
     background: inherit;
-    align-items: center;
     flex-direction: column;
     z-index: 4;
     display: none;
     background:#437A67;
     align-items: center;
     width: 20%;
-    height: auto;
     padding: 0%;
     margin: 0%;
 }
@@ -109,22 +117,21 @@ background:#67bea0 ;
 border-radius: 5px;
     
 }
- .Lista:hover > .submenu {
+ .Lista:hover .submenu {
 display: block;
     
 }
 #input-buscador{
-    display: flex;
-    align-content: stretch;
-    width: 300px;
-    height: 35px;
-    font-size: 20px;
-    text-indent: 12px;
+    display:grid;
+    width:  55px 100%;
+    height:  auto;
+    font-size: 15px;
+    text-indent: 10px;
     color: white;
     background-color: #5BA978;
+    padding: 0%;
     border: none;
     margin: 15px;
-    /* padding: 0px; */ 
     outline:none;
     
     
@@ -160,9 +167,9 @@ border-radius: 5px;
 }
 @media screen and (max-width: 741px) {
    header {
-        height: 60%;
+        /* height: 60%;
         width: 60%;
-        background-color: aquamarine;
+        background-color: aquamarine; */
   }}
 
 
@@ -224,16 +231,15 @@ border-radius: 5px;
 }
 
 aside{
- position: flex;
- /* padding-top: 95px;
- margin: 30px; */
+
  float: left;
  width: auto;
- height: 650px;
+ height: 100%;
  background-color: transparent;
  color: white;
  font-size: inherit;
- /* justify-content: space-between; */
+position: relative;
+top: 20px;
  display: flex;
  flex-direction: column;
     
@@ -242,30 +248,26 @@ aside{
 .About{
  background-color: #437A67;
  width: 400px;
- height: 400px;
+ height: auto;
  margin: 35px;
  display: flex;
+ 
 }
 
-h2{
- margin: 15px;
- padding: 5px;
- height: 45px;
- width: 65px;
- display: inline-flex;
+#AboutH2{
+ margin: 3%;
+ padding: 1%;
+ height: auto;
+ width: 400px;
+ font-size: 20px;
+ position: relative;
+ top: 2px;
+ /* display: inline-flex; */
  text-align: center;
- background-color: inherit;
+ background-color: rgb(179, 221, 26);
     
 }
 
-p{
- width: 250px;
- text-align: center;
- background-color: transparent;
- position:relative;
- top: 15px;
- display: stretch;
-}
 
 .Links{
  color: white;
@@ -298,17 +300,47 @@ p{
  width: 80px;
  display: flex;}
 
+/**************** NAV QUIENES SOMOS  **************/
 #SomosQ{
- width: 50em;
- height: 44em;
- background-color: gray;
- position: relative;
- bottom: 5px;
- left: 30em;
+    box-shadow: -9px 6px 136px -12px rgba(99,156,112,0.5);
+    -webkit-box-shadow: -9px 6px 136px -12px rgba(99,156,112,0.5);
+    -moz-box-shadow: -9px 6px 136px -12px rgba(99,156,112,0.5);
+ width: 100%;
+ height: 30em;
+ background-color:#211E1E ;
+ position:relative;
+ top: 1em;
+ display: inline-grid;
+ left: 5%;
  color: white;
  font-size: inherit;
- justify-content: end;
+ margin-right: auto;
+ margin-left: auto;
  display: none;
+ text-align: center;
+ padding: 15px;
+
+ }
+ #Rick{
+     background-color: transparent;
+     height: 40%;
+     position: absolute;
+     top: 5%;
+     left: 5%;
+ }
+ #Squanchy{
+    background-color: transparent;
+    height: 50%;
+    position: relative;
+     bottom: 3%;
+     left: 25%;
+}
+
+ h2{
+     padding: 30px;
+     align-content: center;
+     font-size: 35px;
+     background-color: inherit;
  }
 
 /************Tarjetas*************/
