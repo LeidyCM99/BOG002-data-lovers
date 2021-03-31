@@ -3,29 +3,32 @@
 import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
 const Data = data.results;//variable que guarda y accede al array [results]
 
+
+
 //***************************************** BOTON DE BUSQUEDA*****************************************
+
+
 
 const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el input 
 const Boton = document.getElementById("Buscar");//enlazamos nuestro boton 
 Boton.addEventListener("click",BuscandoDEntroDeData);//le creamos un evento click 
    
 
-
+// *****************************************FILTRO DE BUSQUEDA*****************************************
 
 function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
     const Resultado = Busqueda.value.toUpperCase();//traemos el valor buscado
-    const Tarjeta = document.getElementsByClassName("tarjeta")
-    const contenedor = document.getElementsByClassName("contenedorTarjetas")
-    
-    console.log(Resultado)
+    const Tarjeta = document.getElementsByClassName("tarjeta");
 
     for (let i=0;i < Data.length;i++){
       if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {
         Tarjeta[i].style.display = "block";
+
         
       } else {
         Tarjeta[i].style.display = "none";
       }}
+
   }
 
 
@@ -41,7 +44,6 @@ for(let i=0;i < Data.length; i++){////esta función recorre la data
    let Genero=Data[i].gender;
    let Episodios=Data[i].episode.length;
    let imagen=Data[i].image;
-   //nombrePersonajedata = Nombres;
    clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
    
 }
@@ -83,34 +85,47 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("contenedorTarjetas").style.display = "none";
           document.getElementById("SomosQ").style.display = "block"; 
           document.getElementById("aside").style.display = "none"; 
-          document.querySelector(".banner").style.display = "none";
+         
   })
 
   let Home=  document.getElementById("Home");
     Home.addEventListener("click",function (){
-          document.getElementById("tarjeta").style.display = "block";
+          document.getElementById("contenedorTarjetas").style.display = "block";
           document.getElementById("SomosQ").style.display = "none"; 
           document.getElementById("aside").style.display = "block"; 
-          document.querySelector(".banner").style.display = "block";
+         
   })
 
-  // *****************************************CREACION DE TARJETAS*****************************************
+  // *****************************************FILTROS POR CATEGORIAS Y BOTONES*****************************************
   //Boton organizacion A-Z
+
   let BotonOrganizarAz = document.getElementById("personajesAZ");
-  BotonOrganizarAz.addEventListener("click", az)
+      BotonOrganizarAz.addEventListener("click", az)
   
   function az(){
+       Tarjeta = document.getElementsByClassName("tarjeta");
    let nombrePersonaje=Data.sort((personajes1,personajes2)=>{
-   return (personajes1.name<personajes2.name)? -1 :1
-   //clonar(Nombres, Origen, Genero, imagen, Episodios)  
+   return (personajes1.name < personajes2.name)? -1 :1;
+   
   })
- console.log(nombrePersonaje)
+  
   }
-//**********Filtro de genero
+
+
+//**********Filtro de genero/**********
   const generoData=[];
+  
   for(let i=0;i < Data.length; i++){
   generoData.push(Data[i].gender);
-  }
+    if (Data[i].gender=="Female") {
+      console.log("mujeres" )
+    
+    }
+  //  else if (Data[i].gender=="Male") {
+  //   console.log("Hombres")
+  //  } 
+   }
+
  console.log(generoData)
 
 let BotonMujeres = document.getElementById("GeneroMujeres");
