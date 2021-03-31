@@ -32,7 +32,7 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
 
 // *****************************************CREACION DE TARJETAS*****************************************
 
- let nombrePersonajedata="";
+let nombrePersonajedata="";
 let nombrePersonaje=document.getElementById("contenedorTarjetas")
 
 for(let i=0;i < Data.length; i++){////esta función recorre la data
@@ -45,7 +45,7 @@ for(let i=0;i < Data.length; i++){////esta función recorre la data
    clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
    
 }
-//document.getElementById("tarjeta").style.display = "none";
+document.getElementById("tarjeta").style.display = "none";
 //nombrePersonaje.textContent=nombrePersonajedata;
 
 

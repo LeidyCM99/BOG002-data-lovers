@@ -355,13 +355,12 @@ top: 20px;
     justify-items: center;
     align-items: center;
     background: transparent;
-    
-    
-    
+    flex-wrap: wrap;
+          
 }
 
 #tarjeta{
-    
+    flex-wrap: wrap;
     /* display: none; */
     height: 252px;
     width: 205px;
@@ -420,7 +419,10 @@ h4{
  margin: 12px;
  background:transparent;
 }
-        
+
+.caracteristicas{
+    background-color: transparent;
+}
     
     
 
