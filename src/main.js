@@ -47,13 +47,13 @@ for(let i=0;i < Data.length; i++){////esta función recorre la data
    clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
    
 }
-
-nombrePersonaje.innerHTML=nombrePersonajedata;
+//document.getElementById("tarjeta").style.display = "none";
+//nombrePersonaje.textContent=nombrePersonajedata;
 
 
 function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta función declarando los parametros a usar
-  var contenedor = document.getElementById("contenedorTarjetas");//reservamos un id en html
-  var clon = contenedor.cloneNode("contenedorTarjetas");//a contenedor le aplicamos el metodo cloneNode para clonar
+  var contenedor = document.getElementById("tarjeta");//reservamos un id en html
+  var clon = contenedor.cloneNode(true);//a contenedor le aplicamos el metodo cloneNode para clonar
   clon.style.display= "inline-flex";//aplicamos un estilo display y una margen para los nuevos div´s
   clon.style.margin= "30px"        
   
@@ -71,7 +71,9 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
 
   document.getElementById("imgPersonaje").src = Imagen
 
-  document.body.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
+  let contenedorDeTarjetas=document.getElementById("contenedorTarjetas")
+  console.log(contenedorDeTarjetas)
+  contenedorDeTarjetas.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
     
   }
 
@@ -80,7 +82,7 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
 
 let QuienesSomos=  document.getElementById("Somos");
     QuienesSomos.addEventListener("click",function (){
-          document.getElementById("tarjeta").style.display = "none";
+          document.getElementById("contenedorTarjetas").style.display = "none";
           document.getElementById("SomosQ").style.display = "block"; 
           document.getElementById("aside").style.display = "none"; 
           document.querySelector(".banner").style.display = "none";
@@ -151,7 +153,9 @@ BotonGeneroDesc.addEventListener("click", filtergenderU)
 function filtergenderU(){
 let genderU=Data.filter(genero=>{
 return genero.gender=== "unknown"
+
 })
+
 console.log(genderU)
 }
   
