@@ -167,9 +167,9 @@ border-radius: 5px;
 }
 @media screen and (max-width: 741px) {
    header {
-        /* height: 60%;
+        height: 60%;
         width: 60%;
-        background-color: aquamarine; */
+        background-color: aquamarine;
   }}
 
 

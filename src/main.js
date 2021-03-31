@@ -1,10 +1,7 @@
-import { example } from './data.js';
+//import { filtroDimensiones } from './data.js';
 
 import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
 const Data = data.results;//variable que guarda y accede al array [results]
-
-
-
 
 //***************************************** BOTON DE BUSQUEDA*****************************************
 
@@ -35,8 +32,8 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
 
 // *****************************************CREACION DE TARJETAS*****************************************
 
-let nombrePersonajedata="";
-let nombrePersonaje=document.getElementById("contenedorTarjetas");
+ let nombrePersonajedata="";
+let nombrePersonaje=document.getElementById("contenedorTarjetas")
 
 for(let i=0;i < Data.length; i++){////esta función recorre la data
    let Nombres=Data[i].name;//accede a los datos  clasificados en el array en este caso name y los guarda en la nueva variable
@@ -46,7 +43,7 @@ for(let i=0;i < Data.length; i++){////esta función recorre la data
    let imagen=Data[i].image;
    //nombrePersonajedata = Nombres;
    clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
-  //  BuscandoDEntroDeData()
+   
 }
 
 nombrePersonaje.innerHTML=nombrePersonajedata;
@@ -94,3 +91,52 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("aside").style.display = "block"; 
           document.querySelector(".banner").style.display = "block";
   })
+
+  // *****************************************CREACION DE TARJETAS*****************************************
+  //Boton organizacion A-Z
+  let BotonOrganizarAz = document.getElementById("personajesAZ");
+  BotonOrganizarAz.addEventListener("click", az)
+  
+  function az(){
+   let nombrePersonaje=Data.sort((personajes1,personajes2)=>{
+   return (personajes1.name<personajes2.name)? -1 :1
+   //clonar(Nombres, Origen, Genero, imagen, Episodios)  
+  })
+ console.log(nombrePersonaje)
+  }
+//**********Filtro de genero
+  const generoData=[];
+  for(let i=0;i < Data.length; i++){
+  generoData.push(Data[i].gender);
+  }
+ console.log(generoData)
+
+let BotonMujeres = document.getElementById("GeneroMujeres");
+BotonMujeres.addEventListener("click", filtergenderF)
+
+function filtergenderF(){
+ let genderF=Data.filter(genero=>{
+  return genero.gender==="Female"
+ })
+ console.log(genderF)
+}
+
+let BotonHombres = document.getElementById("GeneroHombres");
+BotonHombres.addEventListener("click", filtergenderM)
+function filtergenderM(){
+  let genderM=Data.filter(genero=>{
+   return genero.gender==="Male"
+   })
+console.log(genderM)
+}
+
+let BotonGeneroDesc = document.getElementById("ListaPersonajes");
+BotonGeneroDesc.addEventListener("click", filtergenderU)
+ 
+function filtergenderU(){
+let genderU=Data.filter(genero=>{
+return genero.gender=== "unknown"
+})
+console.log(genderU)
+}
+  
