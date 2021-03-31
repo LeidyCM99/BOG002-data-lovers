@@ -119,8 +119,8 @@ display: block; */
     
 #input-buscador{
     display:flex;
-    width:  55px 100%;
-    height:  auto;
+    width:  15vw;
+    height:  3.5vh;
     font-size: 15px;
     text-indent: 10px;
     color: white;
@@ -137,15 +137,17 @@ display: block; */
 #Buscar{
 background-color: #437A67;
 color: white;
-height: 40px;
-width: 90px;
+height: 4vh;
+width: 5vw;
 border:none;
 font-size: inherit;
 text-decoration: none;
 display:flex;
 outline:none;
 position: relative;
-top: 1em;
+/* top: 1em; */
+bottom: 3%;
+padding: 0.3em;
 }
 #Buscar:hover{
 background:#67bea0 ;
@@ -164,10 +166,10 @@ border-radius: 5px;
 }
 /* @media screen and (max-width: 741px) {
    header {
-        /* height: 60%;
+        height: 60%;
         width: 60%;
         background-color: aquamarine; */
-  /* }} */ */
+  /* }} */ 
 
 
   /* **********MAIN ***********/ 
