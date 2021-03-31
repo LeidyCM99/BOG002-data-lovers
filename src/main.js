@@ -47,7 +47,7 @@ for(let i=0;i < Data.length; i++){////esta función recorre la data
    clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
    
 }
-//document.getElementById("tarjeta").style.display = "none";
+document.getElementById("tarjeta").style.display = "none";
 //nombrePersonaje.textContent=nombrePersonajedata;
 
 
@@ -85,15 +85,15 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("contenedorTarjetas").style.display = "none";
           document.getElementById("SomosQ").style.display = "block"; 
           document.getElementById("aside").style.display = "none"; 
-          document.querySelector(".banner").style.display = "none";
+         
   })
 
   let Home=  document.getElementById("Home");
     Home.addEventListener("click",function (){
-          document.getElementById("tarjeta").style.display = "block";
+          document.getElementById("contenedorTarjetas").style.display = "block";
           document.getElementById("SomosQ").style.display = "none"; 
           document.getElementById("aside").style.display = "block"; 
-          document.querySelector(".banner").style.display = "block";
+         
   })
 
   // *****************************************FILTROS POR CATEGORIAS Y BOTONES*****************************************
