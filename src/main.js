@@ -17,18 +17,17 @@ Boton.addEventListener("click",BuscandoDEntroDeData);//le creamos un evento clic
 
 function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
     const Resultado = Busqueda.value.toUpperCase();//traemos el valor buscado
-    const Tarjeta = document.getElementsByClassName("tarjeta")
-    const contenedor = document.getElementsByClassName("contenedorTarjetas")
-    
-    console.log(Resultado)
+    const Tarjeta = document.getElementsByClassName("tarjeta");
 
     for (let i=0;i < Data.length;i++){
       if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {
         Tarjeta[i].style.display = "block";
+       
         
       } else {
         Tarjeta[i].style.display = "none";
       }}
+      Tarjeta[i].style.display="inline-flex"
   }
 
 
@@ -44,7 +43,6 @@ for(let i=0;i < Data.length; i++){////esta función recorre la data
    let Genero=Data[i].gender;
    let Episodios=Data[i].episode.length;
    let imagen=Data[i].image;
-   //nombrePersonajedata = Nombres;
    clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
   //  BuscandoDEntroDeData()
 }
