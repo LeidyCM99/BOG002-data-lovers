@@ -19,10 +19,12 @@ Boton.addEventListener("click",BuscandoDEntroDeData);//le creamos un evento clic
 function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
     const Resultado = Busqueda.value.toUpperCase();//traemos el valor buscado
     const Tarjeta = document.getElementsByClassName("tarjeta");
+    
 
     for (let i=0;i < Data.length;i++){
       if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {
         Tarjeta[i].style.display = "block";
+       
 
         
       } else {
@@ -35,7 +37,7 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
 
 // *****************************************CREACION DE TARJETAS*****************************************
 
- let nombrePersonajedata="";
+let nombrePersonajedata="";
 let nombrePersonaje=document.getElementById("contenedorTarjetas")
 
 for(let i=0;i < Data.length; i++){////esta función recorre la data
@@ -72,7 +74,6 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
   document.getElementById("imgPersonaje").src = Imagen
 
   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas")
-  console.log(contenedorDeTarjetas)
   contenedorDeTarjetas.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
     
   }
@@ -126,7 +127,7 @@ let QuienesSomos=  document.getElementById("Somos");
   //  } 
    }
 
- console.log(generoData)
+//  console.log(generoData)
 
 let BotonMujeres = document.getElementById("GeneroMujeres");
 BotonMujeres.addEventListener("click", filtergenderF)
