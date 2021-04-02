@@ -198,6 +198,8 @@ main{
     transition: all 1.s ease-in-out;
     background-image: url('../src/Img/rickguiño.jpg'); 
     animation: banner 15s infinite linear;
+    background-repeat: no-repeat;
+
 }
 
 @keyframes banner{
@@ -370,10 +372,7 @@ aside{
     margin:1%;
     justify-items: center;
     align-items: center;
-    
     flex-wrap: wrap;
-
-          
 }
 
 #tarjeta{

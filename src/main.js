@@ -97,29 +97,30 @@ let QuienesSomos=  document.getElementById("Somos");
          
   })
 
+  
+  
+
   // *****************************************FILTROS POR CATEGORIAS Y BOTONES*****************************************
   //Boton organizacion A-Z
 
   let BotonOrganizarAz = document.getElementById("personajesAZ");
       BotonOrganizarAz.addEventListener("click", az)
   
-  function az(){
-       Tarjeta = document.getElementsByClassName("tarjeta");
-   let nombrePersonaje=Data.sort((personajes1,personajes2)=>{
-   return (personajes1.name < personajes2.name)? -1 :1;
-   
-  })
+  function az(){ 
+   let organizaAz=Data.sort((personajes1,personajes2)=>{
+   return (personajes1.name < personajes2.name)? -1 :1})
+   document.getElementById("filtroAZ").innerHTML=JSON.stringify(organizaAz);
+   //console.log(organizaAz)
+};
   
-  }
-
 
 //**********Filtro de genero/**********
   const generoData=[];
   
   for(let i=0;i < Data.length; i++){
   generoData.push(Data[i].gender);
-    if (Data[i].gender=="Female") {
-      console.log("mujeres" )
+   if (Data[i].gender=="Female") {
+   console.log("mujeres" )
     
     }
   //  else if (Data[i].gender=="Male") {
