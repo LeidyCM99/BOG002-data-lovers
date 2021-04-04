@@ -7,52 +7,39 @@
 }
 body{
     height: 100vh;
-    display: inline-block;
+    width: auto;
     box-sizing: content-box;  
     flex-wrap: wrap;
     background-color: transparent;
-    z-index: 1;
-    
+   
 }
 header{
     
-    width: 100vw;
-    height: 9vh;
+    width: auto;
+    height: 30vh;
     flex-wrap: wrap;
+    display:flex;
 }
 nav{
     height: 10vh;
-    width: 100vw;
+    width: 98vw;
     background-color:#437A67;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     /* padding-right: 30vw; */
-    justify-content: space-between;  
-    align-items: flex-start;
+    /* justify-content: space-between;   */
+    /* align-items: flex-start; */
+    z-index: 100;
+    flex-wrap: wrap; /*/cambia nav a parte inferior*/
 
 
-}
-
-
-
-.logo{
-    color: white;
-    font-size: 80%;
-    background: inherit;
-    width: 10vw;
-    height: 8vh;
-    margin-left: 10%;
-    padding-top: 2vh;
-    font-weight: bolder;
-    /* letter-spacing: px; */
-    position: flex;  
 }
 nav ul{
     position: relative;
     top: 0em;
     flex-wrap: wrap; 
-    width: 120vw;
+    width: 120vw ;
     display: inline-flex;
     height: 7.5vh;
     color: white;
@@ -83,6 +70,18 @@ nav ul{
     background:inherit;
     width:12vw;
    }
+   .logo{
+    color: white;
+    font-size: 80%;
+    background: inherit;
+    width: 10vw;
+    height: 8vh;
+    margin-left: 10%;
+    padding-top: 2vh;
+    font-weight: bolder;
+    /* letter-spacing: px; */
+    position: flex;  
+}
 
 
   /* **********submenu de categoria ***********/ 
