@@ -38,19 +38,19 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
 // *****************************************CREACION DE TARJETAS*****************************************
 
 let nombrePersonajedata="";
-let nombrePersonaje=document.getElementById("contenedorTarjetas")
+//let nombrePersonaje=document.getElementById("contenedorTarjetas")
 
 for(let i=0;i < Data.length; i++){////esta función recorre la data
-   let Nombres=Data[i].name;//accede a los datos  clasificados en el array en este caso name y los guarda en la nueva variable
-   let Origen=Data[i].origin.name;
-   let Genero=Data[i].gender;
-   let Episodios=Data[i].episode.length;
-   let imagen=Data[i].image;
+   const Nombres=Data[i].name;//accede a los datos  clasificados en el array en este caso name y los guarda en la nueva variable
+   const Origen=Data[i].origin.name;
+   const Genero=Data[i].gender;
+   const Episodios=Data[i].episode.length;
+   const imagen=Data[i].image;
    clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
    
 }
 document.getElementById("tarjeta").style.display = "none";
-//nombrePersonaje.textContent=nombrePersonajedata;
+nombrePersonaje.textContent=nombrePersonajedata;
 
 
 function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta función declarando los parametros a usar
@@ -86,6 +86,7 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("contenedorTarjetas").style.display = "none";
           document.getElementById("SomosQ").style.display = "block"; 
           document.getElementById("aside").style.display = "none"; 
+          
          
   })
 
@@ -97,9 +98,6 @@ let QuienesSomos=  document.getElementById("Somos");
          
   })
 
-  
-  
-
   // *****************************************FILTROS POR CATEGORIAS Y BOTONES*****************************************
   //Boton organizacion A-Z
 
@@ -110,9 +108,13 @@ let QuienesSomos=  document.getElementById("Somos");
    let organizaAz=Data.sort((personajes1,personajes2)=>{
    return (personajes1.name < personajes2.name)? -1 :1})
    document.getElementById("filtroAZ").innerHTML=JSON.stringify(organizaAz);
-   //console.log(organizaAz)
-};
+   document.getElementById("contenedorTarjetas").style.display = "none";
+   document.getElementById("filtroAZ").style.display="block";
   
+   
+   //console.log(organizaAz)
+    }
+
 
 //**********Filtro de genero/**********
   const generoData=[];

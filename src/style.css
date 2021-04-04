@@ -142,6 +142,7 @@ position: relative;
 bottom: 3%;
 padding: 0.3em;
 }
+
 #Buscar:hover{
 background:#67bea0 ;
 border-radius: 5px;
@@ -192,7 +193,7 @@ main{
     width: 100%;
     height:40vh;
     background-color: transparent;
-    background-size: initial; 
+    background-size:100%; 
     background-position: center;
     transition: all 1.s ease-in-out;
     background-image: url('../src/Img/rickguiño.jpg'); 
@@ -379,7 +380,7 @@ aside{
     flex-wrap: wrap;
     /* display: none; */
     height:270px;
-    width:225px;
+    width:260px;
     overflow: hidden;
     margin:10px ;
     padding-top: 10px;
@@ -395,7 +396,7 @@ aside{
   
 #tarjeta:hover{
      height:520px;
-     width: 225px;
+     width: 260px;
      border-radius: 5px;
      box-shadow: 10px 10px 10px 10px, yellow(0,0,0,0.5);
  }
@@ -404,15 +405,15 @@ aside{
  width: 13em; height:13em;
  display:flex;
  flex-wrap: wrap;
+ margin-left: 15px;
 }
 
 #nombrePersonaje{
     font-size: 20px;
-    width: 9vw;
-    height: max-content;
     background-color:transparent;
     color:white;
-    margin:1.2em;
+    margin:0.4em;
+    margin-left:3em;
 }
 
     
