@@ -109,8 +109,8 @@ background:#67bea0 ;
 border-radius: 5px;
     
 }
- /* .Lista:hover .submenu {
-display: block; */
+ #menu:hover> .submenu {
+display: block;}
     
 #input-buscador{
     display:flex;
@@ -213,7 +213,7 @@ main {
     overflow: hidden;
 } 
 .contenedorTarjetas {
-   position: absolute;
+   position: relative;
    width: auto;
    top: 50em;
    left:6em ;

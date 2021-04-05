@@ -27,7 +27,12 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
         
       } else {
         Tarjeta[i].style.display = "none";
-      }}
+      
+      }
+     
+        
+      
+    }
 
   }
 
@@ -35,7 +40,8 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
 // *****************************************CREACION DE TARJETAS*****************************************
 
 let nombrePersonajedata="";
-
+// let BotonOrganizarAz = document.getElementById("personajesAZ");
+// BotonOrganizarAz.addEventListener("click", az);
 
 for(let i=0;i < Data.length; i++){////esta función recorre la data
    const Nombres   = Data[i].name;//accede a los datos  clasificados en el array en este caso name y los guarda en la nueva variable
@@ -44,7 +50,7 @@ for(let i=0;i < Data.length; i++){////esta función recorre la data
    const Episodios = Data[i].episode.length;
    const imagen    = Data[i].image;
    clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
-   
+  //  az(Nombres, Origen, Genero, imagen, Episodios)
 }
 document.getElementById("tarjeta").style.display = "none";
 nombrePersonaje.textContent=nombrePersonajedata;
@@ -103,15 +109,15 @@ let QuienesSomos=  document.getElementById("Somos");
     
    let organizaAz=Data.sort((personajes1,personajes2)=>{
    return (personajes1.name < personajes2.name)? -1 :1})
-  //  console.log(JSON.parse(StringJson));
    document.getElementById("filtroAZ").innerHTML=JSON.stringify(organizaAz);
+
    document.getElementById("contenedorTarjetas").style.display = "none";
    document.getElementById("filtroAZ").style.display="block";
    document.getElementById("SomosQ").style.display = "none"; 
     }
 
 
-//**********Filtro de genero/**********
+// **********Filtro de genero/**********
 
 
   const generoData=[];
