@@ -47,7 +47,7 @@ for(let i=0;i < Data.length; i++){////esta función recorre la data
    
 }
 document.getElementById("tarjeta").style.display = "none";
-nombrePersonaje.textContent=nombrePersonajedata;
+//nombrePersonaje.textContent=nombrePersonajedata;
 
 
 function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta función declarando los parametros a usar
@@ -97,18 +97,29 @@ let QuienesSomos=  document.getElementById("Somos");
   //Boton organizacion A-Z
   let BotonOrganizarAz = document.getElementById("personajesAZ");
   BotonOrganizarAz.addEventListener("click", az);
- 
+  //console.log("data afuera"+Data)
  
   function az(){ 
     
    let organizaAz=Data.sort((personajes1,personajes2)=>{
    return (personajes1.name < personajes2.name)? -1 :1})
+   //console.log(Data)
+   for(let i=0;i < organizaAz.length; i++){////esta función recorre la data
+    const Nombres   = organizaAz[i].name;//accede a los datos  clasificados en el array en este caso name y los guarda en la nueva variable
+    const Origen    = organizaAz[i].origin.name;
+    const Genero    = organizaAz[i].gender;
+    const Episodios = organizaAz[i].episode.length;
+    const imagen    = organizaAz[i].image;
+   clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
+   console.log(Nombres) 
+  }
+   
   //  console.log(JSON.parse(StringJson));
-   document.getElementById("filtroAZ").innerHTML=JSON.stringify(organizaAz);
-   document.getElementById("contenedorTarjetas").style.display = "none";
-   document.getElementById("filtroAZ").style.display="block";
-   document.getElementById("SomosQ").style.display = "none"; 
-    }
+  // document.getElementById("filtroAZ").innerHTML=JSON.stringify(organizaAz);
+    document.getElementById("contenedorTarjetas").style.display = "block";
+    document.getElementById("filtroAZ").style.display="none";
+  //  document.getElementById("SomosQ").style.display = "none"; 
+  }
 
 
 //**********Filtro de genero/**********
