@@ -16,7 +16,7 @@ body{
 header{
     
     width: auto;
-    height: 30vh;
+    height: 20vh;
     flex-wrap: wrap;
     display:flex;
 }
@@ -31,17 +31,17 @@ nav{
     /* justify-content: space-between;   */
     /* align-items: flex-start; */
     z-index: 100;
-    flex-wrap: wrap; /*/cambia nav a parte inferior*/
+    /* flex-wrap: wrap;*ambia nav a parte inferior*/ 
 
 
 }
-nav ul{
+.Lista{
     position: relative;
     top: 0em;
     flex-wrap: wrap; 
     width: 120vw ;
-    display: inline-flex;
-    height: 7.5vh;
+    display:flex;
+    height: auto;
     color: white;
     list-style:none;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -54,11 +54,10 @@ nav ul{
 .li:hover {
     background:#67bea0 ;
     border-radius: 5px;
+   
 }
-.gg-home{
-    margin: auto;
-    padding: 0.5%;
-    display: inline-flex;
+.menu:hover>.submenu{
+    display: block;
 }
 .li{
     margin-top: 0vw;
@@ -117,21 +116,21 @@ display: block; */
     display:flex;
     width:  15vw;
     height:  3.5vh;
-    font-size: 15px;
-    text-indent: 10px;
+    font-size: 1em;
     color: white;
     background-color: #5BA978;
     padding:  auto;
     border: none;
-    margin: 15px;
+    margin: 0%;
     outline:none; 
+    flex-wrap: wrap;
 }
 
 #Buscar{
 background-color: #437A67;
 color: white;
 height: 4vh;
-width: 5vw;
+width: 8vw;
 border:none;
 font-size: inherit;
 text-decoration: none;
@@ -139,8 +138,9 @@ display:flex;
 outline:none;
 position: relative;
 /* top: 1em; */
-bottom: 3%;
-padding: 0.3em;
+flex-wrap: wrap;
+
+padding-bottom: 1.5em;
 }
 
 #Buscar:hover{
@@ -158,27 +158,83 @@ border-radius: 5px;
     font-size: 20px;
     padding: 1em;
 }
-/* @media screen and (max-width: 741px) {
-   header {
-        height: 60%;
-        width: 60%;
-        background-color: aquamarine; */
-  /* }} */ 
+ @media screen and (max-width: 808px) {
+ header {
+        display: block;
+        flex-wrap: wrap;
+        /* right: 0.1em; */
+        position: relative;
+        width: auto;
+        /* background: turquoise; */
+    }
+   nav {
+       display: block;
+       flex-wrap: wrap;
+       /* right: 0.1em; */
+       position: relative;
+       width: 95vw;
+       /* background: turquoise; */
+   }
+   .Lista {
+    display: block;
+    /* flex-wrap: wrap; */
+    /* right: 0.1em; */
+    position: relative;
+    width: 50vw;
+    height: 50vh;
+    text-align: left;
+}
+.li{
+    height: 10vh; 
+    width: 25vw;
+    text-align: left;
+    align-items: center;
+    padding: 1em;
+}
+.About{
+    /* display: flex; */
+    flex-wrap: wrap;
+    position: relative;
+    padding: auto;
+    width: 105vw;
+    height: 75vh;
+    background-color: lightblue;
+   
+}
+aside{
+    float: initial;
+    height: auto;
+    position: absolute;
+}
+main {
+    
+    /* position: relative; */
+    width: 15vw;   
+    overflow: hidden;
+} 
+.contenedorTarjetas {
+   position: absolute;
+   width: auto;
+   top: 50em;
+   left:6em ;
+} 
+}
 
 
   /* **********MAIN ***********/ 
 
 main{
-  display:  flex;
+ flex-wrap: wrap;
+  display:  flex; 
   color: white;
   font-family:  'Hind', sans-serif;
   align-content: center;
-  margin-top:6em;
-  margin-left: 6em;
-  background-color: transparent; 
-  width:55vw ;
+  margin-top:2em;
+  margin-left: 2em;
+  width:95vw ;
   top: 1.5em;
-  left:30em;
+  left:1em;
+  background-color: transparent;
   /* position: relative;
   z-index: 2; */
         
@@ -189,11 +245,13 @@ main{
     flex-wrap: wrap;
     display: flex;
     position: relative;
-    top: 2em;
+    padding: 0%;
+    margin: 0%;
+    top: 0.5em;
     width: 100%;
     height:40vh;
     background-color: transparent;
-    background-size:100%; 
+    background-size:cover; 
     background-position: center;
     transition: all 1.s ease-in-out;
     background-image: url('../src/Img/rickguiño.jpg'); 
@@ -237,13 +295,14 @@ main{
 aside{
 
  float: left;
- width: auto;
- height: 90%;
+ width: 27vw;
+ height: 85vh;
  font-size: inherit;
  position: relative;
- top: 10vh;
- padding: 0.3%;
- margin: 2%;
+ top: 1vh;
+ padding: 0%;
+ margin: 0%;
+ background-color: transparent;
  display: flex;
  flex-direction: column;
  
@@ -255,42 +314,41 @@ aside{
  margin: 1em;
  padding: 1em;
  flex-direction: column;
- 
+ border-radius: 2%;
  color: white;
  
 }
 
 #AboutH2{
+ border-radius: 2%;
  margin: 3%;
- padding: 1%;
+ padding: 8%;
  height: 10vh;
  width: 19vw;
  align-items: center;
  text-align: center;
  color:black;
- font-size: 0.9rem;
+ font-size: 1rem;
  position: relative;
- top: 2px;
- 
- text-align: center;
+ top: -1em;
  background-color: rgb(179, 221, 26);
     
 }
 
 
 .Links {
-    
  color: white;
- margin: 0.1em;
- display: inline-flex;
-
+ margin: 0.5em;
+ display: flex;
  width: 26vw;
  height: 35vh;
  position: relative;
  right: 2em; 
+ border-radius: 2%;
  background-color:transparent;  
 }
 #links {
+    
     background-color: transparent;
       
 }
@@ -298,12 +356,12 @@ aside{
     background-color: #437A67;
     display: flex;
     flex-direction: column;
-    width:350px;
+    width:20vw;
     margin: 1em;
     padding: 4%;
     display: flex;
     flex-wrap: wrap;
-
+    border-radius: 2%;
 }
 
 .ListaDePersonajes:hover{
@@ -312,31 +370,24 @@ aside{
 }
 
 
-#ParrafoDePrueba{
- color: white;
- height: 80px;
- width: 80px;
- display: flex;}
-
 /**************** NAV QUIENES SOMOS  **************/
 #SomosQ{
- box-shadow: -9px 6px 136px -12px rgba(99,156,112,0.5);
+ box-shadow: -9px 6px 136px -12px rgba(124, 182, 137, 0.5);
  -webkit-box-shadow: -9px 6px 136px -12px rgba(99,156,112,0.5);
  -moz-box-shadow: -9px 6px 136px -12px rgba(99,156,112,0.5);
- width: 100%;
- height: 30em;
+ width: 60vw;
+ height: 35em;
  background-color:#211E1E ;
  position:relative;
- top: 1em;
- display: inline-grid;
- left: 5%;
+ top: 2em;
+ left: 10%;
  color: white;
  font-size: inherit;
  margin-right: auto;
  margin-left: auto;
  display: none;
  text-align: center;
- padding: 15px;
+ padding: 2em;
 
  }
  #Rick{
@@ -350,8 +401,9 @@ aside{
     background-color: transparent;
     height: 50%;
     position: relative;
-     bottom: 3%;
-     left: 25%;
+    bottom: 1%;
+    left: 75%;
+    display: flex;
 }
 
  h2{
@@ -365,18 +417,22 @@ aside{
 
 
 #contenedorTarjetas{
+    position: relative;
+    top: 1em;
+    left:2em ;
     display: inline-flex;
     grid-template-columns: repeat(3,1fr);
-    width: 90vw;
+    width: 60vw;
     gap: 0.1em;
     margin:1%;
     justify-items: center;
     align-items: center;
     flex-wrap: wrap;
+    background-color: transparent;
 }
 
 #tarjeta{
-    display:inline-block;
+    display:inline-flex;
     flex-wrap: wrap;
     /* display: none; */
     height:270px;
@@ -386,7 +442,7 @@ aside{
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 0%;
+    border-radius: 2%;
     border:1px solid white;
     transition: all .4s ease-in-out;
     text-align:center;
@@ -429,6 +485,14 @@ h4{
 .caracteristicas{
     background-color: transparent;
 }
-    
+.filtroAZ{
+    display: none;
+    background-color: #30966b;
+    color: white;
+    width: 55vw;
+    height: auto;
+    flex-wrap: wrap;
+}   
     
 
+ 
