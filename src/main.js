@@ -16,6 +16,7 @@ Boton.addEventListener("click",BuscandoDEntroDeData);//le creamos un evento clic
 
 // *****************************************FILTRO DE BUSQUEDA*****************************************
 
+
 function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
     const Resultado = Busqueda.value.toUpperCase();//traemos el valor buscado
     const Tarjeta = document.getElementsByClassName("tarjeta");
@@ -27,6 +28,9 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
       } else {
         Tarjeta[i].style.display = "none"; }
       }}
+
+   
+    
   
 // *****************************************CREACION DE TARJETAS*****************************************
 
@@ -69,9 +73,10 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
 
   document.getElementById("imgPersonaje").src = Imagen
 
-  let contenedorDeTarjetas=document.getElementById("contenedorTarjetas")
-  contenedorDeTarjetas.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
 
+  let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+  contenedorDeTarjetas.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
+  console.log("dentro de clonar")
   }
 
 // ***********OCULTAR Y MOSTRAR SECCIONES ***********
@@ -100,28 +105,36 @@ let QuienesSomos=  document.getElementById("Somos");
   BotonOrganizarAz.addEventListener("click", az);
   
  
-  function az(){ 
-    
+  function az(){
    let organizaAz = Data.sort((personajes1,personajes2)=>{
-   return (personajes1.name < personajes2.name)? -1 :1})
- 
-   for(let i=0;i < organizaAz.length; i++){
-    const Nombres   =organizaAz[i].name;
-    const Origen    =organizaAz[i].origin.name;
-    const Genero    =organizaAz[i].gender;
-    const Episodios =organizaAz[i].episode.length;
-    const imagen    =organizaAz[i].image;
+    return (personajes1.name < personajes2.name)? -1 :1
+  })
+  let nombres=[];
+  let origen=[];
+  let genero=[];
+  let episodios=[];
+  let imagen=[];
 
-   clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
-   console.log(Nombres) 
+   for(let i=0;i < organizaAz.length; i++){
+     nombres.push(organizaAz[i].name) ;
+     origen.push(organizaAz[i].origin.name);
+     genero.push(organizaAz[i].gender);
+     episodios.push(organizaAz[i].episode.length);
+     imagen.push(organizaAz[i].image);
   }
+   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+   let contenedor = document.getElementById("tarjeta");
+   contenedorDeTarjetas.appendChild(contenedor)
+   clonar(nombres, origen, genero, imagen, episodios) //ejecutamos la funcion clonar con los datos del parametro
+   console.log(nombres) 
+   }
    
   //  console.log(JSON.parse(StringJson));
   // document.getElementById("filtroAZ").innerHTML=JSON.stringify(organizaAz);
     document.getElementById("contenedorTarjetas").style.display = "block";
     document.getElementById("filtroAZ").style.display="none";
   //  document.getElementById("SomosQ").style.display = "none"; 
-  }
+  
 
 
 // **********Filtro de genero/**********
@@ -170,19 +183,3 @@ return genero.gender=== "unknown"
 
 // console.log(genderU)
 }
-
-
-// let BotonListaDeNombres = document.getElementById("ListaPersonajes");
-// BotonListaDeNombres.addEventListener("click", function(Nombres){
- 
-
-// for (let i = 0; i < Data.length; i++) {
-//   let Nombres = Data[i].name;
- 
-// document.getElementById("ListaDeNombres").style.display = "block"
-// document.getElementById("contenedorTarjetas").style.display = "none";
-// document.getElementById("filtroAZ").style.display="none";
-// document.getElementById("ListaDeNombres").innerHTML= Nombres ;
-// } 
-// }
-// )
