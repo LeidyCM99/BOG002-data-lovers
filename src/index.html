@@ -12,16 +12,21 @@
 <body>
 
   <header>
+    
        <nav>  
-          <div class="logo">WIKI RICKOCOSO</div>
+        <!-- <input type="checkbox"> <label><img class="icon"src="Img/menu-64.png"/></label> -->
+          <div class="logo">WIKI RICKOCOSO
+            
+          </div>
+         
              <ul class="Lista"> 
              <li class="li" id="Home">INICIO</li>
-             <li class="li" id="menu">CATEGORIAS</li>
-                     <ul class="submenu">
+             <li class="li" id="Categoria">CATEGORIAS</li>
+                     <div class="submenu">
                      <li class="lista_submenu">Genero</li>
                      <li class="lista_submenu">Estado</li>
                      <li class="lista_submenu">Especie</li>
-                     </ul>
+                     </div>
               <li class="li" id="Somos" > ¿QUIENES SOMOS?</li>
               <input type="search" id="input-buscador" class="input-buscador"placeholder="Busca tu personaje">
               <input type= "button" id="Buscar" value="BUSCAR" > </input>
@@ -47,27 +52,29 @@
      de un científico, Rick, y su fácilmente influenciable nieto, Morty, quienes pasan el 
      tiempo entre la vida doméstica y los viajes espaciales, temporales e intergalácticos.      
      
+    
  </div>
 
  <div class="Links"> 
-  <ul id="links"> 
-     <li class="ListaDePersonajes" id="ListaPersonajes">Lista de personajes </li>
-     <li class="ListaDePersonajes" id="GeneroMujeres">Mujeres</li>
-     <li class="ListaDePersonajes" id="GeneroHombres">Hombres</li>
-     <li class="ListaDePersonajes" id="personajesAZ">  De la A-Z</li>
-  </ul>
+    <ul id="links"> 
+        <li class="ListaDePersonajes" id="ListaPersonajes">Lista de personajes </li>
+        <li class="ListaDePersonajes" id="GeneroMujeres">Mujeres</li>
+        <li class="ListaDePersonajes" id="GeneroHombres">Hombres</li>
+        <li class="ListaDePersonajes" id="personajesAZ">  De la A-Z</li>
+         <!-- <iframe 
+         class="iframe"width="300em" height="250em"src="https://www.adultswim.com/streams/rick-and-morty">
+         </iframe> -->
+    </ul>
   </div>
 </aside>
- </section>
+
      
- <section>
   <div id="SomosQ"> 
 
     <img src="Img/rick.png"  id="Rick">
         
     ¿QUIENES SOMOS?
-    <br>
-         
+    <br>   
     <h2> www.RICKOCOSO.com</h2>
     <br>
     Somos una wiki, pagina tambien conocida como una Data fan, nos encargamos de enseñarte los
@@ -101,14 +108,17 @@
   <div class="filtroAZ" id="filtroAZ">
     <h1>Filtro A-Z</h1> 
   </div>
-
+<!------------------ lista de personajes------------------>
+<div class="ListaDeNombres" id="ListaDeNombres">
+  <!-- <h1>NOMBRES DE LOS PERSONAJES</h1>  -->
+</div>
 
 </main>
 
  
  <!------------------ footer ------------------>
 
-<!-- <footer>Todos los derechos reservados © </footer> -->
+<footer>Todos los derechos reservados © 2021 </footer>
     <div id="root"></div>
     <script src="main.js" type="module"></script>
 </body>

@@ -6,35 +6,40 @@
     
 }
 body{
-    height: 100vh;
-    width: auto;
+    height: 100vh;  width: auto;
     box-sizing: content-box;  
     flex-wrap: wrap;
     background-color: transparent;
-   
 }
 header{
     
-    width: auto;
-    height: 20vh;
+    width: auto; height: 20vh;
     flex-wrap: wrap;
     display:flex;
+   
 }
 nav{
     height: 10vh;
     width: 98vw;
-    background-color:#437A67;
+    background-color:#437a67;
+    background-image: -webkit-linear-gradient(#437a67,#499178,#65a18c );
+
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    /* padding-right: 30vw; */
-    /* justify-content: space-between;   */
-    /* align-items: flex-start; */
     z-index: 100;
-    /* flex-wrap: wrap;*ambia nav a parte inferior*/ 
-
-
+    top: 0em;
+    position: fixed;
+   
 }
+ .icon{
+    background:#65a18c;
+    width: 3vw; height: 5vh;
+    position: relative;
+    margin: 0%;
+    display: none;
+    top: 0.5em;} 
+
 .Lista{
     position: relative;
     top: 0em;
@@ -48,7 +53,7 @@ nav{
     font-size: 1rem;
     justify-content: space-around;
     align-items:  baseline;
-    background:#437A67 
+    background:transparent;
      
 }
 .li:hover {
@@ -56,9 +61,7 @@ nav{
     border-radius: 5px;
    
 }
-.menu:hover>.submenu{
-    display: block;
-}
+
 .li{
     margin-top: 0vw;
     text-align: center;
@@ -72,13 +75,13 @@ nav{
    .logo{
     color: white;
     font-size: 80%;
-    background: inherit;
+    background: transparent;
     width: 10vw;
     height: 8vh;
     margin-left: 10%;
     padding-top: 2vh;
     font-weight: bolder;
-    /* letter-spacing: px; */
+    /* letter-spacing: 3px; */
     position: flex;  
 }
 
@@ -88,9 +91,9 @@ nav{
     list-style:none;
     position: relative;
     width: auto; height: auto;
-    display:flex;
+    display:none;
     left: auto;
-    top:63px;
+    top:60px;
     background: inherit;
     flex-direction: column;
     z-index: 4;
@@ -101,16 +104,17 @@ nav{
     padding: 0%;
     margin: 0%;
 }
-   
 
+#categoria:hover> .submenu {
+    display: block;}
     
 .submenu> li:hover{
-background:#67bea0 ;
+background:#67be6e ;
 border-radius: 5px;
     
 }
- #menu:hover> .submenu {
-display: block;}
+
+
     
 #input-buscador{
     display:flex;
@@ -127,7 +131,7 @@ display: block;}
 }
 
 #Buscar{
-background-color: #437A67;
+background-color: transparent;
 color: white;
 height: 4vh;
 width: 8vw;
@@ -162,27 +166,31 @@ border-radius: 5px;
  header {
         display: block;
         flex-wrap: wrap;
-        /* right: 0.1em; */
         position: relative;
         width: auto;
-        /* background: turquoise; */
     }
    nav {
        display: block;
        flex-wrap: wrap;
-       /* right: 0.1em; */
        position: relative;
        width: 95vw;
-       /* background: turquoise; */
    }
+  .icon{
+      background-color: transparent;
+      /* position: relative;
+      top: 0em; */
+  }
+ 
+  
    .Lista {
     display: block;
     /* flex-wrap: wrap; */
-    /* right: 0.1em; */
+    /* margin-left: -70em; */
     position: relative;
     width: 50vw;
     height: 50vh;
     text-align: left;
+    background-color: #437a67;
 }
 .li{
     height: 10vh; 
@@ -218,6 +226,23 @@ main {
    top: 50em;
    left:6em ;
 } 
+#input-buscador{
+    width: 30vw;
+    padding: 2px;
+    margin: 0%;
+    display: inline;
+}
+#Buscar{
+    width: 35vw;
+    padding: 1em 1em 2em 1em;
+    align-items: center;
+    margin: 5%;
+    flex-wrap: wrap;
+}
+footer{
+    position: relative;
+}
+
 }
 
 
@@ -375,12 +400,12 @@ aside{
  box-shadow: -9px 6px 136px -12px rgba(124, 182, 137, 0.5);
  -webkit-box-shadow: -9px 6px 136px -12px rgba(99,156,112,0.5);
  -moz-box-shadow: -9px 6px 136px -12px rgba(99,156,112,0.5);
- width: 60vw;
+ width: 55vw;
  height: 35em;
  background-color:#211E1E ;
  position:relative;
  top: 2em;
- left: 10%;
+ left: 5%;
  color: white;
  font-size: inherit;
  margin-right: auto;
@@ -429,12 +454,13 @@ aside{
     align-items: center;
     flex-wrap: wrap;
     background-color: transparent;
+    
 }
 
 #tarjeta{
-    display:inline-flex;
+    /* display:inline-flex; */
     flex-wrap: wrap;
-    /* display: none; */
+    display: none;
     height:270px;
     width:260px;
     overflow: hidden;
@@ -493,6 +519,31 @@ h4{
     height: auto;
     flex-wrap: wrap;
 }   
+.iframe{
+    position: relative;
+    display: flex;
+}
     
-
+footer{
+  min-height: 4em;
+  background-color: #191919;
+  background-image: -webkit-linear-gradient(#3a3a3a, #000000);
+  background-image: linear-gradient(top, #353535, #000000);
+  border-top: 1px solid rgba(50, 50, 50, 0.3);
+  width: 98vw;
+  position:fixed;
+  clear: both;
+  margin-top: 0px;
+  padding-top: 0px;
+  /* overflow:hidden; */
+  bottom: 0%;
+  color: #ffffff;
+  text-align: center;
+}
+.ListaDeNombres{
+    display: none;
+    background-color: lightseagreen;
+    color: white;
+    width: 60vw;
+}
  
