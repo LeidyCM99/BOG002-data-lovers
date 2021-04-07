@@ -114,7 +114,7 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
  
   }
 
-// ***********OCULTAR Y MOSTRAR SECCIONES ***********
+// *********************************OCULTAR Y MOSTRAR SECCIONES *********************************
 
 
 let QuienesSomos=  document.getElementById("Somos");
@@ -137,31 +137,33 @@ let QuienesSomos=  document.getElementById("Somos");
   //Boton organizacion A-Z
 
   let BotonOrganizarAz = document.getElementById("personajesAZ");
-  BotonOrganizarAz.addEventListener("click", az);
-  
+      BotonOrganizarAz.addEventListener("click", az);
+  const Tarjeta = document.getElementsByClassName("tarjeta");
  
   function az(){
    let organizaAz = Data.sort((personajes1,personajes2)=>{
     return (personajes1.name < personajes2.name)? -1 :1
+    
   })
-  let nombres =[];
-  let origen  =[];
-  let genero  =[];
-  let episodios=[];
-  let imagen  =[];
+  
+  // let nombres =[];
+  // let origen  =[];
+  // let genero  =[];
+  // let episodios=[];
+  // let imagen  =[];
 
-   for(let i=0;i < organizaAz.length; i++){
-     nombres.push(organizaAz[i].name) ;
-      origen.push(organizaAz[i].origin.name);
-      genero.push(organizaAz[i].gender);
-   episodios.push(organizaAz[i].episode.length);
-      imagen.push(organizaAz[i].image);
-  }
-   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
-   let contenedor = document.getElementById("tarjeta");
-   contenedorDeTarjetas.appendChild(contenedor)
-   clonar(nombres, origen, genero, imagen, episodios) //ejecutamos la funcion clonar con los datos del parametro
-   console.log(nombres) 
+  //  for(let i=0;i < organizaAz.length; i++){
+  //    nombres.push(organizaAz[i].name) ;
+  //     origen.push(organizaAz[i].origin.name);
+  //     genero.push(organizaAz[i].gender);
+  //  episodios.push(organizaAz[i].episode.length);
+  //     imagen.push(organizaAz[i].image);
+  // }
+  //  let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+  //  let contenedor = document.getElementById("tarjeta");
+  //  contenedorDeTarjetas.appendChild(contenedor)
+  //  clonar(nombres, origen, genero, imagen, episodios) //ejecutamos la funcion clonar con los datos del parametro
+  //  console.log(nombres) 
    }
    
   //  console.log(JSON.parse(StringJson));

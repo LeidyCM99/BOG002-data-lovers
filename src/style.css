@@ -5,6 +5,12 @@
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     
 }
+html{
+    height: 100vh;  width: auto;
+    box-sizing: content-box;  
+    flex-wrap: wrap;
+    background-color: black;
+}
 body{
     height: 100vh;  width: auto;
     box-sizing: content-box;  
@@ -13,9 +19,10 @@ body{
 }
 header{
     
-    width: auto; height: 20vh;
+    width: auto; height: 10vh;
     flex-wrap: wrap;
     display:flex;
+    background-color: transparent;
    
 }
 nav{
@@ -162,7 +169,20 @@ border-radius: 5px;
     font-size: 20px;
     padding: 1em;
 }
+@media(max-width:900px){
+    .contenedor-banner{
+        background-repeat: no-repeat;
+        width:100%;
+        height:100%;
+        background-image:url('../src/Img/img\ fija.png');
+        background-position: center;         
+       
+    }
+    
+
+}
  @media screen and (max-width: 808px) {
+  
  header {
         display: block;
         flex-wrap: wrap;
@@ -179,10 +199,9 @@ border-radius: 5px;
       background-color: transparent;
       /* position: relative;
       top: 0em; */
-  }
- 
-  
-   .Lista {
+}
+
+   .Lista{
     display: block;
     /* flex-wrap: wrap; */
     /* margin-left: -70em; */
@@ -199,30 +218,22 @@ border-radius: 5px;
     align-items: center;
     padding: 1em;
 }
-.About{
-    /* display: flex; */
-    flex-wrap: wrap;
-    position: relative;
-    padding: auto;
-    width: 105vw;
-    height: 75vh;
-    background-color: lightblue;
-   
-}
+/* HASTA AQUI FUNCIONA EL CODIGO */
+
 aside{
     float: initial;
-    height: auto;
+    height: 60px;
     position: absolute;
 }
 main {
     
-    /* position: relative; */
+    position: relative;
     width: 15vw;   
     overflow: hidden;
 } 
 .contenedorTarjetas {
    position: relative;
-   width: auto;
+   width: 90px;
    top: 50em;
    left:6em ;
 } 
@@ -241,6 +252,15 @@ main {
 }
 footer{
     position: relative;
+}
+.About{
+    /* display: flex; */
+    flex-wrap: wrap;
+    position: relative;
+    padding: auto;
+    width: 505vw;
+    height: 75vh;
+    background-color: lightblue;
 }
 
 }
@@ -445,14 +465,14 @@ aside{
     position: relative;
     top: 1em;
     left:2em ;
-    display: inline-block;
+    display: inline-flex;
     grid-template-columns: repeat(3,1fr);
     width: 65vw;
     gap: 0.1em;
     margin:1%;
     justify-items: center;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     background-color: transparent;
     
 }
