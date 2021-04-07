@@ -445,9 +445,9 @@ aside{
     position: relative;
     top: 1em;
     left:2em ;
-    display: inline-flex;
+    display: inline-block;
     grid-template-columns: repeat(3,1fr);
-    width: 60vw;
+    width: 65vw;
     gap: 0.1em;
     margin:1%;
     justify-items: center;
@@ -458,16 +458,15 @@ aside{
 }
 
 #tarjeta{
-    /* display:inline-flex; */
+    display:inline-flex;
+    position: relative;
     flex-wrap: wrap;
-    display: none;
+    /* display: none; */
     height:270px;
     width:260px;
     overflow: hidden;
     margin:10px ;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 1% 2% 2% 1%;
     border-radius: 2%;
     border:1px solid white;
     transition: all .4s ease-in-out;

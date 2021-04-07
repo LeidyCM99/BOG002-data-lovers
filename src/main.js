@@ -5,13 +5,19 @@ const Data = data.results;//variable que guarda y accede al array [results]
 
 
 
-//***************************************** BOTON DE BUSQUEDA*****************************************
+//***************************************** BOTONES*****************************************
 
 
 
 const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el input 
 const Boton = document.getElementById("Buscar");//enlazamos nuestro boton 
-Boton.addEventListener("click",BuscandoDEntroDeData);//le creamos un evento click 
+      Boton.addEventListener("click",BuscandoDEntroDeData);//le creamos un evento click 
+
+const BotonMujeres = document.getElementById("GeneroMujeres");
+      BotonMujeres.addEventListener("click", BuscandoFemale);
+
+const BotonH = document.getElementById("GeneroHombres");
+      BotonH.addEventListener("click", BuscandoMale);
    
 
 // *****************************************FILTRO DE BUSQUEDA*****************************************
@@ -26,11 +32,40 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
       if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {
         Tarjeta[i].style.display = "block";
       } else {
-        Tarjeta[i].style.display = "none"; }
+        Tarjeta[i].style.display = "none"; 
+      }
       }}
 
-   
     
+     
+
+function BuscandoFemale(){
+      const Result = "FEMALE";
+      const Tarjeta = document.getElementsByClassName("tarjeta");
+        
+    
+        for (let i=0;i < Data.length;i++){
+          if(Tarjeta[i].textContent.toUpperCase().includes(Result)) {
+            Tarjeta[i].style.display = "block";
+          } else {
+            Tarjeta[i].style.display = "none"; }
+          }}
+
+
+          
+function BuscandoMale(){
+  
+            const BuscarLaPalabra = " MALE";
+            const Tarjeta = document.getElementsByClassName("tarjeta");
+              
+          
+              for (let i=0;i < Data.length;i++){
+                if(Tarjeta[i].textContent.toUpperCase().includes(BuscarLaPalabra)) {
+                  Tarjeta[i].style.display = "block";
+                } else {
+                  Tarjeta[i].style.display = "none"; }
+                }
+          }
   
 // *****************************************CREACION DE TARJETAS*****************************************
 
@@ -76,7 +111,7 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
 
   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
   contenedorDeTarjetas.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
-  console.log("dentro de clonar")
+ 
   }
 
 // ***********OCULTAR Y MOSTRAR SECCIONES ***********
@@ -109,18 +144,18 @@ let QuienesSomos=  document.getElementById("Somos");
    let organizaAz = Data.sort((personajes1,personajes2)=>{
     return (personajes1.name < personajes2.name)? -1 :1
   })
-  let nombres=[];
-  let origen=[];
-  let genero=[];
+  let nombres =[];
+  let origen  =[];
+  let genero  =[];
   let episodios=[];
-  let imagen=[];
+  let imagen  =[];
 
    for(let i=0;i < organizaAz.length; i++){
      nombres.push(organizaAz[i].name) ;
-     origen.push(organizaAz[i].origin.name);
-     genero.push(organizaAz[i].gender);
-     episodios.push(organizaAz[i].episode.length);
-     imagen.push(organizaAz[i].image);
+      origen.push(organizaAz[i].origin.name);
+      genero.push(organizaAz[i].gender);
+   episodios.push(organizaAz[i].episode.length);
+      imagen.push(organizaAz[i].image);
   }
    let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
    let contenedor = document.getElementById("tarjeta");
@@ -136,50 +171,3 @@ let QuienesSomos=  document.getElementById("Somos");
   //  document.getElementById("SomosQ").style.display = "none"; 
   
 
-
-// **********Filtro de genero/**********
-
-
-  const generoData=[];
-  
-  for(let i=0;i < Data.length; i++){
-  generoData.push(Data[i].gender);
-   if (Data[i].gender=="Female") {
-    
-     console.log(generoData.indexOf("Female"))
-    }
- 
-   }
-
-
-
-let BotonMujeres = document.getElementById("GeneroMujeres");
-BotonMujeres.addEventListener("click", filtergenderF)
-
-function filtergenderF(){
-   let genderF= Data.filter(genero=>{
-  return genero.gender==="Female"
- })
-  console.log(genderF)
-}
-
-let BotonHombres = document.getElementById("GeneroHombres");
-BotonHombres.addEventListener("click", filtergenderM)
-function filtergenderM(){
-  let genderM=Data.filter(genero=>{
-   return genero.gender==="Male"
-   })
-console.log(genderM)
-}
-
-let BotonGeneroDesc = document.getElementById("ListaPersonajes");
-BotonGeneroDesc.addEventListener("click", filtergenderU)
- 
-function filtergenderU(){
-let genderU=Data.filter(genero=>{
-return genero.gender=== "unknown"
-
-})
-
-// console.log(genderU)
-}
