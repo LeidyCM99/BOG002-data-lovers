@@ -1,5 +1,6 @@
 //import { filtroDimensiones } from './data.js';
 
+// import { Chart } from 'chart.js';
 import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
 const Data = data.results;//variable que guarda y accede al array [results]
 
@@ -30,7 +31,7 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
 
     for (let i=0;i < Data.length;i++){
       if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {
-        Tarjeta[i].style.display = "block";
+        Tarjeta[i].style.display = "inline-flex";
       } else {
         Tarjeta[i].style.display = "none"; 
       }
@@ -46,7 +47,7 @@ function BuscandoFemale(){
     
         for (let i=0;i < Data.length;i++){
           if(Tarjeta[i].textContent.toUpperCase().includes(Result)) {
-            Tarjeta[i].style.display = "block";
+            Tarjeta[i].style.display = "inline-flex";
           } else {
             Tarjeta[i].style.display = "none"; }
           }}
@@ -61,7 +62,7 @@ function BuscandoMale(){
           
               for (let i=0;i < Data.length;i++){
                 if(Tarjeta[i].textContent.toUpperCase().includes(BuscarLaPalabra)) {
-                  Tarjeta[i].style.display = "block";
+                  Tarjeta[i].style.display = "inline-flex";
                 } else {
                   Tarjeta[i].style.display = "none"; }
                 }
@@ -87,7 +88,7 @@ document.getElementById("tarjeta").style.display = "none";
 
 
 function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta función declarando los parametros a usar
-
+//  console.log(Nombres,Origen, Genero, Imagen, Episodios)
   var contenedor = document.getElementById("tarjeta");//reservamos un id en html
   var clon       = contenedor.cloneNode(true);//a contenedor le aplicamos el metodo cloneNode para clonar
 
@@ -146,30 +147,67 @@ let QuienesSomos=  document.getElementById("Somos");
     
   })
   
-  // let nombres =[];
-  // let origen  =[];
-  // let genero  =[];
-  // let episodios=[];
-  // let imagen  =[];
-
-  //  for(let i=0;i < organizaAz.length; i++){
-  //    nombres.push(organizaAz[i].name) ;
-  //     origen.push(organizaAz[i].origin.name);
-  //     genero.push(organizaAz[i].gender);
-  //  episodios.push(organizaAz[i].episode.length);
-  //     imagen.push(organizaAz[i].image);
-  // }
-  //  let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
-  //  let contenedor = document.getElementById("tarjeta");
-  //  contenedorDeTarjetas.appendChild(contenedor)
-  //  clonar(nombres, origen, genero, imagen, episodios) //ejecutamos la funcion clonar con los datos del parametro
-  //  console.log(nombres) 
+  let nombres =[];
+  let origen  =[];
+  let genero  =[];
+  let episodios=[];
+  let imagen  =[];
+  let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+    contenedorDeTarjetas.innerHTML=""
+   for(let i=0;i < organizaAz.length; i++){
+     
+      clonar(organizaAz[i].name, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+  }
+   
+   let contenedor = document.getElementById("tarjeta");
+  
+   contenedorDeTarjetas.appendChild(contenedor)
+  
+   console.log(nombres) 
    }
    
   //  console.log(JSON.parse(StringJson));
   // document.getElementById("filtroAZ").innerHTML=JSON.stringify(organizaAz);
     document.getElementById("contenedorTarjetas").style.display = "block";
     document.getElementById("filtroAZ").style.display="none";
-  //  document.getElementById("SomosQ").style.display = "none"; 
+   document.getElementById("SomosQ").style.display = "none"; 
   
 
+// ***************************EL CANVAS ******************************
+
+for (let i=0;i < Data.length;i++){
+  let categoriaEspecie = Data[i].species;
+  console.log(categoriaEspecie.length);
+  }
+  for (let i=0;i < Data.length;i++){
+    let Ch  = Data[i].name;
+    // console.log(Ch);
+    }
+
+const canvas = document.getElementById("canvas");
+const Especies= ["humano", "alien", "vampiro", "zombie"]
+const Personajes= [1,2,3,2]
+const MyChart= new Chart(canvas,{
+  type: "bar",
+  data: {
+    labels: Especies,
+    datasets:[
+      {
+        label:"Personajes",
+        data:Personajes,
+        BackgroundClor:["rgb(233, 150, 122)",
+          "rgb(148, 0, 211)",
+          " rgb(0, 206, 209)",
+          "rgb(255, 248, 220)"],
+          borderColor: ["rgb(233, 150, 122)",
+          "rgb(148, 0, 211)",
+          " rgb(0, 206, 209)",
+          "rgb(255, 248, 220)"],
+          borderWidth: 1.5,
+      }]
+      }
+    
+      
+  
+
+})

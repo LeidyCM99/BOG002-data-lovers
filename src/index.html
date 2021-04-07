@@ -88,32 +88,26 @@
   </div>
 
   <!--  fichas personajes -->
+  <div class="tarjeta" id="tarjeta" >
+    <h3 id="nombrePersonaje">Data Fans</h3>
+    <img src="Img/buscar.png.jpg" alt="Buscando personaje" id="imgPersonaje">
+     <span class="caracteristicas" id="caracteristicas">
+      <h4 id="lugarDeOrigen">1.Busca el personaje</h4>
+      <h4 id="cantidadDeDeEpisodios">2.Despliega la tarjeta</h4> 
+      <h4 id="genero">3.Datos de tu personaje favorito</h4>
+    </span>
+  </div>  
 
   <div  class="contenedorTarjetas" id="contenedorTarjetas" >
 
-   <div class="tarjeta" id="tarjeta" >
-     <h3 id="nombrePersonaje">Data Fans</h3>
-     <img src="Img/buscar.png.jpg" alt="Buscando personaje" id="imgPersonaje">
-      <span class="caracteristicas" id="caracteristicas">
-       <h4 id="lugarDeOrigen">1.Busca el personaje</h4>
-       <h4 id="cantidadDeDeEpisodios">2.Despliega la tarjeta</h4> 
-       <h4 id="genero">3.Datos de tu personaje favorito</h4>
-     </span>
-   </div>  
+   
                 
   </div>
 
-<!------------------ Filtro de A-Z------------------>
 
-  
-  <div class="filtroAZ" id="filtroAZ">
-    <h1>Filtro A-Z</h1> 
-  </div>
-<!------------------ lista de personajes------------------>
-<div class="ListaDeNombres" id="ListaDeNombres">
-  <!-- <h1>NOMBRES DE LOS PERSONAJES</h1>  -->
+<div id="Chart">
+<canvas id="canvas" height="300" width="300"> </canvas>
 </div>
-
 </main>
 
  
@@ -121,6 +115,7 @@
 
 <footer>Todos los derechos reservados © 2021 </footer>
     <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js" integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A==" crossorigin="anonymous"></script>
     <script src="main.js" type="module"></script>
 </body>
 </html>
