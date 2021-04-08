@@ -118,9 +118,9 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
 let QuienesSomos=  document.getElementById("Somos");
     QuienesSomos.addEventListener("click",function (){
           document.getElementById("contenedorTarjetas").style.display = "none";
-          document.getElementById("SomosQ").style.display = "block"; 
           document.getElementById("Chart").style.display = "none"; 
-             
+          document.getElementById("SomosQ").style.display = "block";  
+          document.getElementById("filtroDeEspecies").style.display = "none";  
   })
 
   let Home=  document.getElementById("Home");
@@ -128,6 +128,7 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("contenedorTarjetas").style.display = "block";
           document.getElementById("SomosQ").style.display = "none"; 
           document.getElementById("Chart").style.display = "none";
+          document.getElementById("filtroDeEspecies").style.display = "none";  
         
          
   })
@@ -136,17 +137,19 @@ let QuienesSomos=  document.getElementById("Somos");
     document.getElementById("Chart").style.display = "block";
     document.getElementById("SomosQ").style.display = "none"; 
     document.getElementById("contenedorTarjetas").style.display="none";
+    document.getElementById("filtroDeEspecies").style.display = "none";  
           })
      
-          document.getElementById("SomosQ").style.display = "block";  
-          document.getElementById("filtroDeEspecies").style.display = "none";  
+         
  
 
 
 let filtrandoEspecies=  document.getElementById("especies");
     filtrandoEspecies.addEventListener("click",function(){
+        document.getElementById("filtroDeEspecies").style.display = "block"; 
+        document.getElementById("Chart").style.display = "none";
+        document.getElementById("SomosQ").style.display = "none";  
         document.getElementById("contenedorTarjetas").style.display = "none";
-        document.getElementById("filtroDeEspecies").style.display = "block";  
 
  })
  
@@ -205,7 +208,7 @@ let filtrandoEspecies=  document.getElementById("especies");
 //****Filtrando especies*****//
 
   const BotonHumans = document.getElementById("Humans");
-      BotonHumans.addEventListener("click",especies);
+        BotonHumans.addEventListener("click",especies);
   const Tarjeta = document.getElementsByClassName("tarjeta");
 
   function especies(){
@@ -229,7 +232,7 @@ let filtrandoEspecies=  document.getElementById("especies");
   
 
 let BotonAliens = document.getElementById("Alien");
-BotonAliens.addEventListener("click",Aliens);
+    BotonAliens.addEventListener("click",Aliens);
 const tarjetaAliens= document.getElementsByClassName("tarjeta");
 
 function Aliens(){
