@@ -261,7 +261,7 @@ function Robots(){
   function humanoid(){
 
    let humanoid= Data.filter(item=>{
-    return item.species==="humanoid"
+    return item.species==="Humanoid"
    })
  
   
