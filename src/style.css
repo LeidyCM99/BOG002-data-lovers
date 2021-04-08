@@ -218,6 +218,8 @@ border-radius: 5px;
     align-items: center;
     padding: 1em;
 }
+
+
 /* HASTA AQUI FUNCIONA EL CODIGO */
 
 aside{
@@ -426,14 +428,15 @@ aside{
  background-color:#211E1E ;
  position:relative;
  top: 2em;
- left: 5%;
+ left: 2%;
  color: white;
  font-size: inherit;
  margin-right: auto;
  margin-left: auto;
  display: none;
  text-align: center;
- padding: 2em;
+ padding: 4em;
+ display: -ms-flexbox;
 
  }
  #Rick{
@@ -567,4 +570,10 @@ footer{
     color: white;
     width: 60vw;
 }
- 
+#Chart{
+    flex-wrap: wrap;
+    display: flex;
+    position: relative;
+    margin: 5%;
+    
+} 

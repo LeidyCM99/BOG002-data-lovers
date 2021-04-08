@@ -19,6 +19,8 @@ const BotonMujeres = document.getElementById("GeneroMujeres");
 
 const BotonH = document.getElementById("GeneroHombres");
       BotonH.addEventListener("click", BuscandoMale);
+
+
    
 
 // *****************************************FILTRO DE BUSQUEDA*****************************************
@@ -121,17 +123,26 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
 let QuienesSomos=  document.getElementById("Somos");
     QuienesSomos.addEventListener("click",function (){
           document.getElementById("contenedorTarjetas").style.display = "none";
-          document.getElementById("SomosQ").style.display = "block";  
-          document.getElementById("filtroAZ").style.display="none";    
+          document.getElementById("SomosQ").style.display = "block"; 
+          document.getElementById("Chart").style.display = "none"; 
+             
   })
 
   let Home=  document.getElementById("Home");
       Home.addEventListener("click",function (){
           document.getElementById("contenedorTarjetas").style.display = "block";
           document.getElementById("SomosQ").style.display = "none"; 
-          document.getElementById("filtroAZ").style.display="none";
+          document.getElementById("Chart").style.display = "none";
+        
          
   })
+    const BotonGraficos = document.getElementById("Graphics");
+          BotonGraficos.addEventListener("click", function MostrarGrafico(){
+    document.getElementById("Chart").style.display = "block";
+    document.getElementById("SomosQ").style.display = "none"; 
+    document.getElementById("contenedorTarjetas").style.display="none";
+          })
+     
 
   // *****************************************FILTROS POR CATEGORIAS Y BOTONES*****************************************
   
@@ -143,49 +154,37 @@ let QuienesSomos=  document.getElementById("Somos");
  
   function az(){
    let organizaAz = Data.sort((personajes1,personajes2)=>{
-    return (personajes1.name < personajes2.name)? -1 :1
-    
+        return (personajes1.name < personajes2.name)? -1 :1 
   })
   
-  let nombres =[];
-  let origen  =[];
-  let genero  =[];
-  let episodios=[];
-  let imagen  =[];
-  let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
-    contenedorDeTarjetas.innerHTML=""
-   for(let i=0;i < organizaAz.length; i++){
-     
-      clonar(organizaAz[i].name, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+    let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+        contenedorDeTarjetas.innerHTML=""
+        for(let i=0;i < organizaAz.length; i++){
+        clonar(organizaAz[i].name, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image, organizaAz[i].episode.length,)
   }
-   
    let contenedor = document.getElementById("tarjeta");
-  
    contenedorDeTarjetas.appendChild(contenedor)
-  
-   console.log(nombres) 
    }
-   
-  //  console.log(JSON.parse(StringJson));
-  // document.getElementById("filtroAZ").innerHTML=JSON.stringify(organizaAz);
+  
     document.getElementById("contenedorTarjetas").style.display = "block";
-    document.getElementById("filtroAZ").style.display="none";
-   document.getElementById("SomosQ").style.display = "none"; 
+    
   
 
 // ***************************EL CANVAS ******************************
 
 for (let i=0;i < Data.length;i++){
   let categoriaEspecie = Data[i].species;
-  console.log(categoriaEspecie.length);
-  }
+  console.log(categoriaEspecie);
+ 
+  
+
   for (let i=0;i < Data.length;i++){
     let Ch  = Data[i].name;
     // console.log(Ch);
     }
 
 const canvas = document.getElementById("canvas");
-const Especies= ["humano", "alien", "vampiro", "zombie"]
+const Especies= categoriaEspecie;
 const Personajes= [1,2,3,2]
 const MyChart= new Chart(canvas,{
   type: "bar",
@@ -210,4 +209,4 @@ const MyChart= new Chart(canvas,{
       
   
 
-})
+}) }
