@@ -8,8 +8,6 @@ const Data = data.results;//variable que guarda y accede al array [results]
 
 //***************************************** BOTONES*****************************************
 
-
-
 const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el input 
 const Boton = document.getElementById("Buscar");//enlazamos nuestro boton 
       Boton.addEventListener("click",BuscandoDEntroDeData);//le creamos un evento click 
@@ -19,7 +17,9 @@ const BotonMujeres = document.getElementById("GeneroMujeres");
 
 const BotonH = document.getElementById("GeneroHombres");
       BotonH.addEventListener("click", BuscandoMale);
-   
+
+  
+      
 
 // *****************************************FILTRO DE BUSQUEDA*****************************************
 
@@ -28,7 +28,6 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
     const Resultado = Busqueda.value.toUpperCase();//traemos el valor buscado
     const Tarjeta = document.getElementsByClassName("tarjeta");
     
-
     for (let i=0;i < Data.length;i++){
       if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {
         Tarjeta[i].style.display = "inline-flex";
@@ -37,7 +36,6 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
       }
       }}
 
-    
      
 
 function BuscandoFemale(){
@@ -79,13 +77,11 @@ window.onload = function RecorriendoData() {
      const Episodios = Data[i].episode.length;
      const imagen    = Data[i].image;
      clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
-  }}
+ }}
+  
+document.getElementById("tarjeta").style.display="none"
 
-
-document.getElementById("tarjeta").style.display = "none";
-
-
-
+ 
 
 function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta función declarando los parametros a usar
 //  console.log(Nombres,Origen, Genero, Imagen, Episodios)
@@ -112,9 +108,9 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
 
   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
   contenedorDeTarjetas.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
- 
+  
   }
-
+  
 // *********************************OCULTAR Y MOSTRAR SECCIONES *********************************
 
 
@@ -125,13 +121,7 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("filtroAZ").style.display="none";    
   })
 
-  let Home=  document.getElementById("Home");
-      Home.addEventListener("click",function (){
-          document.getElementById("contenedorTarjetas").style.display = "block";
-          document.getElementById("SomosQ").style.display = "none"; 
-          document.getElementById("filtroAZ").style.display="none";
-         
-  })
+ 
 
   // *****************************************FILTROS POR CATEGORIAS Y BOTONES*****************************************
   
@@ -139,50 +129,52 @@ let QuienesSomos=  document.getElementById("Somos");
 
   let BotonOrganizarAz = document.getElementById("personajesAZ");
       BotonOrganizarAz.addEventListener("click", az);
-  const Tarjeta = document.getElementsByClassName("tarjeta");
+  
  
   function az(){
    let organizaAz = Data.sort((personajes1,personajes2)=>{
     return (personajes1.name < personajes2.name)? -1 :1
-    
-  })
-  
-  let nombres =[];
-  let origen  =[];
-  let genero  =[];
-  let episodios=[];
-  let imagen  =[];
-  let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
-    contenedorDeTarjetas.innerHTML=""
+   })
+   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+   contenedorDeTarjetas.innerHTML=""
    for(let i=0;i < organizaAz.length; i++){
      
-      clonar(organizaAz[i].name, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+   clonar(organizaAz[i].name, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
   }
-   
-   let contenedor = document.getElementById("tarjeta");
   
-   contenedorDeTarjetas.appendChild(contenedor)
+  let contenedor = document.getElementById("tarjeta");
+  contenedorDeTarjetas.appendChild(contenedor)
   
-   console.log(nombres) 
    }
-   
-  //  console.log(JSON.parse(StringJson));
-  // document.getElementById("filtroAZ").innerHTML=JSON.stringify(organizaAz);
-    document.getElementById("contenedorTarjetas").style.display = "block";
-    document.getElementById("filtroAZ").style.display="none";
-   document.getElementById("SomosQ").style.display = "none"; 
+ 
+
+//Boton Especies
+  let BotonEspecies = document.getElementById("especies");
+      BotonEspecies.addEventListener("click",especies);
+  const Tarjeta = document.getElementsByClassName("tarjeta");
+
+  function especies(){
+
+   let humanos= Data.filter(item=>{
+    return item.species==="Robot"
+   })
+ 
+  
+  let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+  contenedorDeTarjetas.innerHTML=""
+  for(let i=0;i < humanos.length; i++){
+     
+     clonar(humanos[i].name, humanos[i].origin.name, humanos[i].gender, humanos[i].image,humanos[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+  }
+  
+  let contenedor = document.getElementById("tarjeta");
+  contenedorDeTarjetas.appendChild(contenedor)
+  console.log(humanos) 
+}
   
 
 // ***************************EL CANVAS ******************************
 
-for (let i=0;i < Data.length;i++){
-  let categoriaEspecie = Data[i].species;
-  console.log(categoriaEspecie.length);
-  }
-  for (let i=0;i < Data.length;i++){
-    let Ch  = Data[i].name;
-    // console.log(Ch);
-    }
 
 const canvas = document.getElementById("canvas");
 const Especies= ["humano", "alien", "vampiro", "zombie"]
@@ -195,7 +187,7 @@ const MyChart= new Chart(canvas,{
       {
         label:"Personajes",
         data:Personajes,
-        BackgroundClor:["rgb(233, 150, 122)",
+        BackgroundColor:["rgb(233, 150, 122)",
           "rgb(148, 0, 211)",
           " rgb(0, 206, 209)",
           "rgb(255, 248, 220)"],
