@@ -567,4 +567,11 @@ footer{
     color: white;
     width: 60vw;
 }
- 
+
+#filtroDeEspecies{
+    display: none;
+    width: 65vw;
+    background-color: transparent;
+    text-align: center; 
+ }    
+    
