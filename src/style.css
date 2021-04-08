@@ -577,3 +577,11 @@ footer{
     margin: 5%;
     
 } 
+
+#filtroDeEspecies{
+    display: none;
+    width: 65vw;
+    background-color: transparent;
+    text-align: center; 
+ }    
+    
