@@ -474,9 +474,6 @@ aside{
     width: 65vw;
     gap: 0.1em;
     margin:1%;
-    justify-items: center;
-    align-items: center;
-    /* flex-wrap: wrap; */
     background-color: transparent;
     /* display: none; */
     
@@ -572,13 +569,16 @@ footer{
     width: 60vw;
 }
 #Chart{
+    background-color: blueviolet;
     flex-wrap: wrap;
     display: flex;
     position: relative;
     margin: 5%;
-    display: none;
-    
-} 
+}
+/* 
+#canvas{
+    background-color:red;
+} */
 
 #filtroDeEspecies{
     display: none;
@@ -586,7 +586,35 @@ footer{
     background-color: transparent;
     text-align: center; 
     position: relative;
-    top: -25em;
-    left: 25em;
+    padding: 1em;
+    margin: 1em;
+    flex-wrap: wrap;
+    display: flex;
  }    
+ .botonesFiltro{
+    border-radius: 50%;
+    transition: 0.5s;
+    align-items: center;
+    margin-left: 1.8em;
+    display: flex;
+    flex-wrap: wrap;
+
+ }
     
+ .botonesFiltro:hover{
+transform: scale(1.5);
+ }
+ .ItemEspecie{
+     font-size: 1.5em;
+     background-color: transparent;
+     padding: 0.2em;
+     margin: 1em;
+     /* position: relative; */
+     background-color: transparent;
+     width:15vw;
+     height: 30vh;
+     display: inline-flex; 
+     flex-direction: column;
+     flex-wrap: wrap;
+
+ }

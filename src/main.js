@@ -55,7 +55,7 @@ function BuscandoFemale(){
 function BuscandoMale(){
   
             const BuscarLaPalabra = " MALE";
-            const Tarjeta = document.getElementsByClassName("tarjeta");
+            const Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')
               
           
               for (let i=0;i < Data.length;i++){
@@ -115,6 +115,15 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
 // *********************************OCULTAR Y MOSTRAR SECCIONES *********************************
 
 
+let Home=  document.getElementById("Home");
+      Home.addEventListener("click",function (){
+          document.getElementById("contenedorTarjetas").style.display = "block";
+          document.getElementById("SomosQ").style.display = "none"; 
+          document.getElementById("Chart").style.display = "none";
+          document.getElementById("filtroDeEspecies").style.display = "none";  
+  
+  })
+
 let QuienesSomos=  document.getElementById("Somos");
     QuienesSomos.addEventListener("click",function (){
           document.getElementById("contenedorTarjetas").style.display = "none";
@@ -123,15 +132,15 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("filtroDeEspecies").style.display = "none";  
   })
 
-  let Home=  document.getElementById("Home");
-      Home.addEventListener("click",function (){
-          document.getElementById("contenedorTarjetas").style.display = "block";
-          document.getElementById("SomosQ").style.display = "none"; 
-          document.getElementById("Chart").style.display = "none";
-          document.getElementById("filtroDeEspecies").style.display = "none";  
-        
-         
-  })
+  
+  let filtrandoEspecies=  document.getElementById("especies");
+    filtrandoEspecies.addEventListener("click",function(){
+        document.getElementById("contenedorTarjetas").style.display = "none";
+        document.getElementById("filtroDeEspecies").style.display = "block";  
+        document.getElementById("Chart").style.display = "none"; 
+        document.getElementById("SomosQ").style.display = "none"; 
+ })
+
     const BotonGraficos = document.getElementById("Graphics");
           BotonGraficos.addEventListener("click", function MostrarGrafico(){
     document.getElementById("Chart").style.display = "block";
@@ -142,19 +151,7 @@ let QuienesSomos=  document.getElementById("Somos");
      
          
  
-
-
-let filtrandoEspecies=  document.getElementById("especies");
-    filtrandoEspecies.addEventListener("click",function(){
-        document.getElementById("filtroDeEspecies").style.display = "block"; 
-        document.getElementById("Chart").style.display = "none";
-        document.getElementById("SomosQ").style.display = "none";  
-        document.getElementById("contenedorTarjetas").style.display = "none";
-
- })
- 
-
-  // *****************************************FILTROS POR CATEGORIAS Y BOTONES*****************************************
+// *****************************************FILTROS POR CATEGORIAS Y BOTONES*****************************************
   
   //Boton organizacion A-Z
 
@@ -212,45 +209,60 @@ let filtrandoEspecies=  document.getElementById("especies");
   const Tarjeta = document.getElementsByClassName("tarjeta");
 
   function especies(){
-
-   let humanos= Data.filter(item=>{
-    return item.species==="Human"
-   })
+    filtroEspecies("Human"),
+    document.getElementById("contenedorTarjetas").style.display = "none";
+  //  let humanos= Data.filter(item=>{
+  //   return item.species==="Human"
+  //  })
  
   
-  let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
-  contenedorDeTarjetas.innerHTML=""
-  for(let i=0;i < humanos.length; i++){
+  // let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
+  // contenedorDeTarjetas.innerHTML=""
+  // for(let i=0;i < humanos.length; i++){
      
-     clonando(humanos[i].name, humanos[i].origin.name, humanos[i].gender, humanos[i].image,humanos[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
-  }
+  //    clonando(humanos[i].name, humanos[i].origin.name, humanos[i].gender, humanos[i].image,humanos[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+  // }
   
-  let contenedor = document.getElementById("tarjeta");
-  contenedorDeTarjetas.appendChild(contenedor)
-  console.log(humanos) 
+  // let contenedor = document.getElementById("tarjeta");
+  // contenedorDeTarjetas.appendChild(contenedor)
+  // console.log(humanos) 
 }
+function filtroEspecies(filtro){
+  let Aliens= Data.filter(item=>{
+    return item.species===filtro
+    })
   
+let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
+contenedorDeTarjetas.innerHTML=""
+for(let i=0;i < Aliens.length; i++){
+    
+clonando(Aliens[i].name, Aliens[i].origin.name, Aliens[i].gender, Aliens[i].image,Aliens[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+}
+    
+    let contenedor = document.getElementById("tarjeta");
+    contenedorDeTarjetas.appendChild(contenedor)
+    
+    }
 
 let BotonAliens = document.getElementById("Alien");
     BotonAliens.addEventListener("click",Aliens);
 const tarjetaAliens= document.getElementsByClassName("tarjeta");
 
 function Aliens(){
+  filtroEspecies("Alien")
+// let Aliens= Data.filter(item=>{
+// return item.species==="Alien" })
 
-let Aliens= Data.filter(item=>{
-return item.species==="Alien"
-})
 
+// let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
+// contenedorDeTarjetas.innerHTML=""
+// for(let i=0;i < Aliens.length; i++){
 
-let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
-contenedorDeTarjetas.innerHTML=""
-for(let i=0;i < Aliens.length; i++){
+// clonando(Aliens[i].name, Aliens[i].origin.name, Aliens[i].gender, Aliens[i].image,Aliens[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+// }
 
-clonando(Aliens[i].name, Aliens[i].origin.name, Aliens[i].gender, Aliens[i].image,Aliens[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
-}
-
-let contenedor = document.getElementById("tarjeta");
-contenedorDeTarjetas.appendChild(contenedor)
+// let contenedor = document.getElementById("tarjeta");
+// contenedorDeTarjetas.appendChild(contenedor)
 
 }
 
@@ -348,3 +360,42 @@ function Poopybutthole(){
   
   }
 
+  // ***************************EL CANVAS ******************************
+
+  for (let i=0;i < Data.length;i++){
+    let categoriaEspecie = Data[i].species;
+    //console.log(categoriaEspecie.length);
+    
+    //console.log(categoriaEspecie);
+  
+  
+  
+  //   for (let i=0;i < Data.length;i++){
+  //     let Ch  = Data[i].name;
+  //     // console.log(Ch);
+  //     }
+  
+  // const canvas = document.getElementById("canvas");
+  
+  // const Especies= categoriaEspecie;
+  // const Personajes= [1,2,3,2]
+  // const MyChart= new Chart(canvas,{
+  //   type: "bar",
+  //   data: {
+  //     labels: Especies,
+  //     datasets:[
+  //       {
+  //         label:"Personajes",
+  //         data:Personajes,
+  //         BackgroundClor:["rgb(233, 150, 122)",
+  //           "rgb(148, 0, 211)",
+  //           " rgb(0, 206, 209)",
+  //           "rgb(255, 248, 220)"],
+  //           borderColor: ["rgb(233, 150, 122)",
+  //           "rgb(148, 0, 211)",
+  //           " rgb(0, 206, 209)",
+  //           "rgb(255, 248, 220)"],
+  //           borderWidth: 1.5,
+  //       }]
+  //     }})  
+}
