@@ -572,13 +572,16 @@ footer{
     width: 60vw;
 }
 #Chart{
+    background-color: blueviolet;
     flex-wrap: wrap;
     display: flex;
     position: relative;
     margin: 5%;
-    display: none;
-    
-} 
+}
+/* 
+#canvas{
+    background-color:red;
+} */
 
 #filtroDeEspecies{
     display: none;
