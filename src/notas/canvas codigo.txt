@@ -1,0 +1,36 @@
+
+  // ***************************EL CANVAS ******************************
+
+  for (let i=0;i < Data.length;i++){
+    let categoriaEspecie = Data[i].species;
+    console.log(categoriaEspecie);
+   
+    
+  
+    for (let i=0;i < Data.length;i++){
+      let Ch  = Data[i].name;
+      // console.log(Ch);
+      }
+  
+  const canvas = document.getElementById("canvas");
+  const Especies= categoriaEspecie;
+  const Personajes= [1,2,3,2]
+  const MyChart= new Chart(canvas,{
+    type: "bar",
+    data: {
+      labels: Especies,
+      datasets:[
+        {
+          label:"Personajes",
+          data:Personajes,
+          BackgroundClor:["rgb(233, 150, 122)",
+            "rgb(148, 0, 211)",
+            " rgb(0, 206, 209)",
+            "rgb(255, 248, 220)"],
+            borderColor: ["rgb(233, 150, 122)",
+            "rgb(148, 0, 211)",
+            " rgb(0, 206, 209)",
+            "rgb(255, 248, 220)"],
+            borderWidth: 1.5,
+        }]
+        }})}
