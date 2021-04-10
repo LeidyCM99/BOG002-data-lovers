@@ -479,7 +479,7 @@ aside{
     display:inline-flex;
     position: relative;
     flex-wrap: wrap;
-    /* display: none; */
+    display: none;
     height:270px;
     width:260px;
     overflow: hidden;

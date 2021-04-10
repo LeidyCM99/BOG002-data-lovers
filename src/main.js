@@ -130,6 +130,24 @@ let QuienesSomos=  document.getElementById("Somos");
         document.getElementById("SomosQ").style.display = "none"; 
  })
 
+//  let volverEspecies=  document.getElementById("volverEspecies");
+//  volverEspecies.addEventListener("click",function(){
+//         document.getElementById("contenedorTarjetas").style.display = "block";
+//         document.getElementById("filtroDeEspecies").style.display = "none";  
+//         document.getElementById("Chart").style.display = "none"; 
+//         document.getElementById("SomosQ").style.display = "none";
+        
+//  })
+
+ let volverTodosLosPersonajes=  document.getElementById("volverPersonajes");
+ volverTodosLosPersonajes.addEventListener("click",function(){
+        document.getElementById("contenedorTarjetas").style.display = "block";
+        document.getElementById("filtroDeEspecies").style.display = "none";  
+        document.getElementById("Chart").style.display = "none"; 
+        document.getElementById("SomosQ").style.display = "none";
+        
+ })
+
     const BotonGraficos = document.getElementById("Graphics");
           BotonGraficos.addEventListener("click", function MostrarGrafico(){
     document.getElementById("Chart").style.display = "block";
@@ -152,13 +170,15 @@ let QuienesSomos=  document.getElementById("Somos");
    let organizaAz = Data.sort((personajes1,personajes2)=>{
     return (personajes1.name < personajes2.name)? -1 :1
    })
+  
    let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
    contenedorDeTarjetas.innerHTML=""
+  
    for(let i=0;i < organizaAz.length; i++){
      
    clonar(organizaAz[i].name, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
   }
-  
+   //let Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')
   let contenedor = document.getElementById("tarjeta");
   contenedorDeTarjetas.appendChild(contenedor)
   
@@ -191,200 +211,155 @@ let QuienesSomos=  document.getElementById("Somos");
       
       }
     
-//****Filtrando especies*****//
-
-  const BotonHumans = document.getElementById("Humans");
-        BotonHumans.addEventListener("click",especies);
-  const Tarjeta = document.getElementsByClassName("tarjeta");
-
-  function especies(){
-    filtroEspecies("Human"),
-    document.getElementById("contenedorTarjetas").style.display = "none";
-  //  let humanos= Data.filter(item=>{
-  //   return item.species==="Human"
-  //  })
- 
-  
-  // let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
-  // contenedorDeTarjetas.innerHTML=""
-  // for(let i=0;i < humanos.length; i++){
-     
-  //    clonando(humanos[i].name, humanos[i].origin.name, humanos[i].gender, humanos[i].image,humanos[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
-  // }
-  
-  // let contenedor = document.getElementById("tarjeta");
-  // contenedorDeTarjetas.appendChild(contenedor)
-  // console.log(humanos) 
-}
+// *********************************Filtrando especies *********************************
 function filtroEspecies(filtro){
-  let Aliens= Data.filter(item=>{
+  let especies= Data.filter(item=>{
     return item.species===filtro
     })
   
 let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
 contenedorDeTarjetas.innerHTML=""
-for(let i=0;i < Aliens.length; i++){
+for(let i=0;i < especies.length; i++){
     
-clonando(Aliens[i].name, Aliens[i].origin.name, Aliens[i].gender, Aliens[i].image,Aliens[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+clonando(especies[i].name,especies[i].origin.name, especies[i].gender,especies[i].image,especies[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
 }
+ 
+ let contenedor = document.getElementById("tarjeta");
+ contenedorDeTarjetas.appendChild(contenedor)
     
-    let contenedor = document.getElementById("tarjeta");
-    contenedorDeTarjetas.appendChild(contenedor)
-    
-    }
+}
+
+// *********************************Filtrando especies *********************************
+
+
+let BotonHumans = document.getElementById("Humans");
+BotonHumans.addEventListener("click",humans);
+const Tarjeta = document.getElementsByClassName("tarjeta");
+
+  function humans(){
+   filtroEspecies("Human"),
+   document.getElementById("contenedorTarjetas").style.display = "none";
+  }
+
 
 let BotonAliens = document.getElementById("Alien");
-    BotonAliens.addEventListener("click",Aliens);
+BotonAliens.addEventListener("click",Aliens);
 const tarjetaAliens= document.getElementsByClassName("tarjeta");
 
-function Aliens(){
-  filtroEspecies("Alien")
-// let Aliens= Data.filter(item=>{
-// return item.species==="Alien" })
-
-
-// let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
-// contenedorDeTarjetas.innerHTML=""
-// for(let i=0;i < Aliens.length; i++){
-
-// clonando(Aliens[i].name, Aliens[i].origin.name, Aliens[i].gender, Aliens[i].image,Aliens[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
-// }
-
-// let contenedor = document.getElementById("tarjeta");
-// contenedorDeTarjetas.appendChild(contenedor)
-
-}
-
+  function Aliens(){
+   filtroEspecies("Alien")
+   document.getElementById("contenedorTarjetas").style.display = "none";
+  }
 
 let BotonRobots = document.getElementById("Robots");
 BotonRobots.addEventListener("click",Robots);
 const tarjetaRobots= document.getElementsByClassName("tarjeta");
 
-function Robots(){
-
-  let robots= Data.filter(item=>{
-  return item.species==="Robot"
-  })
-  
-  
-  let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
-  contenedorDeTarjetas.innerHTML=""
-  for(let i=0;i < robots.length; i++){
-  
-  clonando(robots[i].name, robots[i].origin.name, robots[i].gender, robots[i].image,robots[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
-  }
-  
-  let contenedor = document.getElementById("tarjeta");
-  contenedorDeTarjetas.appendChild(contenedor)
-  
+ function Robots(){
+   filtroEspecies("Robot")
+   document.getElementById("contenedorTarjetas").style.display = "none";
   }
 
-  let BotonHumanoid = document.getElementById("humanoid");
-      BotonHumanoid.addEventListener("click",humanoid);
-  const TarjetaHumanoid = document.getElementsByClassName("tarjeta");
+let BotonHumanoid = document.getElementById("humanoid");
+BotonHumanoid.addEventListener("click",humanoid);
+const TarjetaHumanoid = document.getElementsByClassName("tarjeta");
 
-  function humanoid(){
-
-   let humanoid= Data.filter(item=>{
-    return item.species==="Humanoid"
-   })
- 
-  
-  let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
-  contenedorDeTarjetas.innerHTML=""
-  for(let i=0;i < humanoid.length; i++){
-     
-     clonando(humanoid[i].name, humanoid[i].origin.name, humanoid[i].gender, humanoid[i].image,humanoid[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+ function  humanoid(){
+   filtroEspecies("Humanoid")
+   document.getElementById("contenedorTarjetas").style.display = "none";
   }
-  
-  let contenedor = document.getElementById("tarjeta");
-  contenedorDeTarjetas.appendChild(contenedor)
- 
-}
-  
+    
 let BotonUnknown = document.getElementById("unknown");
 BotonUnknown.addEventListener("click",unknown);
 const tarjetaUnknown= document.getElementsByClassName("tarjeta");
 
-function unknown(){
-
-  let unknown= Data.filter(item=>{
-  return item.species==="unknown"
-  })
-  
-  
-  let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
-  contenedorDeTarjetas.innerHTML=""
-  for(let i=0;i < unknown.length; i++){
-  
-  clonando(unknown[i].name,unknown[i].origin.name,unknown[i].gender,unknown[i].image,unknown[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
-  }
-  
-  let contenedor = document.getElementById("tarjeta");
-  contenedorDeTarjetas.appendChild(contenedor)
-  
+ function unknown(){
+   filtroEspecies("unknown") 
+   document.getElementById("contenedorTarjetas").style.display = "none";  
   }
 
 let BotonPoopybutthole= document.getElementById("Poopybutthole");
 BotonPoopybutthole.addEventListener("click",Poopybutthole);
 const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
 
-function Poopybutthole(){
+  function Poopybutthole(){
+   filtroEspecies("Poopybutthole")
+   document.getElementById("contenedorTarjetas").style.display = "none";
+ }
 
+ let BotonMytholog= document.getElementById("Mytholog");
+ BotonMytholog.addEventListener("click",EspecieMytholog);
+ const tarjetaMytholog= document.getElementsByClassName("tarjeta");
 
-  let Poopybutthole= Data.filter(item=>{
-  return item.species==="Poopybutthole"
-  })
+ function EspecieMytholog(){
+   filtroEspecies("Mytholog")
+   document.getElementById("contenedorTarjetas").style.display = "none";
+ }
   
-  
-  let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
-  contenedorDeTarjetas.innerHTML=""
-  for(let i=0;i < Poopybutthole.length; i++){
-  
-  clonando(Poopybutthole[i].name,Poopybutthole[i].origin.name,Poopybutthole[i].gender,Poopybutthole[i].image,Poopybutthole[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+ let BotonVampire= document.getElementById("Vampire");
+ BotonVampire.addEventListener("click",Vampire);
+ const tarjetaVampire= document.getElementsByClassName("tarjeta");
+ 
+ function Vampire(){
+   filtroEspecies("Vampire")
+   document.getElementById("contenedorTarjetas").style.display = "none";
+  }
+
+ let BotonCronenberg= document.getElementById("Cronenberg");
+ BotonCronenberg.addEventListener("click",Cronenberg);
+ const tarjetaCronenberg= document.getElementsByClassName("tarjeta");
+   
+ function Cronenberg(){
+   filtroEspecies("Cronenberg")
+   document.getElementById("contenedorTarjetas").style.display = "none";
+  }
+
+ let BotonAnimal= document.getElementById("Animal");
+ BotonAnimal.addEventListener("click",Animal);
+ const tarjetaAnimal= document.getElementsByClassName("tarjeta");
+   
+ function Animal(){
+   filtroEspecies("Animal")
+   document.getElementById("contenedorTarjetas").style.display = "none";
   }
   
-  let contenedor = document.getElementById("tarjeta");
-  contenedorDeTarjetas.appendChild(contenedor)
-  
-  }
 
   // ***************************EL CANVAS ******************************
 
-  for (let i=0;i < Data.length;i++){
-    let categoriaEspecie = Data[i].species;
+  // for (let i=0;i < Data.length;i++){
+  //   let categoriaEspecie = Data[i].species;
     //console.log(categoriaEspecie.length);
     
     //console.log(categoriaEspecie);
   
   
   
-  //   for (let i=0;i < Data.length;i++){
-  //     let Ch  = Data[i].name;
-  //     // console.log(Ch);
-  //     }
+//     for (let i=0;i < Data.length;i++){
+//       let Ch  = Data[i].name;
+//       // console.log(Ch);
+//       }
   
-  // const canvas = document.getElementById("canvas");
+//   const canvas = document.getElementById("canvas");
   
-  // const Especies= categoriaEspecie;
-  // const Personajes= [1,2,3,2]
-  // const MyChart= new Chart(canvas,{
-  //   type: "bar",
-  //   data: {
-  //     labels: Especies,
-  //     datasets:[
-  //       {
-  //         label:"Personajes",
-  //         data:Personajes,
-  //         BackgroundClor:["rgb(233, 150, 122)",
-  //           "rgb(148, 0, 211)",
-  //           " rgb(0, 206, 209)",
-  //           "rgb(255, 248, 220)"],
-  //           borderColor: ["rgb(233, 150, 122)",
-  //           "rgb(148, 0, 211)",
-  //           " rgb(0, 206, 209)",
-  //           "rgb(255, 248, 220)"],
-  //           borderWidth: 1.5,
-  //       }]
-  //     }})  
-}
+//   const Especies= categoriaEspecie;
+//   const Personajes= [1,2,3,2]
+//   const MyChart= new Chart(canvas,{
+//     type: "bar",
+//     data: {
+//       labels: Especies,
+//       datasets:[
+//         {
+//           label:"Personajes",
+//           data:Personajes,
+//           BackgroundClor:["rgb(233, 150, 122)",
+//             "rgb(148, 0, 211)",
+//             " rgb(0, 206, 209)",
+//             "rgb(255, 248, 220)"],
+//             borderColor: ["rgb(233, 150, 122)",
+//             "rgb(148, 0, 211)",
+//             " rgb(0, 206, 209)",
+//             "rgb(255, 248, 220)"],
+//             borderWidth: 1.5,
+//         }]
+//       }})  
+// }
