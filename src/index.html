@@ -14,22 +14,21 @@
 
   <header>
     
-       <nav>  
-        <!-- <input type="checkbox"> <label><img class="icon"src="Img/menu-64.png"/></label> -->
-          <div class="logo">PONTE RICKOCOSO
-            
-          </div>
-         
-             <ul class="Lista"> 
-             <li class="li" id="Home">INICIO</li>
-             <li class="li" id="Graphics">GRAPHICS </li>
-                     
-              <li class="li" id="Somos" > ¿QUIENES SOMOS?</li>
-              <input type="search" id="input-buscador" class="input-buscador"placeholder="Busca tu personaje">
-              <input type= "button" id="Buscar" value="BUSCAR" > </input>
+       <nav>               
+          <!-- <div id="Nav-btn">
+             <div class="Hamburger"></div>
+          </div> -->
+              <div class="logo">PONTE RICKOCOSO</div>
+              <ul class="Lista"> 
+                 <li class="li" id="Home">INICIO</li>
+                 <li class="li" id="Graphics">GRAPHICS </li>   
+                 <li class="li" id="Somos" > ¿QUIENES SOMOS?</li>
+                 <input type="search" id="input-buscador" class="input-buscador"placeholder="Busca tu personaje">
+                 <input type= "button" id="Buscar" value="BUSCAR" > </input>
               </ul>
+
         </nav> 
- </header> 
+  </header> 
   <section class="banner">
     <div 
       class="contenedor-banner">
@@ -41,18 +40,16 @@
 <main>
  
   <!------------------ aside ------------------>
- <aside>
-  <div class="About">
-    <h2 id="AboutH2">SOBRE RICK AND MORTY</h2>
+  <aside>
+     <div class="About">
+        <h2 id="AboutH2">SOBRE RICK AND MORTY</h2>
      Programa de televisión estadounidense de animación para adultos creada 
      por Justin Roiland y Dan Harmon en 2013 para Adult Swim. La serie sigue las desventuras
      de un científico, Rick, y su fácilmente influenciable nieto, Morty, quienes pasan el 
      tiempo entre la vida doméstica y los viajes espaciales, temporales e intergalácticos.      
-     
-    
- </div>
+      </div>
 
- <div class="Links"> 
+   <div class="Links"> 
     <ul id="links"> 
         <li class="ListaDePersonajes" id="especies">Especies</li>
         <li class="ListaDePersonajes" id="GeneroMujeres">Mujeres</li>
@@ -62,16 +59,15 @@
          class="iframe"width="300em" height="250em"src="https://www.adultswim.com/streams/rick-and-morty">
          </iframe> -->
     </ul>
-  </div>
+   </div>
 </aside>
      
-  <div id="SomosQ"> 
+<div id="SomosQ"> 
 
-    <img src="Img/rick.png"  id="Rick">
-        
+    <img src="Img/rick.png"  id="Rick">  
     ¿QUIENES SOMOS?
     <br>   
-    <h2> www.RICKOCOSO.com</h2>
+    <h2 class="PaginaWeb"> www.RICKOCOSO.com</h2>
     <br>
     Somos una wiki, pagina tambien conocida como una Data fan, nos encargamos de enseñarte los
     <br>
@@ -100,9 +96,11 @@
   <div id="Chart">
     <canvas id="canvas" height="500" width="500"> </canvas>
     </div>
-  <div  class="contenedorTarjetas" id="contenedorTarjetas" >
-    <div class="filtroDeEspecies" id="filtroDeEspecies">
 
+
+  <div  class="contenedorTarjetas" id="contenedorTarjetas" >
+<!-- filtro especies -->
+    <div class="filtroDeEspecies" id="filtroDeEspecies">
       <span class="ItemEspecie">Human<img class="botonesFiltro"src="Img/human.jpg" width= "200vw" height="200vh" id="Humans"></span>
       <span class="ItemEspecie">Alien <img class="botonesFiltro"src="Img/Alien.png" width= "200vw"height="200vh" id="Alien"></span>
       <span class="ItemEspecie">Robots <img class="botonesFiltro"src="Img/Robots.png" width= "200vw" height="200vh"  id="Robots"></span>
@@ -112,18 +110,17 @@
     
     </div>       
   </div>
- <!------------------ filtro especies ------------------>
-
+ 
+</main> 
 
  <!------------------ Promedio ------------------>
 
 <!-- <div id="Chart">
   <canvas id="canvas" height="300" width="300"> </canvas>
 </div>
-</main> -->
 
- 
- <!------------------ footer ------------------>
+
+-------------- footer ------------------>
 
 <footer>Todos los derechos reservados © 2021 </footer>
     <div id="root"></div>

@@ -1,10 +1,8 @@
 //import { filtroDimensiones } from './data.js';
-
 // import { Chart } from 'chart.js';
+
 import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
 const Data = data.results;//variable que guarda y accede al array [results]
-
-
 
 //***************************************** BOTONES*****************************************
 
@@ -18,11 +16,7 @@ const BotonMujeres = document.getElementById("GeneroMujeres");
 const BotonH = document.getElementById("GeneroHombres");
       BotonH.addEventListener("click", BuscandoMale);
 
-  
-      
-
 // *****************************************FILTRO DE BUSQUEDA*****************************************
-
 
 function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
     const Resultado = Busqueda.value.toUpperCase();//traemos el valor buscado
@@ -36,12 +30,9 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
       }
       }}
 
-     
-
 function BuscandoFemale(){
       const Result = "FEMALE";
       const Tarjeta = document.getElementsByClassName("tarjeta");
-        
     
         for (let i=0;i < Data.length;i++){
           if(Tarjeta[i].textContent.toUpperCase().includes(Result)) {
@@ -49,15 +40,12 @@ function BuscandoFemale(){
           } else {
             Tarjeta[i].style.display = "none"; }
           }}
-
-
-          
+        
 function BuscandoMale(){
   
             const BuscarLaPalabra = " MALE";
             const Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')
               
-          
               for (let i=0;i < Data.length;i++){
                 if(Tarjeta[i].textContent.toUpperCase().includes(BuscarLaPalabra)) {
                   Tarjeta[i].style.display = "inline-flex";
@@ -79,7 +67,7 @@ window.onload = function RecorriendoData() {
      const especies  = Data[i].species;
      clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
  
-console.log(especies)  
+// console.log(especies)  
 }}
 document.getElementById("tarjeta").style.display="none"
 
@@ -130,6 +118,7 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("Chart").style.display = "none"; 
           document.getElementById("SomosQ").style.display = "block";  
           document.getElementById("filtroDeEspecies").style.display = "none";  
+          
   })
 
   

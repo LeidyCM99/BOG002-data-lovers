@@ -12,7 +12,7 @@ html{
     background-color: black;
 }
 body{
-    height: 100vh;  width: auto;
+    height: auto;  width: auto;
     box-sizing: content-box;  
     flex-wrap: wrap;
     background-color: transparent;
@@ -26,32 +26,24 @@ header{
    
 }
 nav{
-    height: 10vh;
-    width: 98vw;
+    height: 13vh;
+    width: 99vw;
     background-color:#437a67;
     background-image: -webkit-linear-gradient(#437a67,#499178,#65a18c );
-
     margin-left: auto;
     margin-right: auto;
     display: flex;
     z-index: 100;
     top: 0em;
-    position: fixed;
-   
+    left:0%;
+    position: fixed; 
 }
- .icon{
-    background:#65a18c;
-    width: 3vw; height: 5vh;
-    position: relative;
-    margin: 0%;
-    display: none;
-    top: 0.5em;} 
-
+ 
 .Lista{
+    padding-bottom: 3%;
     position: relative;
     top: 0em;
-    flex-wrap: wrap; 
-    width: 120vw ;
+    width: 109vw ;
     display:flex;
     height: auto;
     color: white;
@@ -61,75 +53,44 @@ nav{
     justify-content: space-around;
     align-items:  baseline;
     background:transparent;
-     
 }
 .li:hover {
-    background:#67bea0 ;
-    border-radius: 5px;
-   
+    background:#6cb995 ;
+    border-radius: 5px; 
 }
 
 .li{
-    margin-top: 0vw;
+    margin-top: 0%;
     text-align: center;
     align-items:baseline;
     display:flex;
     justify-content: center;
-    padding: 0.8em;;
+    padding: 0.9em;
     background:inherit;
     width:12vw;
+    margin: 0%;
    }
    .logo{
     color: white;
-    font-size: 80%;
-    background: transparent;
-    width: 10vw;
-    height: 8vh;
+    font-size: 1rem;
+    margin-top: 1%;
+    background-color: transparent;
+    width: auto;
+    height: 10vh;
     margin-left: 10%;
-    padding-top: 2vh;
+    padding-top: 1em;
     font-weight: bolder;
     /* letter-spacing: 3px; */
     position: flex;  
 }
 
-
-  /* **********submenu de categoria ***********/ 
-.submenu{
-    list-style:none;
-    position: relative;
-    width: auto; height: auto;
-    display:none;
-    left: auto;
-    top:60px;
-    background: inherit;
-    flex-direction: column;
-    z-index: 4;
-    display: none;
-    background:#437A67;
-    align-items: center;
-    width: 20%;
-    padding: 0%;
-    margin: 0%;
-}
-
-#categoria:hover> .submenu {
-    display: block;}
-    
-.submenu> li:hover{
-background:#67be6e ;
-border-radius: 5px;
-    
-}
-
-
-    
 #input-buscador{
     display:flex;
     width:  15vw;
-    height:  3.5vh;
-    font-size: 1em;
+    height:  3.8vh;
+    font-size: 1rem;
     color: white;
-    background-color: #5BA978;
+    background-color: #73cf92;
     padding:  auto;
     border: none;
     margin: 0%;
@@ -140,34 +101,50 @@ border-radius: 5px;
 #Buscar{
 background-color: transparent;
 color: white;
-height: 4vh;
+height: 5vh;
 width: 8vw;
 border:none;
+padding-top: 1%;
+padding-bottom: 3%;
+padding-left:2%;
 font-size: inherit;
 text-decoration: none;
 display:flex;
 outline:none;
 position: relative;
-/* top: 1em; */
 flex-wrap: wrap;
-
-padding-bottom: 1.5em;
+margin: 0%;
 }
 
 #Buscar:hover{
 background:#67bea0 ;
-border-radius: 5px;
-    
+border-radius: 5px;    
 }
-
-.lista_submenu{
-    background-color: inherit;
-    width: auto;
-    height: auto;
-    align-items: flex-start;
-    text-align: center;
-    font-size: 20px;
+#Nav-btn{
+    background-color: yellow;
     padding: 1em;
+    position: absolute;
+    /* margin-left: 2%;
+    margin-top: 3%; */
+    top: .6em;
+    left: .6em;
+}
+.Hamburger,
+.Hamburger::after,
+.Hamburger::before
+{
+    width: 1.5em;
+    content: "";
+    display: block;
+    height:2px;
+    border-radius: 3px;
+    background-color: white;
+}
+.Hamburger::after{
+    transform: translateY(3px);
+}
+.Hamburger::before{
+    transform: translateY(-6px);
 }
 @media(max-width:900px){
     .contenedor-banner{
@@ -176,10 +153,13 @@ border-radius: 5px;
         height:100%;
         background-image:url('../src/Img/img\ fija.png');
         background-position: center;         
-       
     }
-    
-
+    body{
+        width: 100%;
+        position: relative;
+        left: 0%;
+        right: 0%;
+    }
 }
  @media screen and (max-width: 808px) {
   
@@ -188,63 +168,89 @@ border-radius: 5px;
         flex-wrap: wrap;
         position: relative;
         width: auto;
+        height: 7vh;
+        left: 0%;
     }
-   nav {
+nav {
        display: block;
        flex-wrap: wrap;
        position: relative;
-       width: 95vw;
+       width:100%;
+       height: 7vh;
    }
-  .icon{
-      background-color: transparent;
-      /* position: relative;
-      top: 0em; */
-}
 
-   .Lista{
+.Lista{
     display: block;
-    /* flex-wrap: wrap; */
     /* margin-left: -70em; */
+    top: -2.2em;
     position: relative;
     width: 50vw;
     height: 50vh;
     text-align: left;
+    align-items: flex-start;
     background-color: #437a67;
+    padding-left: 0%;
+    margin-left: 0%;
 }
 .li{
     height: 10vh; 
-    width: 25vw;
-    text-align: left;
-    align-items: center;
-    padding: 1em;
+    width: 50vw;
+    padding-left: 0%;
+    margin-left: 0%;
 }
 
-
-/* HASTA AQUI FUNCIONA EL CODIGO */
-
-aside{
-    float: initial;
-    height: 60px;
-    position: absolute;
-}
 main {
-    
-    position: relative;
-    width: 15vw;   
+    flex-wrap: wrap;
+    /* position: relative; */
+    width: auto;   
     overflow: hidden;
 } 
-.contenedorTarjetas {
-   position: relative;
-   width: 90px;
-   top: 50em;
-   left:6em ;
-   display: block;
+main aside{
+    height: auto;
+    width: 80%;
+    margin: -3px;
+    /* position: absolute; */
+}
+main aside .About{
+    height: auto;
+    width: 100%; 
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: auto;
+   border: rgb(255, 255, 255) 2px solid;
+}
+main aside .About #AboutH2{
+    height: auto;
+    width: auto; }
+main aside .ListaDePersonajes{
+    width: 60vw; 
+    margin: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
 } 
+main #contenedorTarjetas{
+   width:auto;
+   padding-top: 5em;
+   margin-left: -2em;
+    padding-left: 0%;
+
+} 
+main  #contenedorTarjetas #filtroDeEspecies{
+    background-color: transparent;
+    margin-left: -2em;
+    padding-left: 0%;
+    position: relative;
+    height: auto;
+    width: 75vw;
+
+}
 #input-buscador{
     width: 30vw;
-    padding: 2px;
-    margin: 0%;
-    display: inline;
+    
+    margin-left: 10%;
+    /* display: inline; */
 }
 #Buscar{
     width: 35vw;
@@ -253,21 +259,8 @@ main {
     margin: 5%;
     flex-wrap: wrap;
 }
-footer{
-    position: relative;
-}
-.About{
-    /* display: flex; */
-    flex-wrap: wrap;
-    position: relative;
-    padding: auto;
-    width: 505vw;
-    height: 75vh;
-    background-color: lightblue;
-}
 
 }
-
 
   /* **********MAIN ***********/ 
 
@@ -296,7 +289,7 @@ main{
     padding: 0%;
     margin: 0%;
     top: 0.5em;
-    width: 100%;
+    width: 100%;;
     height:40vh;
     background-color: transparent;
     background-size:cover; 
@@ -357,7 +350,7 @@ aside{
 }
 .About{
  background-color: #437A67;
- width: 25vw;
+ width: 22vw;
  height: auto;
  margin: 1em;
  padding: 1em;
@@ -371,14 +364,14 @@ aside{
  border-radius: 2%;
  margin: 3%;
  padding: 8%;
- height: 10vh;
+ height: auto;
  width: 19vw;
  align-items: center;
  text-align: center;
  color:black;
- font-size: 1rem;
- position: relative;
- top: -1em;
+ font-size: 1.2rem;
+ flex-direction: column;
+ display: flex;
  background-color: rgb(179, 221, 26);
     
 }
@@ -388,20 +381,17 @@ aside{
  color: white;
  margin: 0.5em;
  display: flex;
- width: 26vw;
+ width: auto;
  height: 35vh;
  position: relative;
  right: 2em; 
  border-radius: 2%;
  background-color:transparent;  
 }
-#links {
-    
-    background-color: transparent;
-      
-}
+
 .ListaDePersonajes{
-    background-color: #437A67;
+    background-color: transparent;
+    border:#437a67 3px solid ;
     display: flex;
     flex-direction: column;
     width:20vw;
@@ -409,7 +399,7 @@ aside{
     padding: 4%;
     display: flex;
     flex-wrap: wrap;
-    border-radius: 2%;
+    border-radius: 5px;
 }
 
 .ListaDePersonajes:hover{
@@ -420,35 +410,41 @@ aside{
 
 /**************** NAV QUIENES SOMOS  **************/
 #SomosQ{
- box-shadow: -9px 6px 136px -12px rgba(124, 182, 137, 0.5);
- -webkit-box-shadow: -9px 6px 136px -12px rgba(99,156,112,0.5);
- -moz-box-shadow: -9px 6px 136px -12px rgba(99,156,112,0.5);
- width: 55vw;
- height: 35em;
- background-color:#211E1E ;
+
+ width: 68vw;
+ height: auto;
  position:relative;
  top: 2em;
- left: 2%;
+ left: 1%;
  color: white;
- font-size: inherit;
- margin-right: auto;
- margin-left: auto;
- display: none;
+ font-size: inherit; 
  text-align: center;
- padding: 4em;
- display: -ms-flexbox;
+ padding: 0.2em;
+ display: inline-block;
+ overflow: hidden;
+ align-items: center;
+ display: none;
 
+ }
+ .PaginaWeb{
+     font-size: 2em;
+     margin: 0%;
+     padding: 0%;
+     background-color:#437a67;
+    margin: 3%;
+     
  }
  #Rick{
      background-color: transparent;
-     height: 40%;
-     position: absolute;
-     top: 5%;
-     left: 5%;
+     height: 12em;
+     position: relative;
+     top: 1%;
+     left: -7%;
+     margin: 3%;
  }
  #Squanchy{
     background-color: transparent;
-    height: 50%;
+    height: 15em;
     position: relative;
     bottom: 1%;
     left: 75%;
@@ -493,7 +489,7 @@ aside{
     border:1px solid white;
     transition: all .4s ease-in-out;
     text-align:center;
-    background:linear-gradient(-135deg,yellow,#437A67,#5BA978);
+    background:linear-gradient(-105deg,yellow,#437A67,#5BA978);
     
  }
   
@@ -586,18 +582,23 @@ footer{
     background-color: transparent;
     text-align: center; 
     position: relative;
-    padding: 1em;
-    margin: 1em;
-    flex-wrap: wrap;
-    display: flex;
+    padding: 0em;
+    margin: 0em;
+  flex-wrap: wrap;
+    /* display: inline-block; */
+    font-family: inherit;
+    
+   
  }    
  .botonesFiltro{
     border-radius: 50%;
     transition: 0.5s;
     align-items: center;
-    margin-left: 1.8em;
-    display: flex;
+    margin-top: 1.8em;
+    display: inline-flex;
     flex-wrap: wrap;
+    height: 8em;
+    width: 8em;
 
  }
     
@@ -605,16 +606,14 @@ footer{
 transform: scale(1.5);
  }
  .ItemEspecie{
-     font-size: 1.5em;
-     background-color: transparent;
-     padding: 0.2em;
-     margin: 1em;
-     /* position: relative; */
-     background-color: transparent;
-     width:15vw;
-     height: 30vh;
-     display: inline-flex; 
-     flex-direction: column;
-     flex-wrap: wrap;
-
+    font-size: 1.5em;
+    background-color: transparent;
+    padding: 0em;
+    margin: 2em;
+    position: relative;
+    background-color: transparent;
+    width:15vw;
+    height: 30vh;
+    display: inline-flex; 
+    flex-wrap: wrap;
  }
