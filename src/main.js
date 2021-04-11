@@ -1,6 +1,6 @@
-//import { filtroDimensiones } from './data.js';
+//import { filtroEspecies } from './data.js';
 
-// import { Chart } from 'chart.js';
+
 import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
 const Data = data.results;//variable que guarda y accede al array [results]
 
@@ -194,6 +194,28 @@ let QuienesSomos=  document.getElementById("Somos");
   contenedorDeTarjetas.appendChild(contenedor)
   
    }
+
+let BotonOrganizarZa = document.getElementById("personajesZA");
+BotonOrganizarZa.addEventListener("click", za);
+
+
+function za(){
+let organizaZa = Data.sort((personajes1,personajes2)=>{
+ return (personajes1.name > personajes2.name)? -1 :1
+})
+
+let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+contenedorDeTarjetas.innerHTML=""
+
+for(let i=0;i < organizaZa.length; i++){
+  
+clonar(organizaZa[i].name, organizaZa[i].origin.name, organizaZa[i].gender, organizaZa[i].image,organizaZa[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+}
+//let Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')
+let contenedor = document.getElementById("tarjeta");
+contenedorDeTarjetas.appendChild(contenedor)
+
+}
  // *********************************Clonando especies *********************************
    function clonando(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta función declarando los parametros a usar
   
@@ -334,7 +356,24 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
    document.getElementById("contenedorTarjetas").style.display = "none";
   }
   
-
+  let BotonDisease= document.getElementById("Disease");
+  BotonDisease.addEventListener("click",Disease);
+  const tarjetaDisease= document.getElementsByClassName("tarjeta");
+    
+  function Disease(){
+    filtroEspecies("Disease")
+    document.getElementById("contenedorTarjetas").style.display = "none";
+   }
+ 
+  let BotonParasite= document.getElementById("Parasite");
+  BotonParasite.addEventListener("click",Parasite);
+  const tarjetaParasite= document.getElementsByClassName("tarjeta");
+    
+  function Parasite(){
+    filtroEspecies("Parasite")
+    document.getElementById("contenedorTarjetas").style.display = "none";
+   }
+  
   // ***************************EL CANVAS ******************************
 
   // for (let i=0;i < Data.length;i++){
