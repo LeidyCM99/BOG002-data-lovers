@@ -43,11 +43,10 @@ header label{
     padding: 10px;
 }
 @media(max-width:900px) {
-    header label{
-        display: block;
-    }
-}
-
+  header label{
+     display: block;
+  }
+} 
 
 nav{
     height: 13vh;
@@ -526,7 +525,7 @@ aside{
     flex-wrap: wrap;
     
     height:270px;
-    width:260px;
+    width:280px;
     overflow: hidden;
     margin:10px ;
     padding: 1% 2% 2% 1%;
@@ -540,7 +539,7 @@ aside{
   
 #tarjeta:hover{
      height:520px;
-     width: 260px;
+     width: 280px;
      border-radius: 5px;
      box-shadow: 10px 10px 10px 10px, yellow(0,0,0,0.5);
  }
