@@ -10,8 +10,7 @@ En cada resultado encontraras la ficha del personaje la cual se expande y  permi
 
 ## ***Historia Usuario #1***
 #### Como usuario, entro en contexto del uso de esta pagina, veo una bienvenida, 
-visualizo las tarjetas de los personajes y las opciones de filtro o busqueda que me 
-ofrece.
+#### visualizo las tarjetas de los personajes y las opciones de filtro o busqueda que me ofrece.
 #### **Criterios de Aceptacion:**
 ### Breve información introductoria sobre el programa
 ### El usuario puede visualizar la data principal e interactuar con ella
@@ -54,5 +53,5 @@ ofrece.
 ### Iconos conectados con las redes de la serie
 
 
-Prototipo de Baja
-Prototipo de Alta
+## Prototipo de Baja
+## Prototipo de Alta
