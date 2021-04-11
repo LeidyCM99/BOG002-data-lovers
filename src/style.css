@@ -160,6 +160,7 @@ border-radius: 5px;
         left: 0%;
         right: 0%;
     }
+
 }
  @media screen and (max-width: 808px) {
   
@@ -258,6 +259,22 @@ main  #contenedorTarjetas #filtroDeEspecies{
     align-items: center;
     margin: 5%;
     flex-wrap: wrap;
+}
+ main #Chart{
+    
+    display: flex;
+    position: relative;
+    margin-top: 8%;
+    height: auto;
+    width: 78vw;
+    
+}
+main #canvas{
+    height: auto;
+    width: auto;
+    display: flex;
+    position: relative;
+    background-color: rgb(255, 255, 255);
 }
 
 }
@@ -474,12 +491,17 @@ aside{
     /* display: none; */
     
 }
-
+#fetch{
+    color:white;
+    width: auto;
+    display: block;
+    background-color: #437a67;
+}
 #tarjeta{
     display:inline-flex;
     position: relative;
     flex-wrap: wrap;
-    display: none;
+    
     height:270px;
     width:260px;
     overflow: hidden;
@@ -490,7 +512,7 @@ aside{
     transition: all .4s ease-in-out;
     text-align:center;
     background:linear-gradient(-105deg,yellow,#437A67,#5BA978);
-    
+   
  }
   
 #tarjeta:hover{
@@ -565,16 +587,22 @@ footer{
     width: 60vw;
 }
 #Chart{
-    background-color: blueviolet;
+    background-color: transparent;
     flex-wrap: wrap;
     display: flex;
     position: relative;
-    margin: 5%;
+    margin: 1%;
+    height: 45vh;
+    width: 50vw;
+    position: relative;
+    top: auto;
 }
-/* 
+ 
 #canvas{
-    background-color:red;
-} */
+  
+    width: auto;
+    height: auto;
+}
 
 #filtroDeEspecies{
     display: none;

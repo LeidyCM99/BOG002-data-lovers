@@ -33,6 +33,8 @@
     <div 
       class="contenedor-banner">
     </div>
+
+    
   </section>
 
 
@@ -63,7 +65,7 @@
 </aside>
      
 <div id="SomosQ"> 
-
+  
     <img src="Img/rick.png"  id="Rick">  
     ¿QUIENES SOMOS?
     <br>   
@@ -79,13 +81,16 @@
   </div>
 
   <!--  fichas personajes -->
-  <div class="tarjeta" id="tarjeta" >
+  <div class="tarjeta" id="tarjeta" style="display: none;" >
     <h3 id="nombrePersonaje">Data Fans</h3>
     <img src="Img/buscar.png.jpg" alt="Buscando personaje" id="imgPersonaje">
      <span class="caracteristicas" id="caracteristicas">
+      <h4 id="estado"></h4>
       <h4 id="lugarDeOrigen">1.Busca el personaje</h4>
       <h4 id="cantidadDeDeEpisodios">2.Despliega la tarjeta</h4> 
+      <h4 id="NDeEpisodios"></h4> 
       <h4 id="genero">3.Datos de tu personaje favorito</h4>
+      <h4 id="especie"></h4>
     </span>
   </div>  
 
@@ -93,12 +98,13 @@
     id="contenedorTarjetas" >     
   </div>
   
+
   <div id="Chart">
-    <canvas id="canvas" height="500" width="500"> </canvas>
+    
+    <canvas id="canvas" height="200" width="200"> </canvas>
+    <div id="fetch"> </div>
     </div>
 
-
-  <div  class="contenedorTarjetas" id="contenedorTarjetas" >
 <!-- filtro especies -->
     <div class="filtroDeEspecies" id="filtroDeEspecies">
       <span class="ItemEspecie">Human<img class="botonesFiltro"src="Img/human.jpg" width= "200vw" height="200vh" id="Humans"></span>

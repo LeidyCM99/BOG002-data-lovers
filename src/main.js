@@ -4,6 +4,10 @@
 import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
 const Data = data.results;//variable que guarda y accede al array [results]
 
+
+
+
+
 //***************************************** BOTONES*****************************************
 
 const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el input 
@@ -27,6 +31,7 @@ function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
         Tarjeta[i].style.display = "inline-flex";
       } else {
         Tarjeta[i].style.display = "none"; 
+        document.getElementById("tarjeta").style.display="none"
       }
       }}
 
@@ -51,6 +56,7 @@ function BuscandoMale(){
                   Tarjeta[i].style.display = "inline-flex";
                 } else {
                   Tarjeta[i].style.display = "none"; }
+                  document.getElementById("tarjeta").style.display="none"
                 }
           }
   
@@ -60,30 +66,34 @@ function BuscandoMale(){
 window.onload = function RecorriendoData() {
   for(let i=0;i < Data.length; i++){////esta función recorre la data
      const Nombres   = Data[i].name;//accede a los datos  clasificados en el array en este caso name y los guarda en la nueva variable
+     const Estado   = Data[i].status;
      const Origen    = Data[i].origin.name;
      const Genero    = Data[i].gender;
      const Episodios = Data[i].episode.length;
      const imagen    = Data[i].image;
      const especies  = Data[i].species;
-     clonar(Nombres, Origen, Genero, imagen, Episodios) //ejecutamos la funcion clonar con los datos del parametro
- 
-// console.log(especies)  
+     clonar(Nombres,Estado, Origen, Genero, imagen, Episodios, especies) //ejecutamos la funcion clonar con los datos del parametro
+     document.getElementById("tarjeta").style.display="none"
+
 }}
 document.getElementById("tarjeta").style.display="none"
 
  
 
-function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta función declarando los parametros a usar
-//  console.log(Nombres,Origen, Genero, Imagen, Episodios)
+function clonar(Nombres,Estado, Origen, Genero, Imagen, Episodios, especies) {//Creamos esta función declarando los parametros a usar
+
   var contenedor = document.getElementById("tarjeta");//reservamos un id en html
   var clon       = contenedor.cloneNode(true);//a contenedor le aplicamos el metodo cloneNode para clonar
 
-  clon.style.display          = "inline-flex";//aplicamos un estilo display y una margen para los nuevos div´s
+  clon.style.display          = "inline-block";//aplicamos un estilo display y una margen para los nuevos div´s
   clon.style.margin           = "1em"        
   
   let nombrePersonaje          =document.getElementById("nombrePersonaje");//reservamos un id en html
   nombrePersonaje.innerHTML    = Nombres//imprimimos el dato requerido
-            
+  
+  let estado_personaje          =document.getElementById("estado");
+  estado_personaje.innerHTML    = "Estado: "+ Estado
+
   let lugar_personaje          =document.getElementById("lugarDeOrigen");
   lugar_personaje.innerHTML    = "Lugar De Origen: "+ Origen
                    
@@ -92,6 +102,9 @@ function clonar(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta func
   
   let genero_tarjeta           =document.getElementById("genero");
   genero_tarjeta.innerHTML     = "Genero: "+ Genero
+
+  let especie_tarjeta           =document.getElementById("especie");
+  especie_tarjeta .innerHTML     = "Especie: "+ especies;
 
   document.getElementById("imgPersonaje").src = Imagen
 
@@ -167,34 +180,39 @@ let QuienesSomos=  document.getElementById("Somos");
   
  
   function az(){
+    document.getElementById("tarjeta").style.display="none"
    let organizaAz = Data.sort((personajes1,personajes2)=>{
+    
     return (personajes1.name < personajes2.name)? -1 :1
-   })
-  
+    
+   } )
+   
    let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
    contenedorDeTarjetas.innerHTML=""
-  
    for(let i=0;i < organizaAz.length; i++){
-     
-   clonar(organizaAz[i].name, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+   clonando(organizaAz[i].name,organizaAz[i].status, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length, organizaAz[i].species) 
+  
   }
+  
    //let Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')
   let contenedor = document.getElementById("tarjeta");
   contenedorDeTarjetas.appendChild(contenedor)
-  
+
    }
  // *********************************Clonando especies *********************************
-   function clonando(Nombres, Origen, Genero, Imagen, Episodios) {//Creamos esta función declarando los parametros a usar
+   function clonando(Nombres, Estado, Origen, Genero, imagen, Episodios, especies) {//Creamos esta función declarando los parametros a usar
   
       var contenedor = document.getElementById("tarjeta");//reservamos un id en html
-      var clon       = contenedor.cloneNode(true);//a contenedor le aplicamos el metodo cloneNode para clonar
-    
-      clon.style.display          = "inline-flex";//aplicamos un estilo display y una margen para los nuevos div´s
+      var clon       = contenedor.cloneNode(true);
+      clon.style.display          = "inline-flex";
       clon.style.margin           = "1em"        
       
-      let nombrePersonaje          =document.getElementById("nombrePersonaje");//reservamos un id en html
-      nombrePersonaje.innerHTML    = Nombres//imprimimos el dato requerido
-                
+      let nombrePersonaje          =document.getElementById("nombrePersonaje");
+      nombrePersonaje.innerHTML    = Nombres;
+      
+      let estado_personaje          =document.getElementById("estado");
+      estado_personaje.innerHTML    = "Estado: "+ Estado;
+    
       let lugar_personaje          =document.getElementById("lugarDeOrigen");
       lugar_personaje.innerHTML    = "Lugar De Origen: "+ Origen
                        
@@ -204,14 +222,19 @@ let QuienesSomos=  document.getElementById("Somos");
       let genero_tarjeta           =document.getElementById("genero");
       genero_tarjeta.innerHTML     = "Genero: "+ Genero
     
-      document.getElementById("imgPersonaje").src = Imagen
+      let especie_tarjeta           =document.getElementById("especie");
+      especie_tarjeta .innerHTML     = "Especie: "+ especies;
     
+    
+      document.getElementById("imgPersonaje").src = imagen
+     
       let contenedorDeEspecies=document.getElementById("filtroDeEspecies");
       contenedorDeEspecies.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
       
       }
     
 // *********************************Filtrando especies *********************************
+
 function filtroEspecies(filtro){
   let especies= Data.filter(item=>{
     return item.species===filtro
@@ -220,10 +243,10 @@ function filtroEspecies(filtro){
 let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
 contenedorDeTarjetas.innerHTML=""
 for(let i=0;i < especies.length; i++){
-    
-clonando(especies[i].name,especies[i].origin.name, especies[i].gender,especies[i].image,especies[i].episode.length, ) //ejecutamos la funcion clonar con los datos del parametro
+  clonando(especies[i].name,especies[i].status, especies[i].origin.name, especies[i].gender, especies[i].image, especies[i].episode.length, especies[i].species) 
+  
 }
- 
+
  let contenedor = document.getElementById("tarjeta");
  contenedorDeTarjetas.appendChild(contenedor)
     
@@ -239,8 +262,8 @@ const Tarjeta = document.getElementsByClassName("tarjeta");
   function humans(){
    filtroEspecies("Human"),
    document.getElementById("contenedorTarjetas").style.display = "none";
+   
   }
-
 
 let BotonAliens = document.getElementById("Alien");
 BotonAliens.addEventListener("click",Aliens);
@@ -326,40 +349,63 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
 
   // ***************************EL CANVAS ******************************
 
-  // for (let i=0;i < Data.length;i++){
-  //   let categoriaEspecie = Data[i].species;
-    //console.log(categoriaEspecie.length);
+fetch("https://rickandmortyapi.com/api/episode")
+.then(response => response.json() )
+.then(data =>{
+  console.log(data.results)
+  let LosEpisodio= data.results.map(item => item.name)
+  let epi = document.getElementById("fetch")
+      epi.innerHTML = ` Nombre de los episodios: <br> <li>${LosEpisodio}</li> `
+
+
+  // for (let i = 0; i < data.results.length; i++) {
+  //   let p = data.results[i];
+  //   console.log(p);
+  //   let epi = document.getElementById("fetch")
+  //   epi.innerHTML =  p
     
-    //console.log(categoriaEspecie);
+  //       }
+
+
   
+  const canvas = document.getElementById("canvas");
   
-  
-//     for (let i=0;i < Data.length;i++){
-//       let Ch  = Data[i].name;
-//       // console.log(Ch);
-//       }
-  
-//   const canvas = document.getElementById("canvas");
-  
-//   const Especies= categoriaEspecie;
-//   const Personajes= [1,2,3,2]
-//   const MyChart= new Chart(canvas,{
-//     type: "bar",
-//     data: {
-//       labels: Especies,
-//       datasets:[
-//         {
-//           label:"Personajes",
-//           data:Personajes,
-//           BackgroundClor:["rgb(233, 150, 122)",
-//             "rgb(148, 0, 211)",
-//             " rgb(0, 206, 209)",
-//             "rgb(255, 248, 220)"],
-//             borderColor: ["rgb(233, 150, 122)",
-//             "rgb(148, 0, 211)",
-//             " rgb(0, 206, 209)",
-//             "rgb(255, 248, 220)"],
-//             borderWidth: 1.5,
-//         }]
-//       }})  
-// }
+  const LosEpisodios=data.results.map(item => item.name);
+  const Personajes= data.results.map(item => item.characters.length)
+  const MyChart= new Chart(canvas,{
+    type: "bar",
+    data: {
+      labels: LosEpisodios,
+      datasets:[
+        {
+          label:"Cantidad de Personajes",
+          data:Personajes,
+          backgroundColor:[
+          "#00876c",
+          "#6aaa96",
+          "#aecdc2",
+          "#f1f1f1",
+          "#f0b8b8",
+          "#e67f83",
+          "#d43d51",
+            "#2f4b7c",
+            "#665191",
+            "#a05195",
+            "#003f5c",
+            "#48E71C",
+            "#ffa600",
+            "#DE9E54",
+            "#A36B22",
+            "#d45087",
+            "#f95d6a",
+            "#ff7c43",
+            "#FFD588",
+            "#FB4F93", ],
+         
+            borderColor: ["#000000",
+            ],
+            borderWidth: .5,
+        }]
+      }})  
+
+    })
