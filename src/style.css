@@ -57,7 +57,7 @@ nav{
     margin-right: auto;
     display: flex;
     z-index: 100;
-    top: 2em;
+    top: 0em;
     left:0%;
     position: fixed; 
 }
@@ -108,6 +108,7 @@ nav{
     /* letter-spacing: 3px; */
    position: flex;  
 }
+
 
 #input-buscador{
     display:flex;
@@ -182,7 +183,7 @@ border-radius: 5px;
         display: block;
         flex-wrap: wrap;
         position: relative;
-        width: auto;
+        width: 72vw;
         height: 7vh;
         left: 0%;
     }
@@ -195,14 +196,16 @@ nav {
        display: block;
        flex-wrap: wrap;
        position: relative;
-       width:100%;
-       height: 7vh;
+       width:50vw;
+       height: 10vh;
+       top: 2.5em;
+       margin: 0%;
    }
 
 .Lista{
     display: block;
     /* margin-left: -70em; */
-    top: -2.2em;
+    top: -1.3em;
     position: relative;
     width: 50vw;
     height: 50vh;
@@ -211,6 +214,7 @@ nav {
     background-color: #437a67;
     padding-left: 0%;
     margin-left: 0%;
+    
     
 }
 .li{
@@ -297,6 +301,7 @@ main #canvas{
     position: relative;
     background-color: rgb(255, 255, 255);
 }
+
 
 }
 
@@ -536,6 +541,8 @@ aside{
     background:linear-gradient(-105deg,yellow,#437A67,#5BA978);
    
  }
+
+ 
   
 #tarjeta:hover{
      height:520px;
@@ -608,6 +615,8 @@ footer{
     color: white;
     width: 60vw;
 }
+
+
 #Chart{
     background-color: transparent;
     flex-wrap: wrap;
