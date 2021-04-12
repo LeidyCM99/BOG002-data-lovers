@@ -121,6 +121,7 @@ let Home=  document.getElementById("Home");
           document.getElementById("contenedorTarjetas").style.display = "block";
           document.getElementById("SomosQ").style.display = "none"; 
           document.getElementById("Chart").style.display = "none";
+          document.getElementById("canvas").style.display = "none";
           document.getElementById("filtroDeEspecies").style.display = "none";  
   
   })
@@ -137,20 +138,13 @@ let QuienesSomos=  document.getElementById("Somos");
   
   let filtrandoEspecies=  document.getElementById("especies");
     filtrandoEspecies.addEventListener("click",function(){
-        document.getElementById("contenedorTarjetas").style.display = "none";
         document.getElementById("filtroDeEspecies").style.display = "block";  
+        document.getElementById("contenedorTarjetas").style.display = "none"; 
         document.getElementById("Chart").style.display = "none"; 
         document.getElementById("SomosQ").style.display = "none"; 
  })
 
-//  let volverEspecies=  document.getElementById("volverEspecies");
-//  volverEspecies.addEventListener("click",function(){
-//         document.getElementById("contenedorTarjetas").style.display = "block";
-//         document.getElementById("filtroDeEspecies").style.display = "none";  
-//         document.getElementById("Chart").style.display = "none"; 
-//         document.getElementById("SomosQ").style.display = "none";
-        
-//  })
+
 
  let volverTodosLosPersonajes=  document.getElementById("volverPersonajes");
  volverTodosLosPersonajes.addEventListener("click",function(){
@@ -163,7 +157,7 @@ let QuienesSomos=  document.getElementById("Somos");
 
     const BotonGraficos = document.getElementById("Graphics");
           BotonGraficos.addEventListener("click", function MostrarGrafico(){
-    document.getElementById("Chart").style.display = "block";
+    document.getElementById("canvas").style.display = "block";
     document.getElementById("SomosQ").style.display = "none"; 
     document.getElementById("contenedorTarjetas").style.display="none";
     document.getElementById("filtroDeEspecies").style.display = "none";  
@@ -246,7 +240,9 @@ for(let i=0;i < especies.length; i++){
   clonando(especies[i].name,especies[i].status, especies[i].origin.name, especies[i].gender, especies[i].image, especies[i].episode.length, especies[i].species) 
   
 }
-
+document.getElementById("contenedorTarjetas").style.display = "none"; 
+document.getElementById("Chart").style.display = "none"; 
+document.getElementById("SomosQ").style.display = "none"; 
  let contenedor = document.getElementById("tarjeta");
  contenedorDeTarjetas.appendChild(contenedor)
     
@@ -380,31 +376,12 @@ fetch("https://rickandmortyapi.com/api/episode")
         {
           label:"Cantidad de Personajes",
           data:Personajes,
-          backgroundColor:[
-          "#00876c",
-          "#6aaa96",
-          "#aecdc2",
-          "#f1f1f1",
-          "#f0b8b8",
-          "#e67f83",
-          "#d43d51",
-            "#2f4b7c",
-            "#665191",
-            "#a05195",
-            "#003f5c",
-            "#48E71C",
-            "#ffa600",
-            "#DE9E54",
-            "#A36B22",
-            "#d45087",
-            "#f95d6a",
-            "#ff7c43",
-            "#FFD588",
-            "#FB4F93", ],
-         
-            borderColor: ["#000000",
+          backgroundColor:[ "#48E71C","#f1f1f1","#f0b8b8","#7EC96D","#BDD771","#FFCB55",
+          "#e67f83", "#d43d51", "#665191","#a05195","#003f5c", "#ffa600", "#19B974","#DE9E54","#333f6c","#A36B22","#2f4b7c","#d45087","#FFD588","#FB4F93" ],
+            borderColor: ["#f1f1f1",
             ],
-            borderWidth: .5,
+            borderWidth: 1.5,
+           
         }]
       }})  
 
