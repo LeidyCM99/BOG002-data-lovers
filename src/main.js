@@ -1,5 +1,5 @@
-//import { filtroDimensiones } from './data.js';
-// import { Chart } from 'chart.js';
+//import { filtroEspecies } from './data.js';
+
 
 import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
 const Data = data.results;//variable que guarda y accede al array [results]
@@ -11,72 +11,66 @@ const Data = data.results;//variable que guarda y accede al array [results]
 //***************************************** BOTONES*****************************************
 
 const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el input 
-const Boton = document.getElementById("Buscar");//enlazamos nuestro boton 
-      Boton.addEventListener("click",BuscandoDEntroDeData);//le creamos un evento click para que ejecute la funcion dada
+const Boton = document.getElementById("Buscar");//enlazamos nuestro boton buscar
+      Boton.addEventListener("click",Buscando);//le creamos un evento click para que ejecute la funcion dada
 
-const BotonMujeres = document.getElementById("GeneroMujeres");
+const BotonMujeres = document.getElementById("GeneroMujeres");//Botones que nos ejecutan la función cuando se de el evento click
       BotonMujeres.addEventListener("click", BuscandoFemale);
 
 const BotonH = document.getElementById("GeneroHombres");
       BotonH.addEventListener("click", BuscandoMale);
 
+  
+      
+
 // *****************************************FILTRO DE BUSQUEDA*****************************************
 
-function BuscandoDEntroDeData(){//ejecutamos la función Busqueda
-    const Resultado = Busqueda.value.toUpperCase();//traemos el valor buscado
-    const Tarjeta = document.getElementsByClassName("tarjeta");
+
+function BuscandoDEntroDeData(Buscando){//Creamos una función que filtrara la data sobre el parametro Buscando
+    let Resultado = Buscando.toUpperCase();//Declaramos buscando en una variable y la condicionamos a ser MAYUSCULA
+    const Tarjeta = document.getElementsByClassName("tarjeta");//Llamamos la clase que alojara lo filtrado
     
-    for (let i=0;i < Data.length;i++){
-      if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {
-        Tarjeta[i].style.display = "inline-flex";
+    for (let i=0;i < Data.length;i++){//Recorremos la data
+      if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {//si el contenido concide con el Resultado
+        Tarjeta[i].style.display = "inline-flex";//la tarjeta se motrara
       } else {
-        Tarjeta[i].style.display = "none"; 
+        Tarjeta[i].style.display = "none"; //si no conside la tarjeta no se motrara
         document.getElementById("tarjeta").style.display="none"
       }
       }}
 
-function BuscandoFemale(){
-      const Result = "FEMALE";
-      const Tarjeta = document.getElementsByClassName("tarjeta");
-    
-        for (let i=0;i < Data.length;i++){
-          if(Tarjeta[i].textContent.toUpperCase().includes(Result)) {
-            Tarjeta[i].style.display = "inline-flex";
-          } else {
-            Tarjeta[i].style.display = "none"; }
-          }}
-        
-function BuscandoMale(){
-  
-            const BuscarLaPalabra = " MALE";
-            const Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')
-              
-              for (let i=0;i < Data.length;i++){
-                if(Tarjeta[i].textContent.toUpperCase().includes(BuscarLaPalabra)) {
-                  Tarjeta[i].style.display = "inline-flex";
-                } else {
-                  Tarjeta[i].style.display = "none"; }
-                  document.getElementById("tarjeta").style.display="none"
-                }
-          }
+function Buscando(){//creamos una función que re-usa a Buscando data
+  BuscandoDEntroDeData(Busqueda.value)     //esta buscara el valor que se ingre en el input busqueda
+  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
+}
+
+  function BuscandoFemale(){//creamos una función que re-usa a Buscando Female
+  BuscandoDEntroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
+  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
+}        
+
+function BuscandoMale(){//creamos una función que re-usa a Buscando Male
+  BuscandoDEntroDeData("MALE")//aqui buscara sobre la data toda la coincidencia con Male
+    const Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')//se mostraran las que coincidan y ocultaran la tarjeta 
+}
   
 // *****************************************CREACION DE TARJETAS*****************************************
 
 
-window.onload = function RecorriendoData() {
-  for(let i=0;i < Data.length; i++){////esta función recorre la data
-     const Nombres   = Data[i].name;//accede a los datos  clasificados en el array en este caso name y los guarda en la nueva variable
-     const Estado   = Data[i].status;
+window.onload = function RecorriendoData() {// esta funcion se ejecuta en cada recarga de la pagina
+  for(let i=0;i < Data.length; i++){//recorremos la data
+     const Nombres   = Data[i].name;//accede a los datos especificos en el array en este caso name y los guarda en la nueva variable
+     const Estado    = Data[i].status;
      const Origen    = Data[i].origin.name;
      const Genero    = Data[i].gender;
      const Episodios = Data[i].episode.length;
      const imagen    = Data[i].image;
      const especies  = Data[i].species;
      clonar(Nombres,Estado, Origen, Genero, imagen, Episodios, especies) //ejecutamos la funcion clonar con los datos del parametro
-     document.getElementById("tarjeta").style.display="none"
+    // document.getElementById("tarjeta").style.display="none"
 
 }}
-document.getElementById("tarjeta").style.display="none"
+//document.getElementById("tarjeta").style.display="none" 
 
  
 
@@ -120,7 +114,7 @@ let Home=  document.getElementById("Home");
       Home.addEventListener("click",function (){
           document.getElementById("contenedorTarjetas").style.display = "block";
           document.getElementById("SomosQ").style.display = "none"; 
-          document.getElementById("Chart").style.display = "none";
+          document.getElementById("chart").style.display = "none";
           document.getElementById("canvas").style.display = "none";
           document.getElementById("filtroDeEspecies").style.display = "none";  
   
@@ -129,10 +123,9 @@ let Home=  document.getElementById("Home");
 let QuienesSomos=  document.getElementById("Somos");
     QuienesSomos.addEventListener("click",function (){
           document.getElementById("contenedorTarjetas").style.display = "none";
-          document.getElementById("Chart").style.display = "none"; 
+          document.getElementById("chart").style.display = "none"; 
           document.getElementById("SomosQ").style.display = "block";  
           document.getElementById("filtroDeEspecies").style.display = "none";  
-          
   })
 
   
@@ -140,28 +133,27 @@ let QuienesSomos=  document.getElementById("Somos");
     filtrandoEspecies.addEventListener("click",function(){
         document.getElementById("filtroDeEspecies").style.display = "block";  
         document.getElementById("contenedorTarjetas").style.display = "none"; 
-        document.getElementById("Chart").style.display = "none"; 
+        document.getElementById("chart").style.display = "none"; 
         document.getElementById("SomosQ").style.display = "none"; 
  })
-
-
 
  let volverTodosLosPersonajes=  document.getElementById("volverPersonajes");
  volverTodosLosPersonajes.addEventListener("click",function(){
         document.getElementById("contenedorTarjetas").style.display = "block";
         document.getElementById("filtroDeEspecies").style.display = "none";  
-        document.getElementById("Chart").style.display = "none"; 
+        document.getElementById("chart").style.display = "none"; 
         document.getElementById("SomosQ").style.display = "none";
         
  })
 
     const BotonGraficos = document.getElementById("Graphics");
           BotonGraficos.addEventListener("click", function MostrarGrafico(){
+    document.getElementById("chart").style.display = "flex"; 
     document.getElementById("canvas").style.display = "block";
     document.getElementById("SomosQ").style.display = "none"; 
     document.getElementById("contenedorTarjetas").style.display="none";
     document.getElementById("filtroDeEspecies").style.display = "none";  
-          })
+  })
      
          
  
@@ -174,25 +166,47 @@ let QuienesSomos=  document.getElementById("Somos");
   
  
   function az(){
-    document.getElementById("tarjeta").style.display="none"
-   let organizaAz = Data.sort((personajes1,personajes2)=>{
+   //document.getElementById("tarjeta").style.display="none"
+   let organizaAz = Data.sort((personajes1,personajes2)=>{//declaramos una variable que organizara la data por el medio sort
     
-    return (personajes1.name < personajes2.name)? -1 :1
+    return (personajes1.name < personajes2.name)? -1 :1 //retornamos los argumentos y comparamos por un operador ternario
     
    } )
    
-   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
-   contenedorDeTarjetas.innerHTML=""
-   for(let i=0;i < organizaAz.length; i++){
-   clonando(organizaAz[i].name,organizaAz[i].status, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length, organizaAz[i].species) 
-  
+   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");//llamamos al Id donde vamos a imprimir
+   contenedorDeTarjetas.innerHTML=""// lo vaciamos
+   for(let i=0;i < organizaAz.length; i++){//recorremos la nueva data
+   clonar(organizaAz[i].name,organizaAz[i].status, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length,organizaAz[i].species) 
+  //clonamos los datos a mostrar
   }
   
    //let Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')
-  let contenedor = document.getElementById("tarjeta");
-  contenedorDeTarjetas.appendChild(contenedor)
+  let contenedor = document.getElementById("tarjeta");// Id tarjeta tendra cada clon
+  contenedorDeTarjetas.appendChild(contenedor)//cada clon tarjeta se creara en el contenedor
 
-   }
+}
+
+let BotonOrganizarZa = document.getElementById("personajesZA");
+BotonOrganizarZa.addEventListener("click", za);
+
+
+function za(){
+let organizaZa = Data.sort((personajes1,personajes2)=>{//organizamos la data nuevamente con sort
+ return (personajes1.name > personajes2.name)? -1 :1// la nueva comparación organizara de mayor a menor 
+})
+
+let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+contenedorDeTarjetas.innerHTML=""
+
+for(let i=0;i < organizaZa.length; i++){
+  
+clonar(organizaZa[i].name,organizaZa[i].status, organizaZa[i].origin.name, organizaZa[i].gender, organizaZa[i].image,organizaZa[i].episode.length,organizaZa[i].species) 
+}
+//let Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')
+let contenedor = document.getElementById("tarjeta");
+contenedorDeTarjetas.appendChild(contenedor)
+
+}
  // *********************************Clonando especies *********************************
    function clonando(Nombres, Estado, Origen, Genero, imagen, Episodios, especies) {//Creamos esta función declarando los parametros a usar
   
@@ -222,29 +236,30 @@ let QuienesSomos=  document.getElementById("Somos");
     
       document.getElementById("imgPersonaje").src = imagen
      
-      let contenedorDeEspecies=document.getElementById("filtroDeEspecies");
+      let contenedorDeEspecies=document.getElementById("filtroDeEspecies");//llamamos el Id donde se imprimira
       contenedorDeEspecies.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
       
       }
     
 // *********************************Filtrando especies *********************************
 
-function filtroEspecies(filtro){
-  let especies= Data.filter(item=>{
-    return item.species===filtro
+function filtroEspecies(filtro){//Creamos una funcion con parametro filtro, asi la re-usaremos
+  let especies= Data.filter(item=>{//Declaramos una varible para esta nueva data
+    return item.species===filtro//retornara las especies que sean igual al parametro que demos
     })
   
-let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");
-contenedorDeTarjetas.innerHTML=""
-for(let i=0;i < especies.length; i++){
+let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");// llamamos el Id donde se imprimira
+contenedorDeTarjetas.innerHTML=""//Vaciamos el Id
+for(let i=0;i < especies.length; i++){//Recorro nuestra nueva data especies
   clonando(especies[i].name,especies[i].status, especies[i].origin.name, especies[i].gender, especies[i].image, especies[i].episode.length, especies[i].species) 
-  
+  //clonamos los datos que buscamos 
 }
 document.getElementById("contenedorTarjetas").style.display = "none"; 
 document.getElementById("Chart").style.display = "none"; 
 document.getElementById("SomosQ").style.display = "none"; 
  let contenedor = document.getElementById("tarjeta");
  contenedorDeTarjetas.appendChild(contenedor)
+ document.getElementById("canvas").style.display = "none";
     
 }
 
@@ -255,8 +270,8 @@ let BotonHumans = document.getElementById("Humans");
 BotonHumans.addEventListener("click",humans);
 const Tarjeta = document.getElementsByClassName("tarjeta");
 
-  function humans(){
-   filtroEspecies("Human"),
+  function humans(){//esta función re-usa filtrar
+   filtroEspecies("Human"),//compara especies con Human y muestra las conincidencias
    document.getElementById("contenedorTarjetas").style.display = "none";
    
   }
@@ -342,36 +357,43 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
    document.getElementById("contenedorTarjetas").style.display = "none";
   }
   
-
+  let BotonDisease= document.getElementById("Disease");
+  BotonDisease.addEventListener("click",Disease);
+  const tarjetaDisease= document.getElementsByClassName("tarjeta");
+    
+  function Disease(){
+    filtroEspecies("Disease")
+    document.getElementById("contenedorTarjetas").style.display = "none";
+ }
+ 
+  let BotonParasite= document.getElementById("Parasite");
+  BotonParasite.addEventListener("click",Parasite);
+  const tarjetaParasite= document.getElementsByClassName("tarjeta");
+    
+  function Parasite(){
+    filtroEspecies("Parasite")
+    document.getElementById("contenedorTarjetas").style.display = "none";
+   
+  }
+  
   // ***************************EL CANVAS ******************************
 
-fetch("https://rickandmortyapi.com/api/episode")
-.then(response => response.json() )
+fetch("https://rickandmortyapi.com/api/episode")//Fetch nos permite acceder a datos que nos proporciona http
+.then(response => response.json() )//llamamos el archivo Json
 .then(data =>{
   console.log(data.results)
-  let LosEpisodio= data.results.map(item => item.name)
-  let epi = document.getElementById("fetch")
-      epi.innerHTML = ` Nombre de los episodios: <br> <li>${LosEpisodio}</li> `
+  let LosEpisodio= data.results.map(item => item.name)//recorremos la data y declaramos una variable que guardara los nombres de episodios 
+  let epi = document.getElementById("fetch")//declaramos el Id donde imprimiremos
+      // epi.innerHTML = ` Nombre de los episodios: <br> <li>${LosEpisodio}</li> `//Imprimimos los nombres de episodios
 
-
-  // for (let i = 0; i < data.results.length; i++) {
-  //   let p = data.results[i];
-  //   console.log(p);
-  //   let epi = document.getElementById("fetch")
-  //   epi.innerHTML =  p
-    
-  //       }
-
-
+  const canvas = document.getElementById("canvas");//declaramos el Id donde imprimiremos Canvas
   
-  const canvas = document.getElementById("canvas");
-  
-  const LosEpisodios=data.results.map(item => item.name);
-  const Personajes= data.results.map(item => item.characters.length)
-  const MyChart= new Chart(canvas,{
-    type: "bar",
+  const LosEpisodios=data.results.map(item => item.name);// Recorremos la data, declaramos la variable que guarda el nombre del episodio 
+  const Personajes= data.results.map(item => item.characters.length)//Recorremos la data, declaramos la variable donde guarda la cantidad de personajes según el episodio
+  const MyChart= new Chart(canvas,{// Chart nos permite crear graficas
+    type: "bar",//el tipo de grafica que usamos en este caso barras
     data: {
-      labels: LosEpisodios,
+      labels: LosEpisodios,//Llamamos la data que vamos a graficar
       datasets:[
         {
           label:"Cantidad de Personajes",
@@ -381,7 +403,7 @@ fetch("https://rickandmortyapi.com/api/episode")
             borderColor: ["#f1f1f1",
             ],
             borderWidth: 1.5,
-           
+
         }]
       }})  
 

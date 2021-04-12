@@ -16,15 +16,38 @@ body{
     box-sizing: content-box;  
     flex-wrap: wrap;
     background-color: transparent;
+    margin: 0;
 }
-header{
-    
-    width: auto; height: 10vh;
+header{    
+    width: 100%; height: 10vh;
     flex-wrap: wrap;
     display:flex;
-    background-color: transparent;
-   
+    background-color:transparent;
+      
 }
+
+#btn-menu{
+    display:none;
+   }
+
+.imgMenu{
+    width: 30px;
+    height: 30px;
+    background-color:black;
+    z-index: 100;
+}
+header label{
+    display: none;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+@media(max-width:900px) {
+  header label{
+     display: block;
+  }
+} 
+
 nav{
     height: 13vh;
     width: 99vw;
@@ -45,7 +68,7 @@ nav{
     top: 0em;
     width: 109vw ;
     display:flex;
-    height: auto;
+    height: 3vh;
     color: white;
     list-style:none;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -54,6 +77,7 @@ nav{
     align-items:  baseline;
     background:transparent;
 }
+
 .li:hover {
     background:#6cb995 ;
     border-radius: 5px; 
@@ -69,19 +93,20 @@ nav{
     background:inherit;
     width:12vw;
     margin: 0%;
+    cursor: pointer;
    }
-   .logo{
-    color: white;
-    font-size: 1rem;
-    margin-top: 1%;
-    background-color: transparent;
-    width: auto;
-    height: 10vh;
-    margin-left: 10%;
-    padding-top: 1em;
-    font-weight: bolder;
+.logo{
+   color: white;
+   font-size: 1rem;
+   margin-top: 1%;
+   background-color: transparent;
+   width: auto;
+   height: 10vh;
+   margin-left: 10%;
+   padding-top: 1em;
+   font-weight: bolder;
     /* letter-spacing: 3px; */
-    position: flex;  
+   position: flex;  
 }
 
 #input-buscador{
@@ -129,30 +154,12 @@ border-radius: 5px;
     top: .6em;
     left: .6em;
 }
-.Hamburger,
-.Hamburger::after,
-.Hamburger::before
-{
-    width: 1.5em;
-    content: "";
-    display: block;
-    height:2px;
-    border-radius: 3px;
-    background-color: white;
-}
-.Hamburger::after{
-    transform: translateY(3px);
-}
-.Hamburger::before{
-    transform: translateY(-6px);
-}
 
-
- @media screen and (max-width: 808px) {
-.contenedor-banner{
+@media(max-width:900px){
+    .contenedor-banner{
         background-repeat: no-repeat;
         width:100%;
-        height:100%;
+        height:110%;
         background-image:url('../src/Img/img\ fija.png');
         background-position: center;         
     }
@@ -162,6 +169,15 @@ _body{
         left: 0%;
         right: 0%;
     }
+
+}
+ @media screen and (max-width: 808px) {
+     .menu{
+         position: absolute;
+         width: 70%;
+         margin-left: -70%;
+     }
+  
  header {
         display: block;
         flex-wrap: wrap;
@@ -170,6 +186,11 @@ _body{
         height: 7vh;
         left: 0%;
     }
+
+
+#btn-menu:checked ~ .menu{
+        margin: 0;
+}
 nav {
        display: block;
        flex-wrap: wrap;
@@ -190,12 +211,14 @@ nav {
     background-color: #437a67;
     padding-left: 0%;
     margin-left: 0%;
+    
 }
 .li{
     height: 10vh; 
     width: 50vw;
     padding-left: 0%;
     margin-left: 0%;
+    
 }
 
 main {
@@ -415,6 +438,7 @@ aside{
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
+    
 }
 
 .ListaDePersonajes:hover{
@@ -478,7 +502,7 @@ aside{
 
 #contenedorTarjetas{
     position: relative;
-    top: 1em;
+    top: 2em;
     left:2em ;
     display: block;
     grid-template-columns: repeat(3,1fr);
@@ -499,50 +523,61 @@ aside{
     display:inline-flex;
     position: relative;
     flex-wrap: wrap;
-    
-    height:270px;
-    width:260px;
+    height:38vh;
+    width:250px;
     overflow: hidden;
-    margin:10px ;
+    margin-left:auto;
+    margin-right:auto;
     padding: 1% 2% 2% 1%;
     border-radius: 2%;
     border:1px solid white;
     transition: all .4s ease-in-out;
     text-align:center;
+    align-items: center;
     background:linear-gradient(-105deg,yellow,#437A67,#5BA978);
    
  }
   
 #tarjeta:hover{
-     height:520px;
-     width: 260px;
+     height:70vh;
+     width: 250px;
      border-radius: 5px;
      box-shadow: 10px 10px 10px 10px, yellow(0,0,0,0.5);
  }
 
  #imgPersonaje{
- width: 13em; height:13em;
+ width: 10em; height:10em;
  display:flex;
  flex-wrap: wrap;
- margin-left: 15px;
+ margin-left:auto;
+ margin-right:auto;
+ margin-bottom: 15%;
+ /* margin-left: 15px; */
 }
 
 #nombrePersonaje{
-    font-size: 20px;
+    font-size: 1.2rem;
     background-color:transparent;
     color:white;
-    margin:0.4em;
-    margin-left:3em;
+    height: auto;
+    width: 248px;
+    flex-wrap: wrap;
+    margin:1.2em;
+    margin-left:0em;
+    text-align:center;
+
 }
 
     
 h4{
- font-size:18px;
+ 
  font-family: inherit;
  color:white;
  text-align: left;
- margin: 5px;
+ margin: 2px;
  background:transparent;
+ font-size: medium;
+ font-weight:normal;
 }
 
 .caracteristicas{
@@ -584,22 +619,25 @@ footer{
     color: white;
     width: 60vw;
 }
-/* #Chart{
+#chart{
     display: none;
     background-color: transparent;
     flex-wrap: wrap;
     position: relative;
     margin: 1%;
-    height: 45vh;
+    height: 50vh;
     width: 50vw;
     position: relative;
     top: auto;
-} */
+}
  
 #canvas{
     display: none;
-    width: 5px;
-    height: 5px;
+    width: 70em;
+    height: 70em;
+    display: flex;
+    position: relative;
+    background-color: rgb(12, 12, 12);
 }
 #volverPersonajes{
     background-color: #499178;
@@ -620,41 +658,46 @@ footer{
 
 #filtroDeEspecies{
     display: none;
-    width: 65vw;
-    background-color: transparent;
+    width: 50vw;
+    background-color:transparent;
     text-align: center; 
     position: relative;
-    padding: 0em;
+    padding: 1em;
     margin: 0em;
     flex-wrap: wrap;
     /* display: inline-block; */
     font-family: inherit; 
    
  }    
+
+
  .botonesFiltro{
     border-radius: 50%;
     transition: 0.5s;
     align-items: center;
-    margin-top: 1.8em;
-    display: inline-flex;
+    margin-left: 1.8em;
     flex-wrap: wrap;
-    height: 8em;
-    width: 8em;
-
+    height: 7em;
+    width: 7em;
+    cursor:pointer;
  }
     
  .botonesFiltro:hover{
 transform: scale(1.5);
  }
+
  .ItemEspecie{
+    margin-top: 15em;
+     margin: 1em;
     font-size: 1.5em;
     background-color: transparent;
-    padding: 0em;
-    margin: 2em;
-    position: relative;
-    background-color: transparent;
-    width:15vw;
-    height: 30vh;
-    display: inline-flex; 
+    /* /* padding: 1em; */
+    position:relative; 
+    grid-template-columns: repeat(5,5fr);
     flex-wrap: wrap;
+    display: inline-block;
+    width: 35%;
+    color:rgb(76, 244, 188);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    background-color: aliceblue;
  }
