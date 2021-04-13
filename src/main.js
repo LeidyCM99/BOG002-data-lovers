@@ -139,15 +139,6 @@ let QuienesSomos=  document.getElementById("Somos");
         
  })
 
- let volverEspecies = document.getElementById("volverEspecies");
-    volverEspecies.addEventListener("click",function  (){
-        // document.getElementById('filtroDeEspecies').reset();
-        document.getElementById("contenedorTarjetas").style.display = "none";
-        // document.getElementById("filtroDeEspecies").style.display = "block";  
-        document.getElementById("chart").style.display = "none"; 
-        document.getElementById("SomosQ").style.display = "none";
-        
- })
 
     const BotonGraficos = document.getElementById("Graphics");
           BotonGraficos.addEventListener("click", function MostrarGrafico(){
@@ -248,14 +239,22 @@ function filtroEspecies(filtro){//Creamos una funcion con parametro filtro, asi 
   
 let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");// llamamos el Id donde se imprimira
 contenedorDeTarjetas.innerHTML=""//Vaciamos el Id
-document.getElementById("volverEspecies").style.display = "block";
 
 for(let i=0;i < especies.length; i++){//Recorro nuestra nueva data especies
   clonando(especies[i].name,especies[i].status, especies[i].origin.name, especies[i].gender, especies[i].image, especies[i].episode.length, especies[i].species) 
   //clonamos los datos que buscamos 
 }
 
-contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);    
+contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]); 
+let botonVolverEspecies=document.createElement("button");
+botonVolverEspecies.innerHTML="Volver"
+botonVolverEspecies.setAttribute("type","button")
+botonVolverEspecies.setAttribute("class","volverEspecies")
+botonVolverEspecies.setAttribute("innerHTML","volver")
+console.log(botonVolverEspecies)
+let filtroDeEspecies=document.getElementById("filtroDeEspecies")// let boton=document.createElement(document.getElementById("volverEspecies"))
+filtroDeEspecies.appendChild(botonVolverEspecies);
+
 }
 
 // *********************************Filtrando especies *********************************

@@ -670,25 +670,21 @@ footer{
     flex-wrap: wrap;
     margin: 5%;
     }
-#volverEspecies{
-    background-color: #499178;
-    color: white;
-    height: 6vh;
-    flex-wrap: wrap;
-    width: 8vw;
-    border:none;
-    font-size: inherit;
-    display:flex;
-    position: relative;
-    flex-wrap: wrap;
-    margin: 0%;
-    display: none;
-}    
+.volverEspecies{
+    background-color:#499178; 
+    width: 5em;
+    height: 2em;
+    margin-left: 10em;
+    margin-top: 5em;
+    color:thistle;
+     }
+    
+   
 
 #filtroDeEspecies{
     display: none;
     width: 50vw;
-    background-color:rgba(219, 157, 157, 0.486);
+    background-color:rgba(58, 223, 168, 0.397);
     text-align: center; 
     position: relative;
     padding: 1em;
