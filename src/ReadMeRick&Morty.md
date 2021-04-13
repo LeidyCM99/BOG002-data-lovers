@@ -6,51 +6,51 @@ Podran interactuaur de una manera sencilla y practica utilizando los filtros dis
 de la A a la Z o viseversa, filtrar por genero o especies.
 En cada resultado encontraras la ficha del personaje la cual se expande y  permite conocer mas información</p>
 
-# ***Historias de usuario***
+## Historias de usuario
 
-## ***Historia Usuario #1***
-#### Como usuario, entro en contexto del uso de esta pagina, veo una bienvenida, 
-#### visualizo las tarjetas de los personajes y las opciones de filtro o busqueda que me ofrece.
-#### **Criterios de Aceptacion:**
-### Breve información introductoria sobre el programa
-### El usuario puede visualizar la data principal e interactuar con ella
-### El usuario indentifica visualmente los filtros disponibles para la data
-#### **Criterios de terminado:**
-### Zona introductoria sobre el programa
-### Zona de busqueda 
-### Zona de filtros disponibles
-### Data general representada en tarjetas para facil acceso
+## Historia Usuario #1
+* Como usuario, entro en contexto del uso de esta pagina, veo una bienvenida.
+* Visualizo las tarjetas de los personajes y las opciones de filtro o busqueda que me ofrece.
+## Criterios de Aceptación:
+* Breve información introductoria sobre el programa
+* El usuario puede visualizar la data principal e interactuar con ella
+* El usuario indentifica visualmente los filtros disponibles para la data
+## Criterios de terminado:
+* Zona introductoria sobre el programa
+* Zona de busqueda 
+* Zona de filtros disponibles
+* Data general representada en tarjetas para facil acceso
 
-## ***Historia Usuario #2***
-#### Como usuario, quiero filtrar para encontrar datos populares y clasificar los personajes
-#### **Criterios de Aceptacion:**
-### Zona de busqueda donde encuentre y filtre los personajes por cualquier caracteristica 
-### Visualizar Botones de filtrado para identificar las opciones de datos que puedo encontrar
-### Visualización acertiva de los filtros y busquedas que se realizan
-#### **Criterios de terminado:**
-### Zona de busqueda funcional
-### Botones de filtrado que redireccionan la data de manera mas especifica
+## Historia Usuario #2
+* Como usuario, quiero filtrar para encontrar datos populares y clasificar los personajes
+## Criterios de Aceptacion:
+* Zona de busqueda donde encuentre y filtre los personajes por cualquier caracteristica 
+* Visualizar Botones de filtrado para identificar las opciones de datos que puedo encontrar
+* Visualización acertiva de los filtros y busquedas que se realizan
+## Criterios de terminado:
+* Zona de busqueda funcional
+* Botones de filtrado que redireccionan la data de manera mas especifica
 
-## ***Historia Usuario #3***
-#### Como usuario, uso los botones que me guian a las opciones que puedo filtrar 
-#### **Criterios de Aceptacion:**
-### Diferentes botones con opciones diferentes de filtrado
-### Al usar dichos botones ser guiado a las categorias de estos filtros principales
-### Visualizar el resultado final del filtro aplicado y poder volver a la pagina principal
-#### **Criterios de terminado:**
-### Botones que almacenen las categorias que se pueden filtrar
-### Pantalla donde se categorizan por el filtro seleccionado
-### Cada categoria presenta las tarjetas que cumplen con lo filtrado
-### Boton de volver, para seguir interactando con la data
+## Historia Usuario #3
+* Como usuario, uso los botones que me guian a las opciones que puedo filtrar 
+## Criterios de Aceptacion:
+* Diferentes botones con opciones diferentes de filtrado
+* Al usar dichos botones ser guiado a las categorias de estos filtros principales
+* Visualizar el resultado final del filtro aplicado y poder volver a la pagina principal
+## Criterios de terminado:
+* Botones que almacenen las categorias que se pueden filtrar
+* Pantalla donde se categorizan por el filtro seleccionado
+* Cada categoria presenta las tarjetas que cumplen con lo filtrado
+* Boton de volver, para seguir interactando con la data
 
-## ***Historia Usuario #4***
-#### Como usuario, filtre la data y quiero dirigirme a las redes de la serie
-#### **Criterios de Aceptacion:**
-### Visualizar los iconos que me permitan direccionarme a las redes
-### Poder ingresar a ellos y  cambiar de pagina
-#### **Criterios de terminado:**
-### Footer, en contexto con la serie Rick & Morty 
-### Iconos conectados con las redes de la serie
+## Historia Usuario #4
+* Como usuario, filtre la data y quiero dirigirme a las redes de la serie
+## Criterios de Aceptacion:
+* Visualizar los iconos que me permitan direccionarme a las redes
+* Poder ingresar a ellos y  cambiar de pagina
+## Criterios de terminado:
+* Footer, en contexto con la serie Rick & Morty 
+* Iconos conectados con las redes de la serie
 
 
 ## Prototipo de Baja

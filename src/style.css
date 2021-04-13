@@ -109,6 +109,7 @@ nav{
    position: flex;  
 }
 
+
 #input-buscador{
     display:flex;
     width:  15vw;
@@ -163,7 +164,7 @@ border-radius: 5px;
         background-image:url('../src/Img/img\ fija.png');
         background-position: center;         
     }
-_body{
+body{
         width: 100%;
         position: relative;
         left: 0%;
@@ -182,7 +183,7 @@ _body{
         display: block;
         flex-wrap: wrap;
         position: relative;
-        width: auto;
+        width: 72vw;
         height: 7vh;
         left: 0%;
     }
@@ -195,14 +196,16 @@ nav {
        display: block;
        flex-wrap: wrap;
        position: relative;
-       width:100%;
-       height: 7vh;
+       width:50vw;
+       height: 10vh;
+       top: 2.5em;
+       margin: 0%;
    }
 
 .Lista{
     display: block;
     /* margin-left: -70em; */
-    top: -2.2em;
+    top: -1.3em;
     position: relative;
     width: 50vw;
     height: 50vh;
@@ -211,6 +214,7 @@ nav {
     background-color: #437a67;
     padding-left: 0%;
     margin-left: 0%;
+    
     
 }
 .li{
@@ -259,14 +263,23 @@ main #contenedorTarjetas{
     padding-left: 0%;
 
 } 
-main  #contenedorTarjetas #filtroDeEspecies{
+main  #contenedorTarjetas{
+    margin-top: 2em;
     background-color: transparent;
-    margin-left: -2em;
+    margin-left: -1em;
     padding-left: 0%;
     position: relative;
     height: auto;
-    width: 75vw;
-
+    width: 95vw;
+    padding: 0%;
+}
+main #filtroDeEspecies{
+position: relative;
+top: 6em;
+margin-left: 0%;
+}
+main .ItemEspecie{
+    margin-left: 2em;
 }
 #input-buscador{
     width: 30vw;
@@ -297,6 +310,7 @@ main #canvas{
     position: relative;
     background-color: rgb(255, 255, 255);
 }
+
 
 }
 
@@ -537,6 +551,8 @@ aside{
     background:linear-gradient(-105deg,yellow,#437A67,#5BA978);
    
  }
+
+ 
   
 #tarjeta:hover{
      height:70vh;
@@ -642,7 +658,7 @@ footer{
 #volverPersonajes{
     background-color: #499178;
     color: white;
-    height: 5vh;
+    height: 8vh;
     width: 8vw;
     border:none;
     padding-top: 1%;
@@ -654,12 +670,25 @@ footer{
     flex-wrap: wrap;
     margin: 5%;
     }
-    
+#volverEspecies{
+    background-color: #499178;
+    color: white;
+    height: 6vh;
+    flex-wrap: wrap;
+    width: 8vw;
+    border:none;
+    font-size: inherit;
+    display:flex;
+    position: relative;
+    flex-wrap: wrap;
+    margin: 0%;
+    display: none;
+}    
 
 #filtroDeEspecies{
     display: none;
     width: 50vw;
-    background-color:transparent;
+    background-color:rgba(219, 157, 157, 0.486);
     text-align: center; 
     position: relative;
     padding: 1em;
@@ -675,7 +704,7 @@ footer{
     border-radius: 50%;
     transition: 0.5s;
     align-items: center;
-    margin-left: 1.8em;
+    margin-left: 0em;
     flex-wrap: wrap;
     height: 7em;
     width: 7em;
@@ -688,16 +717,15 @@ transform: scale(1.5);
 
  .ItemEspecie{
     margin-top: 15em;
-     margin: 1em;
+    margin: 1em;
     font-size: 1.5em;
     background-color: transparent;
-    /* /* padding: 1em; */
+    padding: 1em; 
     position:relative; 
     grid-template-columns: repeat(5,5fr);
     flex-wrap: wrap;
     display: inline-block;
     width: 35%;
     color:rgb(76, 244, 188);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    background-color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
  }

@@ -5,9 +5,6 @@ import data from './data/rickandmorty/rickandmorty.js';//importamos la data acce
 const Data = data.results;//variable que guarda y accede al array [results]
 
 
-
-
-
 //***************************************** BOTONES*****************************************
 
 const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el input 
@@ -20,11 +17,7 @@ const BotonMujeres = document.getElementById("GeneroMujeres");//Botones que nos 
 const BotonH = document.getElementById("GeneroHombres");
       BotonH.addEventListener("click", BuscandoMale);
 
-  
-      
-
 // *****************************************FILTRO DE BUSQUEDA*****************************************
-
 
 function BuscandoDEntroDeData(Buscando){//Creamos una función que filtrara la data sobre el parametro Buscando
     let Resultado = Buscando.toUpperCase();//Declaramos buscando en una variable y la condicionamos a ser MAYUSCULA
@@ -37,21 +30,23 @@ function BuscandoDEntroDeData(Buscando){//Creamos una función que filtrara la d
         Tarjeta[i].style.display = "none"; //si no conside la tarjeta no se motrara
         document.getElementById("tarjeta").style.display="none"
       }
-      }}
+    }
+      contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
+}
 
 function Buscando(){//creamos una función que re-usa a Buscando data
   BuscandoDEntroDeData(Busqueda.value)     //esta buscara el valor que se ingre en el input busqueda
   const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }
 
-  function BuscandoFemale(){//creamos una función que re-usa a Buscando Female
-  BuscandoDEntroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
-  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
+function BuscandoFemale(){//creamos una función que re-usa a Buscando Female
+ BuscandoDEntroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
+ const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }        
 
 function BuscandoMale(){//creamos una función que re-usa a Buscando Male
-  BuscandoDEntroDeData("MALE")//aqui buscara sobre la data toda la coincidencia con Male
-    const Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')//se mostraran las que coincidan y ocultaran la tarjeta 
+  BuscandoDEntroDeData(" MALE")//aqui buscara sobre la data toda la coincidencia con Male
+  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }
   
 // *****************************************CREACION DE TARJETAS*****************************************
@@ -67,12 +62,10 @@ window.onload = function RecorriendoData() {// esta funcion se ejecuta en cada r
      const imagen    = Data[i].image;
      const especies  = Data[i].species;
      clonar(Nombres,Estado, Origen, Genero, imagen, Episodios, especies) //ejecutamos la funcion clonar con los datos del parametro
-    // document.getElementById("tarjeta").style.display="none"
-
-}}
-//document.getElementById("tarjeta").style.display="none" 
-
+  }
+ document.getElementById("tarjeta").style.display="none"
  
+}
 
 function clonar(Nombres,Estado, Origen, Genero, Imagen, Episodios, especies) {//Creamos esta función declarando los parametros a usar
 
@@ -82,30 +75,30 @@ function clonar(Nombres,Estado, Origen, Genero, Imagen, Episodios, especies) {//
   clon.style.display          = "inline-block";//aplicamos un estilo display y una margen para los nuevos div´s
   clon.style.margin           = "1em"        
   
-  let nombrePersonaje          =document.getElementById("nombrePersonaje");//reservamos un id en html
-  nombrePersonaje.innerHTML    = Nombres//imprimimos el dato requerido
+  let nombrePersonaje         =document.getElementById("nombrePersonaje");//reservamos un id en html
+  nombrePersonaje.innerHTML   = Nombres//imprimimos el dato requerido
   
-  let estado_personaje          =document.getElementById("estado");
-  estado_personaje.innerHTML    = "Estado: "+ Estado
+  let estado_personaje        =document.getElementById("estado");
+  estado_personaje.innerHTML  = "Estado: "+ Estado
 
-  let lugar_personaje          =document.getElementById("lugarDeOrigen");
-  lugar_personaje.innerHTML    = "Lugar De Origen: "+ Origen
+  let lugar_personaje         =document.getElementById("lugarDeOrigen");
+  lugar_personaje.innerHTML   = "Lugar De Origen: "+ Origen
                    
-  let cantidad_episodios       =document.getElementById("cantidadDeDeEpisodios");
-  cantidad_episodios.innerHTML = "Cantidad de episodios: "+ Episodios
+  let cantidad_episodios      =document.getElementById("cantidadDeDeEpisodios");
+  cantidad_episodios.innerHTML= "Cantidad de episodios: "+ Episodios
   
-  let genero_tarjeta           =document.getElementById("genero");
-  genero_tarjeta.innerHTML     = "Genero: "+ Genero
+  let genero_tarjeta          =document.getElementById("genero");
+  genero_tarjeta.innerHTML    = "Genero: "+ Genero
 
-  let especie_tarjeta           =document.getElementById("especie");
-  especie_tarjeta .innerHTML     = "Especie: "+ especies;
+  let especie_tarjeta         =document.getElementById("especie");
+  especie_tarjeta .innerHTML  = "Especie: "+ especies;
 
   document.getElementById("imgPersonaje").src = Imagen
 
-
   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
   contenedorDeTarjetas.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
-  }
+  
+}
   
 // *********************************OCULTAR Y MOSTRAR SECCIONES *********************************
 
@@ -146,6 +139,16 @@ let QuienesSomos=  document.getElementById("Somos");
         
  })
 
+ let volverEspecies = document.getElementById("volverEspecies");
+    volverEspecies.addEventListener("click",function  (){
+        // document.getElementById('filtroDeEspecies').reset();
+        document.getElementById("contenedorTarjetas").style.display = "none";
+        // document.getElementById("filtroDeEspecies").style.display = "block";  
+        document.getElementById("chart").style.display = "none"; 
+        document.getElementById("SomosQ").style.display = "none";
+        
+ })
+
     const BotonGraficos = document.getElementById("Graphics");
           BotonGraficos.addEventListener("click", function MostrarGrafico(){
     document.getElementById("chart").style.display = "flex"; 
@@ -166,7 +169,7 @@ let QuienesSomos=  document.getElementById("Somos");
   
  
   function az(){
-   //document.getElementById("tarjeta").style.display="none"
+
    let organizaAz = Data.sort((personajes1,personajes2)=>{//declaramos una variable que organizara la data por el medio sort
     
     return (personajes1.name < personajes2.name)? -1 :1 //retornamos los argumentos y comparamos por un operador ternario
@@ -175,15 +178,12 @@ let QuienesSomos=  document.getElementById("Somos");
    
    let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");//llamamos al Id donde vamos a imprimir
    contenedorDeTarjetas.innerHTML=""// lo vaciamos
+   
    for(let i=0;i < organizaAz.length; i++){//recorremos la nueva data
    clonar(organizaAz[i].name,organizaAz[i].status, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length,organizaAz[i].species) 
   //clonamos los datos a mostrar
   }
-  
-   //let Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')
-  let contenedor = document.getElementById("tarjeta");// Id tarjeta tendra cada clon
-  contenedorDeTarjetas.appendChild(contenedor)//cada clon tarjeta se creara en el contenedor
-
+  contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
 }
 
 let BotonOrganizarZa = document.getElementById("personajesZA");
@@ -193,53 +193,51 @@ BotonOrganizarZa.addEventListener("click", za);
 function za(){
 let organizaZa = Data.sort((personajes1,personajes2)=>{//organizamos la data nuevamente con sort
  return (personajes1.name > personajes2.name)? -1 :1// la nueva comparación organizara de mayor a menor 
-})
+ })
 
-let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
-contenedorDeTarjetas.innerHTML=""
+ let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+ contenedorDeTarjetas.innerHTML=""
 
-for(let i=0;i < organizaZa.length; i++){
+ for(let i=0;i < organizaZa.length; i++){
   
-clonar(organizaZa[i].name,organizaZa[i].status, organizaZa[i].origin.name, organizaZa[i].gender, organizaZa[i].image,organizaZa[i].episode.length,organizaZa[i].species) 
-}
-//let Tarjeta = document.querySelectorAll( '.contenedorTarjetas .tarjeta')
-let contenedor = document.getElementById("tarjeta");
-contenedorDeTarjetas.appendChild(contenedor)
+ clonar(organizaZa[i].name,organizaZa[i].status, organizaZa[i].origin.name, organizaZa[i].gender, organizaZa[i].image,organizaZa[i].episode.length,organizaZa[i].species) 
+ }
+ contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
 
 }
  // *********************************Clonando especies *********************************
-   function clonando(Nombres, Estado, Origen, Genero, imagen, Episodios, especies) {//Creamos esta función declarando los parametros a usar
+  function clonando(Nombres, Estado, Origen, Genero, imagen, Episodios, especies) {//Creamos esta función declarando los parametros a usar
   
-      var contenedor = document.getElementById("tarjeta");//reservamos un id en html
-      var clon       = contenedor.cloneNode(true);
-      clon.style.display          = "inline-flex";
-      clon.style.margin           = "1em"        
+    var contenedor = document.getElementById("tarjeta");//reservamos un id en html
+    var clon       = contenedor.cloneNode(true);
+    clon.style.display          = "inline-flex";
+    clon.style.margin           = "1em"        
       
-      let nombrePersonaje          =document.getElementById("nombrePersonaje");
-      nombrePersonaje.innerHTML    = Nombres;
+    let nombrePersonaje         =document.getElementById("nombrePersonaje");
+    nombrePersonaje.innerHTML   = Nombres;
       
-      let estado_personaje          =document.getElementById("estado");
-      estado_personaje.innerHTML    = "Estado: "+ Estado;
+    let estado_personaje        =document.getElementById("estado");
+    estado_personaje.innerHTML  = "Estado: "+ Estado;
     
-      let lugar_personaje          =document.getElementById("lugarDeOrigen");
-      lugar_personaje.innerHTML    = "Lugar De Origen: "+ Origen
+    let lugar_personaje         =document.getElementById("lugarDeOrigen");
+    lugar_personaje.innerHTML   = "Lugar De Origen: "+ Origen
                        
-      let cantidad_episodios       =document.getElementById("cantidadDeDeEpisodios");
-      cantidad_episodios.innerHTML = "Cantidad de episodios: "+ Episodios
+    let cantidad_episodios      =document.getElementById("cantidadDeDeEpisodios");
+    cantidad_episodios.innerHTML= "Cantidad de episodios: "+ Episodios
       
-      let genero_tarjeta           =document.getElementById("genero");
-      genero_tarjeta.innerHTML     = "Genero: "+ Genero
+    let genero_tarjeta          =document.getElementById("genero");
+    genero_tarjeta.innerHTML    = "Genero: "+ Genero
     
-      let especie_tarjeta           =document.getElementById("especie");
-      especie_tarjeta .innerHTML     = "Especie: "+ especies;
+    let especie_tarjeta         =document.getElementById("especie");
+    especie_tarjeta .innerHTML  = "Especie: "+ especies;
     
     
-      document.getElementById("imgPersonaje").src = imagen
+    document.getElementById("imgPersonaje").src = imagen
      
-      let contenedorDeEspecies=document.getElementById("filtroDeEspecies");//llamamos el Id donde se imprimira
-      contenedorDeEspecies.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
-      
-      }
+    let contenedorDeEspecies=document.getElementById("filtroDeEspecies");//llamamos el Id donde se imprimira
+    contenedorDeEspecies.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
+            
+  }
     
 // *********************************Filtrando especies *********************************
 
@@ -250,17 +248,14 @@ function filtroEspecies(filtro){//Creamos una funcion con parametro filtro, asi 
   
 let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");// llamamos el Id donde se imprimira
 contenedorDeTarjetas.innerHTML=""//Vaciamos el Id
+document.getElementById("volverEspecies").style.display = "block";
+
 for(let i=0;i < especies.length; i++){//Recorro nuestra nueva data especies
   clonando(especies[i].name,especies[i].status, especies[i].origin.name, especies[i].gender, especies[i].image, especies[i].episode.length, especies[i].species) 
   //clonamos los datos que buscamos 
 }
-document.getElementById("contenedorTarjetas").style.display = "none"; 
-document.getElementById("Chart").style.display = "none"; 
-document.getElementById("SomosQ").style.display = "none"; 
- let contenedor = document.getElementById("tarjeta");
- contenedorDeTarjetas.appendChild(contenedor)
- document.getElementById("canvas").style.display = "none";
-    
+
+contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);    
 }
 
 // *********************************Filtrando especies *********************************
@@ -272,8 +267,7 @@ const Tarjeta = document.getElementsByClassName("tarjeta");
 
   function humans(){//esta función re-usa filtrar
    filtroEspecies("Human"),//compara especies con Human y muestra las conincidencias
-   document.getElementById("contenedorTarjetas").style.display = "none";
-   
+  document.getElementById("contenedorTarjetas").style.display = "none";
   }
 
 let BotonAliens = document.getElementById("Alien");
@@ -283,6 +277,7 @@ const tarjetaAliens= document.getElementsByClassName("tarjeta");
   function Aliens(){
    filtroEspecies("Alien")
    document.getElementById("contenedorTarjetas").style.display = "none";
+  
   }
 
 let BotonRobots = document.getElementById("Robots");

@@ -1,10 +1,10 @@
 // estas funciones son de ejemplo
 
-export const getDimensions = (data) => data.map(location => location.dimension);
+// export const getDimensions = (data) => data.map(location => location.dimension);
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+// export const anotherExample = () => {
+//   return 'OMG';
+// };
 
 
 // function az(){
