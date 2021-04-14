@@ -1,17 +1,26 @@
-// estas funciones son de ejemplo
+const prueba = {
+subir
+}
 
-// export const getDimensions = (data) => data.map(location => location.dimension);
+function subir(){
+    let trayendoBoton = document.documentElement.scrollTop;
+    if (trayendoBoton > 0) {
+      window.scrollTo (0,0);
+    } 
+  };
 
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
-
-
-// function az(){
-//    let nombrePersonaje=Data.sort((personajes1,personajes2)=>{
-//    return (personajes1.name<personajes2.name)? -1 :1
-//    //clonar(Nombres, Origen, Genero, imagen, Episodios)
+export const organizaAz = (Data)=>Data.sort((personajes1,personajes2)=>{
+   return (personajes1.name<personajes2.name)? -1 :1
+//    clonar(Nombres, Origen, Genero, imagen, Episodios)
      
-// })
-// console.log(nombrePersonaje)
-// }
+})
+;
+
+export const organizaZa = (Data)=>Data.sort((personajes1,personajes2)=>{
+    return (personajes1.name>personajes2.name)? -1 :1
+ //    clonar(Nombres, Origen, Genero, imagen, Episodios)
+      
+ })
+ ;
+
+export default prueba;

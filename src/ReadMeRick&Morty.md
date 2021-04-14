@@ -1,12 +1,27 @@
-# ***Rick and Morty***
 
-<p style="text-align: justify;">Data fan´s, es una base de datos creada para los aficionados a la
+
+# ***RICK AND MORTY***
+
+
+## Índice
+
+* [1. Resumen del Proyecto.](#1-resumen-del-proyecto)
+* [2. Historias de usuario.](#2-Historias-de-usuario)
+* [3. Criterios de aceptacion.](#3-definición-del-producto)
+* [4. Prototipo de baja.](#4-prototipo-final)
+* [5. Prototipo de alta,](#4-prototipo-final)
+* [6. Objetivos de aprendizaje.](#5-objetivos-de-aprendizaje)
+* [6. Desarrollares/autores](#5-Desarrollares/autores)
+
+***
+
+# 1. Resumen del Proyecto.Data fan´s, es una base de datos creada para los aficionados a la
 popular serie Rick & Morty, facilitando encontrar todos los personajes con datos relevantes.
 Podran interactuaur de una manera sencilla y practica utilizando los filtros disponibles, como organizar 
 de la A a la Z o viseversa, filtrar por genero o especies.
 En cada resultado encontraras la ficha del personaje la cual se expande y  permite conocer mas información</p>
 
-## Historias de usuario
+# 2. Historias de usuario
 
 ## Historia Usuario #1
 * Como usuario, entro en contexto del uso de esta pagina, veo una bienvenida.

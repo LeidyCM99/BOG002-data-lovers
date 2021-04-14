@@ -1,17 +1,14 @@
-//import { filtroEspecies } from './data.js';
-
 
 import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
 const Data = data.results;//variable que guarda y accede al array [results]
+import {organizaAz, organizaZa } from './data.js';
+import prueba from './data.js';
+
 
 // ****************************************BOTON PARA SUBIR ********************************
-document.getElementById("ImagenUp").addEventListener("click", subir);
-function subir(){
-  let trayendoBoton = document.getElement.scrollTop;
-  if (trayendoBoton>0) {
-    window.scrollTo (0,0);
-  } 
-};
+
+document.getElementById("ImagenUp").addEventListener("click", prueba.subir);
+
 
 //***************************************** BOTONES*****************************************
 
@@ -170,17 +167,12 @@ let QuienesSomos=  document.getElementById("Somos");
  
   function az(){
 
-   let organizaAz = Data.sort((personajes1,personajes2)=>{//declaramos una variable que organizara la data por el medio sort
-    
-    return (personajes1.name < personajes2.name)? -1 :1 //retornamos los argumentos y comparamos por un operador ternario
-    
-   } )
-   
    let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");//llamamos al Id donde vamos a imprimir
-   contenedorDeTarjetas.innerHTML=""// lo vaciamos
-   
-   for(let i=0;i < organizaAz.length; i++){//recorremos la nueva data
-   clonar(organizaAz[i].name,organizaAz[i].status, organizaAz[i].origin.name, organizaAz[i].gender, organizaAz[i].image,organizaAz[i].episode.length,organizaAz[i].species) 
+       contenedorDeTarjetas.innerHTML=""// lo vaciamos
+   let NombresAZ = organizaAz(Data)
+
+   for(let i=0;i < NombresAZ.length; i++){//recorremos la nueva data
+   clonar(NombresAZ[i].name, NombresAZ[i].status, NombresAZ[i].origin.name, NombresAZ[i].gender, NombresAZ[i].image,NombresAZ[i].episode.length,NombresAZ[i].species) 
   //clonamos los datos a mostrar
   }
   contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
@@ -191,16 +183,13 @@ BotonOrganizarZa.addEventListener("click", za);
 
 
 function za(){
-let organizaZa = Data.sort((personajes1,personajes2)=>{//organizamos la data nuevamente con sort
- return (personajes1.name > personajes2.name)? -1 :1// la nueva comparación organizara de mayor a menor 
- })
 
  let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
- contenedorDeTarjetas.innerHTML=""
-
- for(let i=0;i < organizaZa.length; i++){
+     contenedorDeTarjetas.innerHTML=""
+let NombresZa = organizaZa(Data)
+ for(let i=0;i < NombresZa .length; i++){
   
- clonar(organizaZa[i].name,organizaZa[i].status, organizaZa[i].origin.name, organizaZa[i].gender, organizaZa[i].image,organizaZa[i].episode.length,organizaZa[i].species) 
+ clonar(NombresZa[i].name,NombresZa[i].status,NombresZa[i].origin.name, NombresZa[i].gender, NombresZa[i].image, NombresZa[i].episode.length, NombresZa[i].species) 
  }
  contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
 
@@ -412,33 +401,35 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
    
   }
   
-  // ***************************EL CANVAS ******************************
+  // ***************************CANVAS ******************************
 
 fetch("https://rickandmortyapi.com/api/episode")//Fetch nos permite acceder a datos que nos proporciona http
-.then(response => response.json() )//llamamos el archivo Json
-.then(data =>{
-  console.log(data.results)
-  let LosEpisodio= data.results.map(item => item.name)//recorremos la data y declaramos una variable que guardara los nombres de episodios 
-  let epi = document.getElementById("fetch")//declaramos el Id donde imprimiremos
-      // epi.innerHTML = ` Nombre de los episodios: <br> <li>${LosEpisodio}</li> `//Imprimimos los nombres de episodios
-
-  const canvas = document.getElementById("canvas");//declaramos el Id donde imprimiremos Canvas
+      .then(response => response.json() )//llamamos el archivo Json
+      .then(data =>{
   
-  const LosEpisodios=data.results.map(item => item.name);// Recorremos la data, declaramos la variable que guarda el nombre del episodio 
-  const Personajes= data.results.map(item => item.characters.length)//Recorremos la data, declaramos la variable donde guarda la cantidad de personajes según el episodio
-  const MyChart= new Chart(canvas,{// Chart nos permite crear graficas
-    type: "bar",//el tipo de grafica que usamos en este caso barras
-    data: {
-      labels: LosEpisodios,//Llamamos la data que vamos a graficar
-      datasets:[
+  let LosEpisodio= data.results.map(item => item.name)//recorremos la data y declaramos una variable que guardara los nombres de episodios 
+  // let epi = document.getElementById("fetch")//declaramos el Id donde imprimiremos
+  //     createElement("button")// epi.innerHTML = ` Nombre de los episodios: <br> <li>${LosEpisodio}</li> `//Imprimimos los nombres de episodios
+
+
+
+  const canvas      = document.getElementById("canvas");//declaramos el Id donde imprimiremos Canvas
+  const LosEpisodios= data.results.map(item => item.name);// Recorremos la data, declaramos la variable que guarda el nombre del episodio 
+  const Personajes  = data.results.map(item => item.characters.length)//Recorremos la data, declaramos la variable donde guarda la cantidad de personajes según el episodio
+  const MyChart     = new Chart(canvas,{// Chart nos permite crear graficas
+    
+       type: "bar",//el tipo de grafica que usamos en este caso barras
+       data: {
+            labels: LosEpisodios,//Llamamos la data que vamos a graficar
+            datasets:[
         {
-          label:"Cantidad de Personajes",
-          data:Personajes,
-          backgroundColor:[ "#48E71C","#f1f1f1","#f0b8b8","#7EC96D","#BDD771","#FFCB55",
+             label:"Cantidad de Personajes",
+             data:Personajes,
+             backgroundColor:[ "#48E71C","#f1f1f1","#f0b8b8","#7EC96D","#BDD771","#FFCB55",
           "#e67f83", "#d43d51", "#665191","#a05195","#003f5c", "#ffa600", "#19B974","#DE9E54","#333f6c","#A36B22","#2f4b7c","#d45087","#FFD588","#FB4F93" ],
-            borderColor: ["#f1f1f1",
+             borderColor: ["#f1f1f1",
             ],
-            borderWidth: 1.5,
+             borderWidth: 1.5,
 
         }]
       }})  
