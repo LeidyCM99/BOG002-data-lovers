@@ -12,6 +12,10 @@
 
 <body>
 
+  
+    <img class="ImagenUp" id="ImagenUp"
+    src="Img/up.png" width="50" height="50">
+ 
   <header>
     <input type ='checkbox' id="btn-menu">
     <label for=btn-menu><img src='Img/menu-64.png' class="imgMenu"alt='menu'></label>
@@ -104,11 +108,13 @@
 
 
     
-<div id="ContenedorFiltrosEspecie"></div>
-   
+
 
 <!-- filtro especies -->
-    <div class="filtroDeEspecies" id="filtroDeEspecies">
+    <div class="filtroDeEspecies" id="filtroDeEspecies"></div>       
+  
+    <div id="ContenedorFiltrosEspecie">
+      <input  type= "button" id="volverPersonajes" value="ATRAS" > </input>
       <span class="ItemEspecie">Human<img class="botonesFiltro"src="Img/human.jpg" id="Humans"></span>
       <span class="ItemEspecie">Alien<img class="botonesFiltro"src="Img/Alien.png" id="Alien"></span>
       <span class="ItemEspecie">Robots<img class="botonesFiltro"src="Img/Robots.png"   id="Robots"></span>
@@ -121,9 +127,10 @@
       <span class="ItemEspecie">Animal <img class="botonesFiltro"src="Img/Animal1.jpg "width= "200vw" height="200vh" id="Animal"> </span>
       <span class="ItemEspecie">Disease<img class="botonesFiltro"src="Img/Disease.png" id="Disease"> </span>
       <span class="ItemEspecie">Parasite <img class="botonesFiltro"src="Img/Parasite.jpeg" id="Parasite"> </span>
-      <input  type= "button" id="volverPersonajes" value="ATRAS" > </input>
-    </div>       
-  </div>
+    </div>
+       
+
+
   <div id="chart">
     <canvas id="canvas" height="50" width="50"> </canvas>
     <!-- <div id="fetch"> </div> -->

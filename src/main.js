@@ -4,6 +4,14 @@
 import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
 const Data = data.results;//variable que guarda y accede al array [results]
 
+// ****************************************BOTON PARA SUBIR ********************************
+document.getElementById("ImagenUp").addEventListener("click", subir);
+function subir(){
+  let trayendoBoton = document.getElement.scrollTop;
+  if (trayendoBoton>0) {
+    window.scrollTo (0,0);
+  } 
+};
 
 //***************************************** BOTONES*****************************************
 
@@ -17,7 +25,7 @@ const BotonMujeres = document.getElementById("GeneroMujeres");//Botones que nos 
 const BotonH = document.getElementById("GeneroHombres");
       BotonH.addEventListener("click", BuscandoMale);
 
-// *****************************************FILTRO DE BUSQUEDA*****************************************
+// *****************************************FILTRO DE BUSQUEDA**********************************
 
 function BuscandoDEntroDeData(Buscando){//Creamos una función que filtrara la data sobre el parametro Buscando
     let Resultado = Buscando.toUpperCase();//Declaramos buscando en una variable y la condicionamos a ser MAYUSCULA
@@ -124,7 +132,8 @@ let QuienesSomos=  document.getElementById("Somos");
   
   let filtrandoEspecies=  document.getElementById("especies");
     filtrandoEspecies.addEventListener("click",function(){
-        document.getElementById("filtroDeEspecies").style.display = "block";  
+      document.getElementById("ContenedorFiltrosEspecie").style.display = "block";  
+        document.getElementById("filtroDeEspecies").style.display = "none";  
         document.getElementById("contenedorTarjetas").style.display = "none"; 
         document.getElementById("chart").style.display = "none"; 
         document.getElementById("SomosQ").style.display = "none"; 
@@ -232,7 +241,8 @@ let organizaZa = Data.sort((personajes1,personajes2)=>{//organizamos la data nue
     
 // *********************************Filtrando especies *********************************
 
-function filtroEspecies(filtro){//Creamos una funcion con parametro filtro, asi la re-usaremos
+function filtroEspecies(filtro)
+{//Creamos una funcion con parametro filtro, asi la re-usaremos
   let especies= Data.filter(item=>{//Declaramos una varible para esta nueva data
     return item.species===filtro//retornara las especies que sean igual al parametro que demos
     })
@@ -246,16 +256,24 @@ for(let i=0;i < especies.length; i++){//Recorro nuestra nueva data especies
 }
 
 contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]); 
+
 let botonVolverEspecies=document.createElement("button");
-botonVolverEspecies.innerHTML="Volver"
-botonVolverEspecies.setAttribute("type","button")
-botonVolverEspecies.setAttribute("class","volverEspecies")
-botonVolverEspecies.setAttribute("innerHTML","volver")
-console.log(botonVolverEspecies)
+    botonVolverEspecies.innerHTML="VOLVER"
+    botonVolverEspecies.setAttribute("type","button")
+    botonVolverEspecies.setAttribute("class","volverEspecies")
+
+
+    botonVolverEspecies.onclick =function especies(){
+      document.getElementById("ContenedorFiltrosEspecie").style.display = "block";  
+      document.getElementById("filtroDeEspecies").style.display = "none";  
+    }
+      
+
 let filtroDeEspecies=document.getElementById("filtroDeEspecies")// let boton=document.createElement(document.getElementById("volverEspecies"))
-filtroDeEspecies.appendChild(botonVolverEspecies);
+    filtroDeEspecies.appendChild(botonVolverEspecies);
 
 }
+
 
 // *********************************Filtrando especies *********************************
 
@@ -267,6 +285,9 @@ const Tarjeta = document.getElementsByClassName("tarjeta");
   function humans(){//esta función re-usa filtrar
    filtroEspecies("Human"),//compara especies con Human y muestra las conincidencias
   document.getElementById("contenedorTarjetas").style.display = "none";
+  document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+  document.getElementById("filtroDeEspecies").style.display = "block";  
+
   }
 
 let BotonAliens = document.getElementById("Alien");
@@ -276,7 +297,8 @@ const tarjetaAliens= document.getElementsByClassName("tarjeta");
   function Aliens(){
    filtroEspecies("Alien")
    document.getElementById("contenedorTarjetas").style.display = "none";
-  
+   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+   document.getElementById("filtroDeEspecies").style.display = "block";  
   }
 
 let BotonRobots = document.getElementById("Robots");
@@ -286,6 +308,8 @@ const tarjetaRobots= document.getElementsByClassName("tarjeta");
  function Robots(){
    filtroEspecies("Robot")
    document.getElementById("contenedorTarjetas").style.display = "none";
+   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+   document.getElementById("filtroDeEspecies").style.display = "block";  
   }
 
 let BotonHumanoid = document.getElementById("humanoid");
@@ -295,6 +319,8 @@ const TarjetaHumanoid = document.getElementsByClassName("tarjeta");
  function  humanoid(){
    filtroEspecies("Humanoid")
    document.getElementById("contenedorTarjetas").style.display = "none";
+   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+   document.getElementById("filtroDeEspecies").style.display = "block";  
   }
     
 let BotonUnknown = document.getElementById("unknown");
@@ -303,7 +329,9 @@ const tarjetaUnknown= document.getElementsByClassName("tarjeta");
 
  function unknown(){
    filtroEspecies("unknown") 
-   document.getElementById("contenedorTarjetas").style.display = "none";  
+   document.getElementById("contenedorTarjetas").style.display = "none"; 
+   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+   document.getElementById("filtroDeEspecies").style.display = "block";   
   }
 
 let BotonPoopybutthole= document.getElementById("Poopybutthole");
@@ -313,6 +341,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
   function Poopybutthole(){
    filtroEspecies("Poopybutthole")
    document.getElementById("contenedorTarjetas").style.display = "none";
+   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+   document.getElementById("filtroDeEspecies").style.display = "block";  
  }
 
  let BotonMytholog= document.getElementById("Mytholog");
@@ -322,6 +352,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
  function EspecieMytholog(){
    filtroEspecies("Mytholog")
    document.getElementById("contenedorTarjetas").style.display = "none";
+   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+   document.getElementById("filtroDeEspecies").style.display = "block";  
  }
   
  let BotonVampire= document.getElementById("Vampire");
@@ -331,6 +363,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
  function Vampire(){
    filtroEspecies("Vampire")
    document.getElementById("contenedorTarjetas").style.display = "none";
+   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+   document.getElementById("filtroDeEspecies").style.display = "block";  
   }
 
  let BotonCronenberg= document.getElementById("Cronenberg");
@@ -340,6 +374,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
  function Cronenberg(){
    filtroEspecies("Cronenberg")
    document.getElementById("contenedorTarjetas").style.display = "none";
+   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+   document.getElementById("filtroDeEspecies").style.display = "block";  
   }
 
  let BotonAnimal= document.getElementById("Animal");
@@ -349,6 +385,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
  function Animal(){
    filtroEspecies("Animal")
    document.getElementById("contenedorTarjetas").style.display = "none";
+   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+   document.getElementById("filtroDeEspecies").style.display = "block";  
   }
   
   let BotonDisease= document.getElementById("Disease");
@@ -358,6 +396,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
   function Disease(){
     filtroEspecies("Disease")
     document.getElementById("contenedorTarjetas").style.display = "none";
+    document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+    document.getElementById("filtroDeEspecies").style.display = "block";  
  }
  
   let BotonParasite= document.getElementById("Parasite");
@@ -367,6 +407,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
   function Parasite(){
     filtroEspecies("Parasite")
     document.getElementById("contenedorTarjetas").style.display = "none";
+    document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+    document.getElementById("filtroDeEspecies").style.display = "block";  
    
   }
   
