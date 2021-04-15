@@ -137,18 +137,19 @@ let QuienesSomos=  document.getElementById("Somos");
   let filtrandoEspecies=  document.getElementById("especies");
     filtrandoEspecies.addEventListener("click",function(){
       document.getElementById("ContenedorFiltrosEspecie").style.display = "block";  
-        document.getElementById("filtroDeEspecies").style.display = "none";  
-        document.getElementById("contenedorTarjetas").style.display = "none"; 
-        document.getElementById("chart").style.display = "none"; 
-        document.getElementById("SomosQ").style.display = "none"; 
+      document.getElementById("titulo").style.display = "block";  
+      document.getElementById("filtroDeEspecies").style.display = "none";  
+      document.getElementById("contenedorTarjetas").style.display = "none"; 
+      document.getElementById("chart").style.display = "none"; 
+      document.getElementById("SomosQ").style.display = "none"; 
  })
 
  let volverTodosLosPersonajes=  document.getElementById("volverPersonajes");
  volverTodosLosPersonajes.addEventListener("click",function(){
-        document.getElementById("contenedorTarjetas").style.display = "block";
-        document.getElementById("filtroDeEspecies").style.display = "none";  
-        document.getElementById("chart").style.display = "none"; 
-        document.getElementById("SomosQ").style.display = "none";
+      document.getElementById("contenedorTarjetas").style.display = "block";
+      document.getElementById("filtroDeEspecies").style.display = "none";  
+      document.getElementById("chart").style.display = "none"; 
+      document.getElementById("SomosQ").style.display = "none";
         
  })
 
@@ -159,7 +160,8 @@ let QuienesSomos=  document.getElementById("Somos");
     document.getElementById("canvas").style.display = "block";
     document.getElementById("SomosQ").style.display = "none"; 
     document.getElementById("contenedorTarjetas").style.display="none";
-    document.getElementById("filtroDeEspecies").style.display = "none";  
+    document.getElementById("filtroDeEspecies").style.display = "none";
+    document.getElementById("tarjetas").style.display="none";  
   })
      
          
@@ -261,7 +263,8 @@ let botonVolverEspecies=document.createElement("button");
 
     botonVolverEspecies.onclick =function especies(){
       document.getElementById("ContenedorFiltrosEspecie").style.display = "block";  
-      document.getElementById("filtroDeEspecies").style.display = "none";  
+      document.getElementById("filtroDeEspecies").style.display = "none";
+      document.getElementById("titulo").style.display = "none";    
     }
       
 
@@ -271,19 +274,33 @@ let filtroDeEspecies=document.getElementById("filtroDeEspecies")// let boton=doc
 }
 
 
-// *********************************Filtrando especies *********************************
+// *********************************Cambiando titulo*********************************
+function titulos(especie){
+  let titulo=document.getElementById("titulo")
+  // let span=document.getElementsById("efecto")
+  titulo.innerHTML=especie;
+  // span.innerHTML="&#160;";
+  console.log("hola")
+ }
+ 
+ function cambio(){
+  document.getElementById("contenedorTarjetas").style.display = "none";
+  document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+  document.getElementById("filtroDeEspecies").style.display = "block";  
+  document.getElementById("titulo").style.display = "block";  
+ }
 
+// *********************************Filtrando especies *********************************
 
 let BotonHumans = document.getElementById("Humans");
 BotonHumans.addEventListener("click",humans);
 const Tarjeta = document.getElementsByClassName("tarjeta");
 
   function humans(){//esta función re-usa filtrar
-   filtroEspecies("Human"),//compara especies con Human y muestra las conincidencias
-  document.getElementById("contenedorTarjetas").style.display = "none";
-  document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-  document.getElementById("filtroDeEspecies").style.display = "block";  
-
+   filtroEspecies("Human");//compara especies con Human y muestra las conincidencias
+   titulos("Human")
+   cambio()
+  
   }
 
 let BotonAliens = document.getElementById("Alien");
@@ -292,10 +309,10 @@ const tarjetaAliens= document.getElementsByClassName("tarjeta");
 
   function Aliens(){
    filtroEspecies("Alien")
-   document.getElementById("contenedorTarjetas").style.display = "none";
-   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-   document.getElementById("filtroDeEspecies").style.display = "block";  
+   cambio()
+   titulos("Aliens")
   }
+  
 
 let BotonRobots = document.getElementById("Robots");
 BotonRobots.addEventListener("click",Robots);
@@ -303,10 +320,10 @@ const tarjetaRobots= document.getElementsByClassName("tarjeta");
 
  function Robots(){
    filtroEspecies("Robot")
-   document.getElementById("contenedorTarjetas").style.display = "none";
-   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-   document.getElementById("filtroDeEspecies").style.display = "block";  
+   cambio()
+   titulos("Robots")
   }
+
 
 let BotonHumanoid = document.getElementById("humanoid");
 BotonHumanoid.addEventListener("click",humanoid);
@@ -314,9 +331,8 @@ const TarjetaHumanoid = document.getElementsByClassName("tarjeta");
 
  function  humanoid(){
    filtroEspecies("Humanoid")
-   document.getElementById("contenedorTarjetas").style.display = "none";
-   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-   document.getElementById("filtroDeEspecies").style.display = "block";  
+   cambio() 
+   titulos("Humanoid")
   }
     
 let BotonUnknown = document.getElementById("unknown");
@@ -325,9 +341,8 @@ const tarjetaUnknown= document.getElementsByClassName("tarjeta");
 
  function unknown(){
    filtroEspecies("unknown") 
-   document.getElementById("contenedorTarjetas").style.display = "none"; 
-   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-   document.getElementById("filtroDeEspecies").style.display = "block";   
+   cambio()
+   titulos("Unknown")
   }
 
 let BotonPoopybutthole= document.getElementById("Poopybutthole");
@@ -336,9 +351,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
 
   function Poopybutthole(){
    filtroEspecies("Poopybutthole")
-   document.getElementById("contenedorTarjetas").style.display = "none";
-   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-   document.getElementById("filtroDeEspecies").style.display = "block";  
+   cambio()
+   titulos("Poopybutthole")
  }
 
  let BotonMytholog= document.getElementById("Mytholog");
@@ -347,9 +361,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
 
  function EspecieMytholog(){
    filtroEspecies("Mytholog")
-   document.getElementById("contenedorTarjetas").style.display = "none";
-   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-   document.getElementById("filtroDeEspecies").style.display = "block";  
+   cambio()
+   titulos("EspecieMytholog")
  }
   
  let BotonVampire= document.getElementById("Vampire");
@@ -358,9 +371,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
  
  function Vampire(){
    filtroEspecies("Vampire")
-   document.getElementById("contenedorTarjetas").style.display = "none";
-   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-   document.getElementById("filtroDeEspecies").style.display = "block";  
+   cambio()
+   titulos("Vampire")
   }
 
  let BotonCronenberg= document.getElementById("Cronenberg");
@@ -369,9 +381,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
    
  function Cronenberg(){
    filtroEspecies("Cronenberg")
-   document.getElementById("contenedorTarjetas").style.display = "none";
-   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-   document.getElementById("filtroDeEspecies").style.display = "block";  
+   cambio()
+   titulos("Cronenberg")
   }
 
  let BotonAnimal= document.getElementById("Animal");
@@ -380,9 +391,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
    
  function Animal(){
    filtroEspecies("Animal")
-   document.getElementById("contenedorTarjetas").style.display = "none";
-   document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-   document.getElementById("filtroDeEspecies").style.display = "block";  
+   cambio()
+   titulos("Animal")
   }
   
   let BotonDisease= document.getElementById("Disease");
@@ -391,10 +401,9 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
     
   function Disease(){
     filtroEspecies("Disease")
-    document.getElementById("contenedorTarjetas").style.display = "none";
-    document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-    document.getElementById("filtroDeEspecies").style.display = "block";  
- }
+    cambio()
+    titulos("Disease") 
+  }
  
   let BotonParasite= document.getElementById("Parasite");
   BotonParasite.addEventListener("click",Parasite);
@@ -402,10 +411,8 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
     
   function Parasite(){
     filtroEspecies("Parasite")
-    document.getElementById("contenedorTarjetas").style.display = "none";
-    document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-    document.getElementById("filtroDeEspecies").style.display = "block";  
-   
+    cambio()
+    titulos("Parasite")
   }
   
   // ***************************CANVAS ******************************
