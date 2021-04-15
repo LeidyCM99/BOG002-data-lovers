@@ -354,28 +354,28 @@ main{
     background-size:cover; 
     background-position: center;
     transition: all 1.s ease-in-out;
-    background-image: url('../src/Img/rickguiño.jpg'); 
+    background-image: url('Img/rickguiño.jpg'); 
     animation: banner 15s infinite linear;
     background-repeat: no-repeat;
 
 }
 
 @keyframes banner{
-    0%{background-image: url('../src/Img/Rick.jpg.webp');
+    0%{background-image: url('Img/Rick.jpg.webp');
     }
-    25%{background-image: url('../src/Img/Rick.jpg.webp');
+    25%{background-image: url('Img/Rick.jpg.webp');
     }
-    26%{background-image: url('../src/Img/banner2.jpg');
+    26%{background-image: url('Img/banner2.jpg');
     }
-    50%{background-image: url('../src/Img/banner2.jpg');
+    50%{background-image: url('Img/banner2.jpg');
     }
-    51%{background-image: url('../src/Img/banner3.png');
+    51%{background-image: url('Img/banner3.png');
     }
-    75%{background-image: url('../src/Img/banner3.png');
+    75%{background-image: url('Img/banner3.png');
     }
-    76%{background-image: url('../src/Img/Rick-and-Morty.gif');
+    76%{background-image: url('Img/Rick-and-Morty.gif');
     }
-    100%{background-image:url('../src/Img/Rick-and-Morty.gif');
+    100%{background-image:url('Img/Rick-and-Morty.gif');
     }
 
 }
