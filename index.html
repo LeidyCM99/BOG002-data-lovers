@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://css.gg/home.css' rel='stylesheet'>
+    <title> Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+
+<body>
+
+  
+    <img class="ImagenUp" id="ImagenUp"
+    src="Img/up.png" width="50" height="50">
+ 
+  <header>
+    <input type ='checkbox' id="btn-menu">
+    <label for=btn-menu><img src='Img/menu-64.png' class="imgMenu"alt='menu'></label>
+    <nav class="menu">               
+      <div class="logo">PONTE RICKOCOSO</div>
+      <ul class="Lista"> 
+        <li class="li" id="Home">INICIO</li>
+        <li class="li" id="Graphics">GRAPHICS </li>   
+        <li class="li" id="Somos" > ¿QUIENES SOMOS?</li>
+        <input type="search" id="input-buscador" class="input-buscador"placeholder="Busca tu personaje">
+        <input type= "button" id="Buscar" value="BUSCAR" > </input>
+      </ul>
+    </nav> 
+  </header> 
+  <section class="banner">
+    <div 
+      class="contenedor-banner">
+    </div>
+
+    
+  </section>
+
+
+  <!------------------ main  ------------------>
+<main>
+ 
+  <!------------------ aside ------------------>
+  <aside>
+     <div class="About">
+        <h2 id="AboutH2">SOBRE RICK AND MORTY</h2>
+     Programa de televisión estadounidense de animación para adultos creada 
+     por Justin Roiland y Dan Harmon en 2013 para Adult Swim. La serie sigue las desventuras
+     de un científico, Rick, y su fácilmente influenciable nieto, Morty, quienes pasan el 
+     tiempo entre la vida doméstica y los viajes espaciales, temporales e intergalácticos.      
+      </div>
+
+   <div class="Links"> 
+    <ul id="links"> 
+        <li class="ListaDePersonajes" id="especies">Especies</li>
+        <li class="ListaDePersonajes" id="GeneroMujeres">Mujeres</li>
+        <li class="ListaDePersonajes" id="GeneroHombres">Hombres</li>
+        <li class="ListaDePersonajes" id="personajesAZ">  De la A-Z</li>
+        <li class="ListaDePersonajes" id="personajesZA">  De la Z-A</li>
+         <!-- <iframe 
+         class="iframe"width="300em" height="250em"src="https://www.adultswim.com/streams/rick-and-morty">
+         </iframe> -->
+    </ul>
+   </div>
+</aside>
+
+
+ 
+
+<div id="SomosQ"> 
+  
+    <img src="Img/rick.png"  id="Rick">  
+    ¿QUIENES SOMOS?
+    <br>   
+    <h2 class="PaginaWeb"> www.RICKOCOSO.com</h2>
+    <br>
+    Somos una wiki, pagina tambien conocida como una Data fan, nos encargamos de enseñarte los
+    <br>
+    personajes de Rick and Morty junto con los episodios, lugares de origen y genero.
+    <br>
+    Creada con el proposito de aprender y ser unas buenas desarrolladoras front end con el  acompañamiento del equipo
+    de laboratoria Colombia.
+    <img src="Img/squanchy.png"  id="Squanchy"> 
+  </div>
+
+  <!--  fichas personajes -->
+  <div class="tarjeta" id="tarjeta"  >
+    <h3 id="nombrePersonaje">Data Fans</h3>
+    <img src="Img/buscar.png.jpg" alt="Buscando personaje" id="imgPersonaje">
+     <span class="caracteristicas" id="caracteristicas">
+      <h4 id="estado"></h4>
+      <h4 id="lugarDeOrigen">1.Busca el personaje</h4>
+      <h4 id="cantidadDeDeEpisodios">2.Despliega la tarjeta</h4> 
+      <h4 id="NDeEpisodios"></h4> 
+      <h4 id="genero">3.Datos de tu personaje favorito</h4>
+      <h4 id="especie"></h4>
+    </span>
+  </div>  
+  
+  <div  class="contenedorTarjetas" 
+    id="contenedorTarjetas" >   
+  </div>
+  
+ 
+<!------------------ Promedio ------------------>
+
+
+    
+
+
+<!-- filtro especies -->
+    <div class="filtroDeEspecies" id="filtroDeEspecies"></div>       
+  
+    <div id="ContenedorFiltrosEspecie">
+      <input  type= "button" id="volverPersonajes" value="ATRAS" > </input>
+      <span class="ItemEspecie">Human<img class="botonesFiltro"src="Img/human.jpg" id="Humans"></span>
+      <span class="ItemEspecie">Alien<img class="botonesFiltro"src="Img/Alien.png" id="Alien"></span>
+      <span class="ItemEspecie">Robots<img class="botonesFiltro"src="Img/Robots.png"   id="Robots"></span>
+      <span class="ItemEspecie">Humanoid<img class="botonesFiltro"src="Img/humanoide.png"  id="humanoid"></span>
+      <span class="ItemEspecie">Unknown<img class="botonesFiltro"src="Img/Pickle.jpg" width= "200vw"height="200vh"  id="unknown"></span>
+      <span class="ItemEspecie">Poopybutthole <img class="botonesFiltro"src="Img/Poopybutthole.jpg"width= "200vw" height="200vh" id="Poopybutthole"> </span>
+      <span class="ItemEspecie">Mytholog<img class="botonesFiltro"src="Img/Mytholog.jpg"width= "200vw" height="200vh" id="Mytholog"> </span>
+      <span class="ItemEspecie">Vampire<img class="botonesFiltro"src="Img/Vampire.jpg"width= "200vw" height="200vh" id="Vampire"> </span>
+      <span class="ItemEspecie">Cronenberg<img class="botonesFiltro"src="Img/Cronenberg.png"width= "200vw" height="200vh" id="Cronenberg"> </span>
+      <span class="ItemEspecie">Animal <img class="botonesFiltro"src="Img/Animal1.jpg "width= "200vw" height="200vh" id="Animal"> </span>
+      <span class="ItemEspecie">Disease<img class="botonesFiltro"src="Img/Disease.png" id="Disease"> </span>
+      <span class="ItemEspecie">Parasite <img class="botonesFiltro"src="Img/Parasite.jpeg" id="Parasite"> </span>
+    </div>
+       
+
+
+  <div id="chart">
+    <canvas id="canvas" height="50" width="50"> </canvas>
+    <!-- <div id="fetch"> </div> -->
+  </div>
+
+
+</main> 
+
+ <!------------------ Promedio ------------------>
+
+<footer>Todos los derechos reservados © 2021 </footer>
+    <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js" integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A==" crossorigin="anonymous"></script>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
