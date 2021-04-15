@@ -8,11 +8,10 @@
 * [1. Resumen del Proyecto.](#1-resumen-del-proyecto)
 * [2. Historias de usuario.](#2-Historias-de-usuario)
 * [3. Criterios de aceptacion.](#3-definición-del-producto)
-* [4. Problemas de usabilidad.](#3-definición-del-producto)
-* [5. Prototipo de baja.](#4-prototipo-final)
-* [6. Prototipo de alta,](#4-prototipo-final)
-* [7. Objetivos de aprendizaje.](#5-objetivos-de-aprendizaje)
-* [8. Desarrollares/autores](#5-Desarrollares/autores)
+* [4. Prototipo de baja.](#4-prototipo-final)
+* [5. Prototipo de alta,](#4-prototipo-final)
+* [6. Objetivos de aprendizaje.](#5-objetivos-de-aprendizaje)
+* [6. Desarrollares/autores](#5-Desarrollares/autores)
 
 ***
 

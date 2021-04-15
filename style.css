@@ -60,6 +60,7 @@ nav{
     top: 0em;
     left:0%;
     position: fixed; 
+    
 }
  
 .Lista{
@@ -71,7 +72,7 @@ nav{
     height: 3vh;
     color: white;
     list-style:none;
-    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Press Start 2P', cursive;;
     font-size: 1rem;
     justify-content: space-around;
     align-items:  baseline;
@@ -106,6 +107,7 @@ nav{
    padding-top: 1em;
    font-weight: bolder;
    position: flex;  
+   font-family: 'Press Start 2P', cursive;;
 }
 #input-buscador{
     display:flex;
@@ -168,11 +170,11 @@ body{
 
 }
  @media screen and (max-width: 808px) {
-     .menu{
-         position: absolute;
-         width: 70%;
-         margin-left: -70%;
-     }
+  .menu{
+        position: absolute;
+        width: 70%;
+        margin-left: -70%;
+  }
   
  header {
         display: block;
@@ -195,13 +197,13 @@ nav {
        height: 10vh;
        top: 2.5em;
        margin: 0%;
-   }
+    }
 
 .Lista{
     display: block;
     /* margin-left: -70em; */
     top: -1.3em;
-    position: relative;
+    /* position: relative; */
     width: 50vw;
     height: 50vh;
     text-align: left;
@@ -209,7 +211,7 @@ nav {
     background-color: #437a67;
     padding-left: 0%;
     margin-left: 0%;
-    
+       
     
 }
 .li{
@@ -217,7 +219,7 @@ nav {
     width: 50vw;
     padding-left: 0%;
     margin-left: 0%;
-    
+   
 }
 
 main {
@@ -256,19 +258,27 @@ main #contenedorTarjetas{
    padding-top: 5em;
    margin-left: -2em;
     padding-left: 0%;
-    margin-top: 2em;
+
+} 
+main  #contenedorTarjetas{
+    margin-top: 7em;
     background-color: transparent;
     margin-left: -1em;
+    padding-left: 0%;
     position: relative;
     height: auto;
     width: 95vw;
     padding: 0%;
-} 
-
+}
 main #filtroDeEspecies{
 position: relative;
-top: 6em;
+top: 2em;
 margin-left: 0%;
+}
+
+main .contenedorEspecies{
+    margin-top: 30%;
+    margin-left: 5%;
 }
 main .ItemEspecie{
     margin-left: 2em;
@@ -303,6 +313,11 @@ main #canvas{
     background-color: rgb(255, 255, 255);
 }
 
+#titulo{
+    top:60%;
+    display:inline-block;
+    background: #30966b;
+}
 
 }
 
@@ -346,21 +361,21 @@ main{
 }
 
 @keyframes banner{
-    0%{background-image: url('Img/Rick.jpg.webp');
+    0%{background-image: url('../src/Img/Rick.jpg.webp');
     }
-    25%{background-image: url('Img/Rick.jpg.webp');
+    25%{background-image: url('../src/Img/Rick.jpg.webp');
     }
-    26%{background-image: url('Img/banner2.jpg');
+    26%{background-image: url('../src/Img/banner2.jpg');
     }
-    50%{background-image: url('Img/banner2.jpg');
+    50%{background-image: url('../src/Img/banner2.jpg');
     }
-    51%{background-image: url('Img/banner3.png');
+    51%{background-image: url('../src/Img/banner3.png');
     }
-    75%{background-image: url('Img/banner3.png');
+    75%{background-image: url('../src/Img/banner3.png');
     }
-    76%{background-image: url('Img/Rick-and-Morty.gif');
+    76%{background-image: url('../src/Img/Rick-and-Morty.gif');
     }
-    100%{background-image:url('Img/Rick-and-Morty.gif');
+    100%{background-image:url('../src/Img/Rick-and-Morty.gif');
     }
 
 }
@@ -507,7 +522,6 @@ aside{
 
 
 #contenedorTarjetas{
-    margin-top: 6em;
     position: relative;
     top: 2em;
     left:2em ;
@@ -530,7 +544,7 @@ aside{
     display:inline-flex;
     position: relative;
     flex-wrap: wrap;
-    height:280px;
+    height:38vh;
     width:250px;
     overflow: hidden;
     margin-left:auto;
@@ -548,7 +562,7 @@ aside{
  
   
 #tarjeta:hover{
-     height:470px;
+     height:70vh;
      width: 250px;
      border-radius: 5px;
      box-shadow: 10px 10px 10px 10px, yellow(0,0,0,0.5);
@@ -712,8 +726,8 @@ transform: scale(1.5);
     flex-wrap: wrap;
     display: inline-block;
     width: 35%;
-    color:rgb(76, 244, 188);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+    color:white;
+   font-family:'Press Start 2P', cursive;
  }
  #ContenedorFiltrosEspecie{
      top:5em;
@@ -729,7 +743,7 @@ transform: scale(1.5);
  }
 
  .ImagenUp{
-     position: fixed;
+    position: fixed;
     display: flex;
     height:60px; width: 60px;
     z-index: 150;
@@ -745,3 +759,35 @@ transform: scale(1.5);
 transform: scale(1.1);
 border: 8px double rgb(0, 0, 0, 6);
  }
+
+ .contenedorEspecies{
+     align-items: center;
+     top: 6em;
+ }
+
+ #titulo{
+    /* margin:auto; */
+    display: table;
+    float: center;
+    position:relative ;
+    background:black;
+    color:white;
+    font-size: 3em;
+    /* display: block; */
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    border-radius:1vh;
+    font-family: 'Press Start 2P', cursive;
+    /* font-family: fantasy; */
+    top: 0.5em;
+    left:0.5em ;
+    padding: 0.5em; 
+    grid-template-columns: repeat(3,1fr);
+    /* width: 30vw;  */
+    /*  gap: 0.1em; */
+    margin:1%;
+    z-index: 100%;
+    display: none;
+
+ } 
