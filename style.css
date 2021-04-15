@@ -346,21 +346,21 @@ main{
 }
 
 @keyframes banner{
-    0%{background-image: url('../src/Img/Rick.jpg.webp');
+    0%{background-image: url('Img/Rick.jpg.webp');
     }
-    25%{background-image: url('../src/Img/Rick.jpg.webp');
+    25%{background-image: url('Img/Rick.jpg.webp');
     }
-    26%{background-image: url('../src/Img/banner2.jpg');
+    26%{background-image: url('Img/banner2.jpg');
     }
-    50%{background-image: url('../src/Img/banner2.jpg');
+    50%{background-image: url('Img/banner2.jpg');
     }
-    51%{background-image: url('../src/Img/banner3.png');
+    51%{background-image: url('Img/banner3.png');
     }
-    75%{background-image: url('../src/Img/banner3.png');
+    75%{background-image: url('Img/banner3.png');
     }
-    76%{background-image: url('../src/Img/Rick-and-Morty.gif');
+    76%{background-image: url('Img/Rick-and-Morty.gif');
     }
-    100%{background-image:url('../src/Img/Rick-and-Morty.gif');
+    100%{background-image:url('Img/Rick-and-Morty.gif');
     }
 
 }
