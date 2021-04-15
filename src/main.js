@@ -4,6 +4,11 @@ const Data = data.results;//variable que guarda y accede al array [results]
 import {organizaAz, organizaZa } from './data.js';
 import prueba from './data.js';
 
+// PRUEBAS PARA TESTING 
+
+
+
+
 
 // ****************************************BOTON PARA SUBIR ********************************
 
@@ -24,33 +29,35 @@ const BotonH = document.getElementById("GeneroHombres");
 
 // *****************************************FILTRO DE BUSQUEDA**********************************
 
-function BuscandoDEntroDeData(Buscando){//Creamos una función que filtrara la data sobre el parametro Buscando
+function BuscandoDentroDeData(Buscando){//Creamos una función que filtrara la data sobre el parametro Buscando
     let Resultado = Buscando.toUpperCase();//Declaramos buscando en una variable y la condicionamos a ser MAYUSCULA
     const Tarjeta = document.getElementsByClassName("tarjeta");//Llamamos la clase que alojara lo filtrado
     
     for (let i=0;i < Data.length;i++){//Recorremos la data
       if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {//si el contenido concide con el Resultado
         Tarjeta[i].style.display = "inline-flex";//la tarjeta se motrara
+        document.getElementById("tarjeta").style.display="none"
       } else {
         Tarjeta[i].style.display = "none"; //si no conside la tarjeta no se motrara
         document.getElementById("tarjeta").style.display="none"
+
       }
     }
       contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
 }
 
 function Buscando(){//creamos una función que re-usa a Buscando data
-  BuscandoDEntroDeData(Busqueda.value)     //esta buscara el valor que se ingre en el input busqueda
+  BuscandoDentroDeData(Busqueda.value)     //esta buscara el valor que se ingre en el input busqueda
   const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }
 
 function BuscandoFemale(){//creamos una función que re-usa a Buscando Female
- BuscandoDEntroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
+ BuscandoDentroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }        
 
 function BuscandoMale(){//creamos una función que re-usa a Buscando Male
-  BuscandoDEntroDeData(" MALE")//aqui buscara sobre la data toda la coincidencia con Male
+  BuscandoDentroDeData(" MALE")//aqui buscara sobre la data toda la coincidencia con Male
   const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }
   
@@ -170,7 +177,7 @@ let QuienesSomos=  document.getElementById("Somos");
    let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");//llamamos al Id donde vamos a imprimir
        contenedorDeTarjetas.innerHTML=""// lo vaciamos
    let NombresAZ = organizaAz(Data)
-
+       console.log(NombresAZ)
    for(let i=0;i < NombresAZ.length; i++){//recorremos la nueva data
    clonar(NombresAZ[i].name, NombresAZ[i].status, NombresAZ[i].origin.name, NombresAZ[i].gender, NombresAZ[i].image,NombresAZ[i].episode.length,NombresAZ[i].species) 
   //clonamos los datos a mostrar

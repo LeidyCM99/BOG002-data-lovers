@@ -256,18 +256,15 @@ main #contenedorTarjetas{
    padding-top: 5em;
    margin-left: -2em;
     padding-left: 0%;
-
-} 
-main  #contenedorTarjetas{
     margin-top: 2em;
     background-color: transparent;
     margin-left: -1em;
-    padding-left: 0%;
     position: relative;
     height: auto;
     width: 95vw;
     padding: 0%;
-}
+} 
+
 main #filtroDeEspecies{
 position: relative;
 top: 6em;
@@ -342,28 +339,28 @@ main{
     background-size:cover; 
     background-position: center;
     transition: all 1.s ease-in-out;
-    background-image: url('../src/Img/rickguiño.jpg'); 
+    background-image: url('/Img/rickguiño.jpg'); 
     animation: banner 15s infinite linear;
     background-repeat: no-repeat;
 
 }
 
 @keyframes banner{
-    0%{background-image: url('../src/Img/Rick.jpg.webp');
+    0%{background-image: url('Img/Rick.jpg.webp');
     }
-    25%{background-image: url('../src/Img/Rick.jpg.webp');
+    25%{background-image: url('Img/Rick.jpg.webp');
     }
-    26%{background-image: url('../src/Img/banner2.jpg');
+    26%{background-image: url('Img/banner2.jpg');
     }
-    50%{background-image: url('../src/Img/banner2.jpg');
+    50%{background-image: url('Img/banner2.jpg');
     }
-    51%{background-image: url('../src/Img/banner3.png');
+    51%{background-image: url('Img/banner3.png');
     }
-    75%{background-image: url('../src/Img/banner3.png');
+    75%{background-image: url('Img/banner3.png');
     }
-    76%{background-image: url('../src/Img/Rick-and-Morty.gif');
+    76%{background-image: url('Img/Rick-and-Morty.gif');
     }
-    100%{background-image:url('../src/Img/Rick-and-Morty.gif');
+    100%{background-image:url('Img/Rick-and-Morty.gif');
     }
 
 }
@@ -510,6 +507,7 @@ aside{
 
 
 #contenedorTarjetas{
+    margin-top: 6em;
     position: relative;
     top: 2em;
     left:2em ;
@@ -532,7 +530,7 @@ aside{
     display:inline-flex;
     position: relative;
     flex-wrap: wrap;
-    height:38vh;
+    height:280px;
     width:250px;
     overflow: hidden;
     margin-left:auto;
@@ -550,7 +548,7 @@ aside{
  
   
 #tarjeta:hover{
-     height:70vh;
+     height:470px;
      width: 250px;
      border-radius: 5px;
      box-shadow: 10px 10px 10px 10px, yellow(0,0,0,0.5);
