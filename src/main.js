@@ -122,6 +122,8 @@ let Home=  document.getElementById("Home");
           document.getElementById("chart").style.display = "none";
           document.getElementById("canvas").style.display = "none";
           document.getElementById("filtroDeEspecies").style.display = "none";  
+          document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+          document.getElementsByClassName("contenedorEspecies").style.display = "none"; 
   
   })
 
@@ -130,7 +132,10 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("contenedorTarjetas").style.display = "none";
           document.getElementById("chart").style.display = "none"; 
           document.getElementById("SomosQ").style.display = "block";  
-          document.getElementById("filtroDeEspecies").style.display = "none";  
+          document.getElementById("filtroDeEspecies").style.display = "none"; 
+          document.getElementById("ContenedorFiltrosEspecie").style.display = "none";   
+          document.getElementById("contenedorEspecies").style.display = "none"; 
+          document.getElementById("aside").style.display = "none";     
   })
 
   
@@ -144,8 +149,8 @@ let QuienesSomos=  document.getElementById("Somos");
       document.getElementById("SomosQ").style.display = "none"; 
  })
 
- let volverTodosLosPersonajes=  document.getElementById("volverPersonajes");
- volverTodosLosPersonajes.addEventListener("click",function(){
+ let volverTodosLosPersonajes = document.getElementById("volverPersonajes");
+     volverTodosLosPersonajes.addEventListener("click",function(){
       document.getElementById("contenedorTarjetas").style.display = "block";
       document.getElementById("filtroDeEspecies").style.display = "none";  
       document.getElementById("chart").style.display = "none"; 
@@ -161,7 +166,9 @@ let QuienesSomos=  document.getElementById("Somos");
     document.getElementById("SomosQ").style.display = "none"; 
     document.getElementById("contenedorTarjetas").style.display="none";
     document.getElementById("filtroDeEspecies").style.display = "none";
-    document.getElementById("tarjetas").style.display="none";  
+    document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+    document.getElementById("tarjetas").style.display="none"; 
+    document.getElementById("contenedorEspecies").style.display = "none"; 
   })
      
          
@@ -193,8 +200,8 @@ BotonOrganizarZa.addEventListener("click", za);
 
 function za(){
 
- let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
-     contenedorDeTarjetas.innerHTML=""
+let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+    contenedorDeTarjetas.innerHTML=""
 let NombresZa = organizaZa(Data)
  for(let i=0;i < NombresZa .length; i++){
   
@@ -204,6 +211,7 @@ let NombresZa = organizaZa(Data)
 
 }
  // *********************************Clonando especies *********************************
+
   function clonando(Nombres, Estado, Origen, Genero, imagen, Episodios, especies) {//Creamos esta función declarando los parametros a usar
   
     var contenedor = document.getElementById("tarjeta");//reservamos un id en html
@@ -280,7 +288,6 @@ function titulos(especie){
   // let span=document.getElementsById("efecto")
   titulo.innerHTML=especie;
   // span.innerHTML="&#160;";
-  console.log("hola")
  }
  
  function cambio(){
