@@ -18,8 +18,9 @@ document.getElementById("ImagenUp").addEventListener("click", prueba.subir);
 //***************************************** BOTONES*****************************************
 
 const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el input 
+
 const Boton = document.getElementById("Buscar");//enlazamos nuestro boton buscar
-      Boton.addEventListener("click",Buscando);//le creamos un evento click para que ejecute la funcion dada
+      Boton.addEventListener("click", Buscando);//le creamos un evento click para que ejecute la funcion dada
 
 const BotonMujeres = document.getElementById("GeneroMujeres");//Botones que nos ejecutan la función cuando se de el evento click
       BotonMujeres.addEventListener("click", BuscandoFemale);
@@ -30,11 +31,11 @@ const BotonH = document.getElementById("GeneroHombres");
 // *****************************************FILTRO DE BUSQUEDA**********************************
 
 function BuscandoDentroDeData(Buscando){//Creamos una función que filtrara la data sobre el parametro Buscando
-    let Resultado = Buscando.toUpperCase();//Declaramos buscando en una variable y la condicionamos a ser MAYUSCULA
-    const Tarjeta = document.getElementsByClassName("tarjeta");//Llamamos la clase que alojara lo filtrado
+        const Resultado = Buscando.toUpperCase();//Declaramos buscando en una variable y la condicionamos a ser MAYUSCULA
+        const Tarjeta = document.getElementsByClassName("tarjeta");//Llamamos la clase que alojara lo filtrado
     
     for (let i=0;i < Data.length;i++){//Recorremos la data
-      if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {//si el contenido concide con el Resultado
+        if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {//si el contenido concide con el Resultado
         Tarjeta[i].style.display = "inline-flex";//la tarjeta se motrara
         document.getElementById("tarjeta").style.display="none"
       } else {
@@ -47,17 +48,17 @@ function BuscandoDentroDeData(Buscando){//Creamos una función que filtrara la d
 }
 
 function Buscando(){//creamos una función que re-usa a Buscando data
-  BuscandoDentroDeData(Busqueda.value)     //esta buscara el valor que se ingre en el input busqueda
+         BuscandoDentroDeData(Busqueda.value)     //esta buscara el valor que se ingre en el input busqueda
   const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }
 
 function BuscandoFemale(){//creamos una función que re-usa a Buscando Female
- BuscandoDentroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
+         BuscandoDentroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }        
 
 function BuscandoMale(){//creamos una función que re-usa a Buscando Male
-  BuscandoDentroDeData(" MALE")//aqui buscara sobre la data toda la coincidencia con Male
+         BuscandoDentroDeData(" MALE")//aqui buscara sobre la data toda la coincidencia con Male
   const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }
   
@@ -91,19 +92,19 @@ function clonar(Nombres,Estado, Origen, Genero, Imagen, Episodios, especies) {//
   nombrePersonaje.innerHTML   = Nombres//imprimimos el dato requerido
   
   let estado_personaje        =document.getElementById("estado");
-  estado_personaje.innerHTML  = "Estado: "+ Estado
+  estado_personaje.innerHTML  = "Status: "+ Estado
 
   let lugar_personaje         =document.getElementById("lugarDeOrigen");
-  lugar_personaje.innerHTML   = "Lugar De Origen: "+ Origen
+  lugar_personaje.innerHTML   = "Origin: "+ Origen
                    
   let cantidad_episodios      =document.getElementById("cantidadDeDeEpisodios");
-  cantidad_episodios.innerHTML= "Cantidad de episodios: "+ Episodios
+  cantidad_episodios.innerHTML= "Number of episodes: "+ Episodios
   
   let genero_tarjeta          =document.getElementById("genero");
-  genero_tarjeta.innerHTML    = "Genero: "+ Genero
+  genero_tarjeta.innerHTML    = "Gender: "+ Genero
 
   let especie_tarjeta         =document.getElementById("especie");
-  especie_tarjeta .innerHTML  = "Especie: "+ especies;
+  especie_tarjeta .innerHTML  = "Specie: "+ especies;
 
   document.getElementById("imgPersonaje").src = Imagen
 
@@ -123,7 +124,7 @@ let Home=  document.getElementById("Home");
           document.getElementById("canvas").style.display = "none";
           document.getElementById("filtroDeEspecies").style.display = "none";  
           document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-          document.getElementsByClassName("contenedorEspecies").style.display = "none"; 
+          document.getElementsByClassName("contenedorEspecies").style.display= "none"; 
   
   })
 
@@ -223,19 +224,19 @@ let NombresZa = organizaZa(Data)
     nombrePersonaje.innerHTML   = Nombres;
       
     let estado_personaje        =document.getElementById("estado");
-    estado_personaje.innerHTML  = "Estado: "+ Estado;
+    estado_personaje.innerHTML  = "Status: "+ Estado;
     
     let lugar_personaje         =document.getElementById("lugarDeOrigen");
-    lugar_personaje.innerHTML   = "Lugar De Origen: "+ Origen
+    lugar_personaje.innerHTML   = "Origin: "+ Origen
                        
     let cantidad_episodios      =document.getElementById("cantidadDeDeEpisodios");
-    cantidad_episodios.innerHTML= "Cantidad de episodios: "+ Episodios
+    cantidad_episodios.innerHTML= "Number of episodes: "+ Episodios
       
     let genero_tarjeta          =document.getElementById("genero");
-    genero_tarjeta.innerHTML    = "Genero: "+ Genero
+    genero_tarjeta.innerHTML    = "Gender: "+ Genero
     
     let especie_tarjeta         =document.getElementById("especie");
-    especie_tarjeta .innerHTML  = "Especie: "+ especies;
+    especie_tarjeta .innerHTML  = "Specie: "+ especies;
     
     
     document.getElementById("imgPersonaje").src = imagen
@@ -264,7 +265,7 @@ for(let i=0;i < especies.length; i++){//Recorro nuestra nueva data especies
 contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]); 
 
 let botonVolverEspecies=document.createElement("button");
-    botonVolverEspecies.innerHTML="VOLVER"
+    botonVolverEspecies.innerHTML="BACK"
     botonVolverEspecies.setAttribute("type","button")
     botonVolverEspecies.setAttribute("class","volverEspecies")
 
@@ -444,7 +445,7 @@ fetch("https://rickandmortyapi.com/api/episode")//Fetch nos permite acceder a da
             labels: LosEpisodios,//Llamamos la data que vamos a graficar
             datasets:[
         {
-             label:"Cantidad de Personajes",
+             label:"Number of characters",
              data:Personajes,
              backgroundColor:[ "#48E71C","#f1f1f1","#f0b8b8","#7EC96D","#BDD771","#FFCB55",
           "#e67f83", "#d43d51", "#665191","#a05195","#003f5c", "#ffa600", "#19B974","#DE9E54","#333f6c","#A36B22","#2f4b7c","#d45087","#FFD588","#FB4F93" ],
