@@ -130,13 +130,16 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("contenedorTarjetas").style.display = "none";
           document.getElementById("chart").style.display = "none"; 
           document.getElementById("SomosQ").style.display = "block";  
-          document.getElementById("filtroDeEspecies").style.display = "none";  
+          document.getElementById("filtroDeEspecies").style.display = "none";
+          document.getElementById("contenedorEspecies").style.display = "none";
+
   })
 
   
   let filtrandoEspecies=  document.getElementById("especies");
     filtrandoEspecies.addEventListener("click",function(){
       document.getElementById("ContenedorFiltrosEspecie").style.display = "block";  
+      document.getElementById("contenedorEspecies").style.display = "block";
       document.getElementById("titulo").style.display = "block";  
       document.getElementById("filtroDeEspecies").style.display = "none";  
       document.getElementById("contenedorTarjetas").style.display = "none"; 
@@ -162,6 +165,8 @@ let QuienesSomos=  document.getElementById("Somos");
     document.getElementById("contenedorTarjetas").style.display="none";
     document.getElementById("filtroDeEspecies").style.display = "none";
     document.getElementById("tarjetas").style.display="none";  
+    document.getElementById("ContenedorFiltrosEspecie").style.display = "none";
+    document.getElementById("contenedorEspecies").style.display = "none";
   })
      
          
@@ -421,7 +426,7 @@ fetch("https://rickandmortyapi.com/api/episode")//Fetch nos permite acceder a da
       .then(response => response.json() )//llamamos el archivo Json
       .then(data =>{
   
-  let LosEpisodio= data.results.map(item => item.name)//recorremos la data y declaramos una variable que guardara los nombres de episodios 
+ // let LosEpisodio= data.results.map(item => item.name)//recorremos la data y declaramos una variable que guardara los nombres de episodios 
   // let epi = document.getElementById("fetch")//declaramos el Id donde imprimiremos
   //     createElement("button")// epi.innerHTML = ` Nombre de los episodios: <br> <li>${LosEpisodio}</li> `//Imprimimos los nombres de episodios
 
