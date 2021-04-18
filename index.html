@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://css.gg/home.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title> Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -43,8 +44,8 @@
   <!------------------ main  ------------------>
 <main>
  
-  <!------------------ aside ------------------>
-  <aside>
+  <!---- aside ------------->
+  <aside >
      <div class="About">
         <h2 id="AboutH2">SOBRE RICK AND MORTY</h2>
      Programa de televisión estadounidense de animación para adultos creada 
@@ -58,8 +59,8 @@
         <li class="ListaDePersonajes" id="especies">Especies</li>
         <li class="ListaDePersonajes" id="GeneroMujeres">Mujeres</li>
         <li class="ListaDePersonajes" id="GeneroHombres">Hombres</li>
-        <li class="ListaDePersonajes" id="personajesAZ">  De la A-Z</li>
-        <li class="ListaDePersonajes" id="personajesZA">  De la Z-A</li>
+        <li class="ListaDePersonajes" id="personajesAZ"> De la A-Z</li>
+        <li class="ListaDePersonajes" id="personajesZA"> De la Z-A</li>
          <!-- <iframe 
          class="iframe"width="300em" height="250em"src="https://www.adultswim.com/streams/rick-and-morty">
          </iframe> -->
@@ -103,15 +104,10 @@
   <div  class="contenedorTarjetas" 
     id="contenedorTarjetas" >   
   </div>
-  
- 
-<!------------------ Promedio ------------------>
-
-
-    
+   
 
 <!-- filtro especies -->
-  <div class="contenedorEspecies">
+  <div class="contenedorEspecies" id="contenedorEspecies">
    <div id="titulo">Especies</div> 
 
   <div class="filtroDeEspecies" id="filtroDeEspecies"></div>
@@ -132,20 +128,32 @@
       <span class="ItemEspecie">Parasite <img class="botonesFiltro"src="Img/Parasite.jpeg" id="Parasite"> </span>
     </div>
   </div>
-
-
+<!------------------ Promedio ------------------>
+<div id="graficos">
   <div id="chart">
-    <canvas id="canvas" height="50" width="50"> </canvas>
-    <!-- <div id="fetch"> </div> -->
+    Cantidad de personajes en cada capitulo
+  <canvas id="canvas" height="50" width="50"> </canvas>
   </div>
+  <div id="chart1">
+   Status de los personajes
+  <canvas id="canvas1" height="50" width="50"> </canvas>
+   </div>
+</div>
 
-
+  
 </main> 
 
- <!------------------ Promedio ------------------>
+ 
 
-<footer>Todos los derechos reservados © 2021 </footer>
-    <div id="root"></div>
+<footer>
+  Todos los derechos reservados © 2021
+    <a href="https://www.facebook.com/RickyMorty2019/" class="facebook"><i class="fab fa-facebook-square fa-2x" ></i>
+    <a href="https://www.instagram.com/rickandmorty/"class="instagram"><i class="fab fa-instagram fa-2x"></i>
+    <a href="https://twitter.com/RickAndMorty"class="twitter"><i class="fab fa-twitter-square fa-2x"></i>
+    <a href="https://rickandmortyapi.com/" class="api"><img class="api"src="Img/logorick.png" >
+
+</footer>
+    <div id="root"></div> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js" integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A==" crossorigin="anonymous"></script>
     <script src="main.js" type="module"></script>
 </body>
