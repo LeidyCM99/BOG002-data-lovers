@@ -16,7 +16,8 @@
 
 ***
 
-# 1. Resumen del Proyecto.Data fan´s, es una base de datos creada para los aficionados a la
+# 1. Resumen del Proyecto.Data fan´s
+Es una base de datos creada para los aficionados a la
 popular serie Rick & Morty, facilitando encontrar todos los personajes con datos relevantes.
 Podran interactuaur de una manera sencilla y practica utilizando los filtros disponibles, como organizar 
 de la A a la Z o viseversa, filtrar por genero o especies.
