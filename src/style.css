@@ -243,7 +243,8 @@ main aside .About{
 }
 main aside .About #AboutH2{
     height: auto;
-    width: auto; }
+    width: auto; 
+}
 
 main aside .ListaDePersonajes{
     width: 60vw; 
@@ -333,8 +334,15 @@ main #canvas1{
     background: #30966b;
 }
 
+footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+footer a{
+    width: 23%;
 }
 
+ }
   /* **********MAIN ***********/ 
 
 main{
@@ -644,12 +652,24 @@ footer{
   position:fixed;
   clear: both;
   margin-top: 0px;
-  padding-top: 0px;
+  padding-top: 2px;
   bottom: 0%;
   color: #ffffff;
   text-align: center;
-  /* display: none; */
+  justify-content:space-evenly;
+  display:flex;
 }
+
+footer a{
+    background-color: transparent;
+    color: white;    
+}
+
+.api{
+    width: 30px;
+    border-radius: 80px;
+}
+
 .ListaDeNombres{
     display: none;
     background-color: lightseagreen;
