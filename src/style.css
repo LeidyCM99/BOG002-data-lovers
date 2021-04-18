@@ -653,14 +653,14 @@ footer{
     position: relative;
     top: auto;
 }
- 
+
 #canvas{
     display: none;
     width: 70em;
     height: 70em;
     display: flex;
     position: relative;
-    background-color: rgb(12, 12, 12);
+    background-color:rgb(12, 12, 12);
 }
 .volverEspecies{
     background-color: #499178;
@@ -766,6 +766,7 @@ border: 8px double rgb(0, 0, 0, 6);
  .contenedorEspecies{
      align-items: center;
      top: 6em;
+     display: none;
  }
 
  #titulo{
