@@ -102,9 +102,11 @@ Cada uno de ellos se ira solucionando a medida de que nuestros conocimientos cre
 
 # 5. Prototipo de alta fidelidad
 
+ Para desktop
 ![Prototipo de alta](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/Figma.PNG)
-![Prototipo de alta](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/bajaF2.jpeg)
+![Prototipo de alta](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/figma2.PNG)
 
+Para mobile
 
 # 6. objetivos de aprendizaje
   * [x]Uso de HTML semántico.
@@ -113,9 +115,10 @@ Cada uno de ellos se ira solucionando a medida de que nuestros conocimientos cre
   * [x]Uso de flexbox en CSS.
 ### DOM y Web APIs
   * [x]Uso de selectores del DOM.
-  * [] Manejo de eventos del DOM.
+  * [x] Manejo de eventos del DOM.
   * [x]Manipulación dinámica del DOM. (appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
 ### JavaScript
+
   * [x]Uso de condicionales (if-else | switch | operador ternario)
   * [x]Uso de bucles (for | for..in | for..of | while)
   * [x] Uso de funciones (parámetros | argumentos | valor de retorno)
@@ -123,18 +126,21 @@ Cada uno de ellos se ira solucionando a medida de que nuestros conocimientos cre
   * []Manipular objects (key | value)
   * [x] Uso ES modules (import | export)
   * [] Diferenciar entre expression y statements.
-  * [] Diferenciar entre tipos de datos primitivos y no primitivos.
+  * [x] Diferenciar entre tipos de datos primitivos y no primitivos.
   * []Testing
   * [] Testeo unitario.
 ### Estructura del código y guía de estilo
+
    * []Organizar y dividir el código en módulos (Modularización)
    * []Uso de identificadores descriptivos (Nomenclatura | Semántica)
    * []Uso de linter (ESLINT)
 ### Git y GitHub
+
   * [x] Uso de comandos de git (add | commit | pull | status | push)
   * [x] Manejo de repositorios de GitHub (clone | fork | gh-pages)
   * [] Colaboración en Github (branches | pull requests | |tags)
 ### UX
+
   * [x] Diseñar la aplicación pensando y entendiendo al usuario.
   * [x] Crear prototipos para obtener feedback e iterar.
   * [x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)

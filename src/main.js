@@ -1,7 +1,7 @@
 
 import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
 const Data = data.results;//variable que guarda y accede al array [results]
-import {organizaAz, organizaZa,statusDePersonajes,subir} from './data.js';//importando las funciones a usar
+import {organizaAz, organizaZa, statusDePersonajes, subir} from './data.js';//importando las funciones a usar
 
 
 // ****************************************BOTON PARA SUBIR ********************************
@@ -38,22 +38,19 @@ function BuscandoDentroDeData(Buscando){//Creamos una función que filtrara la d
 
       }
     }
-      contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
+contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
 }
 
-function Buscando(){//creamos una función que re-usa a Buscando data
+function Buscando(){                              //creamos una función que re-usa a Buscando data
          BuscandoDentroDeData(Busqueda.value)     //esta buscara el valor que se ingre en el input busqueda
-  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }
 
-function BuscandoFemale(){//creamos una función que re-usa a Buscando Female
-         BuscandoDentroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
- const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
+function BuscandoFemale(){                       //creamos una función que re-usa a Buscando Female
+         BuscandoDentroDeData("FEMALE")          //aqui buscara sobre la data toda la coincidencia con Female
 }        
 
-function BuscandoMale(){//creamos una función que re-usa a Buscando Male
-         BuscandoDentroDeData(" MALE")//aqui buscara sobre la data toda la coincidencia con Male
-  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
+function BuscandoMale(){                        //creamos una función que re-usa a Buscando Male
+         BuscandoDentroDeData(" MALE")          //aqui buscara sobre la data toda la coincidencia con Male
 }
   
 // *****************************************CREACION DE TARJETAS*****************************************
@@ -184,7 +181,7 @@ let QuienesSomos=  document.getElementById("Somos");
    let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");//llamamos al Id donde vamos a imprimir
        contenedorDeTarjetas.innerHTML=""// lo vaciamos
    let NombresAZ = organizaAz(Data)
-       console.log(NombresAZ)
+
    for(let i=0;i < NombresAZ.length; i++){//recorremos la nueva data
    clonar(NombresAZ[i].name, NombresAZ[i].status, NombresAZ[i].origin.name, NombresAZ[i].gender, NombresAZ[i].image,NombresAZ[i].episode.length,NombresAZ[i].species) 
   //clonamos los datos a mostrar
@@ -297,7 +294,6 @@ function titulos(especie){
 
 let BotonHumans = document.getElementById("Humans");
 BotonHumans.addEventListener("click",humans);
-const Tarjeta = document.getElementsByClassName("tarjeta");
 
   function humans(){//esta función re-usa filtrar
    filtroEspecies("Human");//compara especies con Human y muestra las conincidencias
@@ -308,7 +304,6 @@ const Tarjeta = document.getElementsByClassName("tarjeta");
 
 let BotonAliens = document.getElementById("Alien");
 BotonAliens.addEventListener("click",Aliens);
-const tarjetaAliens= document.getElementsByClassName("tarjeta");
 
   function Aliens(){
    filtroEspecies("Alien")
@@ -319,7 +314,6 @@ const tarjetaAliens= document.getElementsByClassName("tarjeta");
 
 let BotonRobots = document.getElementById("Robots");
 BotonRobots.addEventListener("click",Robots);
-const tarjetaRobots= document.getElementsByClassName("tarjeta");
 
  function Robots(){
    filtroEspecies("Robot")
@@ -330,7 +324,6 @@ const tarjetaRobots= document.getElementsByClassName("tarjeta");
 
 let BotonHumanoid = document.getElementById("humanoid");
 BotonHumanoid.addEventListener("click",humanoid);
-const TarjetaHumanoid = document.getElementsByClassName("tarjeta");
 
  function  humanoid(){
    filtroEspecies("Humanoid")
@@ -340,7 +333,6 @@ const TarjetaHumanoid = document.getElementsByClassName("tarjeta");
     
 let BotonUnknown = document.getElementById("unknown");
 BotonUnknown.addEventListener("click",unknown);
-const tarjetaUnknown= document.getElementsByClassName("tarjeta");
 
  function unknown(){
    filtroEspecies("unknown") 
@@ -350,7 +342,7 @@ const tarjetaUnknown= document.getElementsByClassName("tarjeta");
 
 let BotonPoopybutthole= document.getElementById("Poopybutthole");
 BotonPoopybutthole.addEventListener("click",Poopybutthole);
-const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
+
 
   function Poopybutthole(){
    filtroEspecies("Poopybutthole")
@@ -360,7 +352,7 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
 
  let BotonMytholog= document.getElementById("Mytholog");
  BotonMytholog.addEventListener("click",EspecieMytholog);
- const tarjetaMytholog= document.getElementsByClassName("tarjeta");
+
 
  function EspecieMytholog(){
    filtroEspecies("Mytholog")
@@ -370,7 +362,6 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
   
  let BotonVampire= document.getElementById("Vampire");
  BotonVampire.addEventListener("click",Vampire);
- const tarjetaVampire= document.getElementsByClassName("tarjeta");
  
  function Vampire(){
    filtroEspecies("Vampire")
@@ -380,7 +371,6 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
 
  let BotonCronenberg= document.getElementById("Cronenberg");
  BotonCronenberg.addEventListener("click",Cronenberg);
- const tarjetaCronenberg= document.getElementsByClassName("tarjeta");
    
  function Cronenberg(){
    filtroEspecies("Cronenberg")
@@ -390,7 +380,7 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
 
  let BotonAnimal= document.getElementById("Animal");
  BotonAnimal.addEventListener("click",Animal);
- const tarjetaAnimal= document.getElementsByClassName("tarjeta");
+
    
  function Animal(){
    filtroEspecies("Animal")
@@ -400,8 +390,7 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
   
   let BotonDisease= document.getElementById("Disease");
   BotonDisease.addEventListener("click",Disease);
-  const tarjetaDisease= document.getElementsByClassName("tarjeta");
-    
+  
   function Disease(){
     filtroEspecies("Disease")
     cambio()
@@ -410,35 +399,28 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
  
   let BotonParasite= document.getElementById("Parasite");
   BotonParasite.addEventListener("click",Parasite);
-  const tarjetaParasite= document.getElementsByClassName("tarjeta");
+ 
     
   function Parasite(){
     filtroEspecies("Parasite")
     cambio()
     titulos("Parasite")
   }
+
   //  *************************CALCULOS PARA RICK Y MORTY  *************************
-
-
 
   // El porciento de las muertes en la serie 
 
   const cantidad= Data.map(item => item.name);
-        let personajetotales = cantidad.length;
+        let PersonajesTotales = cantidad.length;
 
   const CantidadMuertes = Data.filter(function(element){
         return element.status === "Dead";
   });
 
   let MuertesTotales = CantidadMuertes.length
-
-
-  let PorcientoDeMuertes = 100 * MuertesTotales / personajetotales;
-      console.log(PorcientoDeMuertes)
-      document.getElementById("Calculo").innerHTML =  "¿Sabias que el " + parseInt(PorcientoDeMuertes)+"% de los personajes de las dos temporadas estan muertos?";
-  
-
-
+  let PorcientoDeMuertes = 100 * MuertesTotales / PersonajesTotales;
+  document.getElementById("Calculo").innerHTML = "Did you know that " + parseInt(PorcientoDeMuertes) + "% of the characters they are dead?";
 
   // ************************************************   GRAFICAS    ***************************************************
 
@@ -449,7 +431,8 @@ fetch("https://rickandmortyapi.com/api/episode")               //Fetch nos permi
   const canvas      = document.getElementById("canvas");        //declaramos el Id donde imprimiremos Canvas
   const LosEpisodios= data.results.map(item => item.name);      // Recorremos la data, declaramos la variable que guarda el nombre del episodio 
   const Personajes  = data.results.map(item => item.characters.length)//Recorremos la data, declaramos la variable donde guarda la cantidad de personajes según el episodio
-  const MyChart     = new Chart(canvas,{                        // Chart nos permite crear graficas
+   new Chart(canvas,
+    {                                                            // Chart nos permite crear graficas
     
        type: "bar",                                             //el tipo de grafica que usamos en este caso barras
        data: {
@@ -477,19 +460,19 @@ fetch("https://rickandmortyapi.com/api/character")                  //Fetch nos 
 
 const canvas1     =  document.getElementById("canvas1");           //declaramos el Id donde imprimiremos Canvas
 const statusApi   =  data.results.map(item => item.status);        // Recorremos la data, declaramos la variable que guarda el nombre del episodio 
-const dimensionsSet = new Set(statusApi);
-const listaStatus = [...dimensionsSet];
+const StatusSet = new Set(statusApi);
+const listaStatus = [...StatusSet];
 
-const cantidadDePersonajes= statusDePersonajes(Data)
+const cantidadDePersonajes= statusDePersonajes(Data);
       
-const MyChart    = new Chart(canvas1,{// Chart nos permite crear graficas
+ new Chart(canvas1,{                                                 // Chart nos permite crear graficas
     
-     type: "bar",//el tipo de grafica que usamos en este caso barras
+     type: "bar",                                                   //el tipo de grafica que usamos en este caso barras
      data: {
-          labels:listaStatus,//Llamamos la data que vamos a graficar
+          labels:listaStatus,                                       //Llamamos la data que vamos a graficar
           datasets:[
       {
-           label:"Cantidad de Personaje",
+           label:"Number of characters",
            data:cantidadDePersonajes,
            backgroundColor:[ "#48E71C","#d43d51", "#665191"],
            borderColor: ["#f1f1f1"],
