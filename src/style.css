@@ -342,9 +342,21 @@ main #canvas1{
     background-color: white;
     color:black;
     padding: 1em;
-    width:100hv;
+    width:100vw;
     height:auto;
     font-size: 10px;
+}
+main #Calculo{
+    border: #ffffff double 6px;
+    background-color:#6cb995;
+    width: 60vw;
+    height: 20vh;
+    margin-top: 10em;
+    padding-top: 2em;
+    justify-content: center;
+    text-align: center;
+    display: none;
+    margin-left: 10%;
 }
 
 #titulo{
@@ -732,7 +744,7 @@ footer a{
     height: 50vh;
     margin-bottom: 15%;
     width: 50vw;
-    margin-top: 20em;
+    margin-top: 2em;
     justify-content: center;
 }
 
@@ -742,7 +754,7 @@ footer a{
     height: 70em;
     display: flex;
     position:relative;
-    background-color:rgb(12, 12, 12);
+    background-color:rgb(8, 8, 8);
     padding: 1em 0em 3em;
     
     
@@ -871,12 +883,10 @@ margin-bottom: 10em;
  } 
 #Calculo{
     position: relative;
-    /* background-color: #67bea0; */
     border: #67bea0 double 2px;
     width: 30vw;
     height: 20vh;
     margin-top: 30em;
-    margin-bottom: 10em;
     padding-top: 1.5em;
     justify-content: center;
     text-align: center;
