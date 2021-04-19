@@ -9,13 +9,15 @@
 * [2. Historias de usuario.](#2-Historias-de-usuario)
 * [3. Problemas de usabilidad.](#3-Problemas-de-usabilidad)
 * [4. Prototipo de baja.](#4-prototipo-baja)
-* [5. Prototipo de alta](#5-prototipo-baja)
-* [6. Objetivos de aprendizaje.](#7-objetivos-de-aprendizaje)
-* [7. Desarrollares/autores](#6-Desarrollares/autores)
-
+* [5. Prototipo de alta](#5-prototipo-alta)
+* [6. Objetivos de aprendizaje.](#6-objetivos-de-aprendizaje)
+* [7. Desarrollares/autores](#7-Desarrollares/autores)
+* [8. Link de la pagina web](#8-pagina-web)
 ***
 
 # 1. Resumen del Proyecto.Data fan´s
+
+
 Es una base de datos creada para los aficionados a la
 popular serie Rick & Morty, facilitando encontrar todos los personajes con datos relevantes.
 Podran interactuaur de una manera sencilla y practica utilizando los filtros disponibles, como organizar 
@@ -24,7 +26,10 @@ En cada resultado encontraras la ficha del personaje la cual se expande y  permi
 
 # 2. Historias de usuario
 
+
+
 ## Historia Usuario #1
+
 * Como usuario, entro en contexto del uso de esta pagina, veo una bienvenida.
 * Visualizo las tarjetas de los personajes y las opciones de filtro o busqueda que me ofrece.
 ### Criterios de Aceptación:
@@ -37,7 +42,10 @@ En cada resultado encontraras la ficha del personaje la cual se expande y  permi
 * Zona de filtros disponibles
 * Data general representada en tarjetas para facil acceso
 
+
+
 ## Historia Usuario #2
+
 * Como usuario, quiero filtrar para encontrar datos populares y clasificar los personajes
 ### Criterios de Aceptacion:
 * Zona de busqueda donde encuentre y filtre los personajes por cualquier caracteristica 
@@ -47,7 +55,10 @@ En cada resultado encontraras la ficha del personaje la cual se expande y  permi
 * Zona de busqueda funcional
 * Botones de filtrado que redireccionan la data de manera mas especifica
 
+
+
 ## Historia Usuario #3
+
 * Como usuario, uso los botones que me guian a las opciones que puedo filtrar 
 ### Criterios de Aceptacion:
 * Diferentes botones con opciones diferentes de filtrado
@@ -59,7 +70,10 @@ En cada resultado encontraras la ficha del personaje la cual se expande y  permi
 * Cada categoria presenta las tarjetas que cumplen con lo filtrado
 * Boton de volver, para seguir interactando con la data
 
+
+
 ## Historia Usuario #4
+
 * Como usuario, filtre la data y quiero dirigirme a las redes de la serie
 ### Criterios de Aceptacion:
 * Visualizar los iconos que me permitan direccionarme a las redes
@@ -67,6 +81,8 @@ En cada resultado encontraras la ficha del personaje la cual se expande y  permi
 ### Criterios de terminado:
 * Footer, en contexto con la serie Rick & Morty 
 * Iconos conectados con las redes de la serie
+
+
 
 # 3. Problemas de usabilidad.
 
@@ -81,14 +97,13 @@ Cada uno de ellos se ira solucionando a medida de que nuestros conocimientos cre
 
 # 4. Prototipo de baja fidelidad
 
-![Prototipo de baja]()
-![Prototipo de baja]()
+![Prototipo de baja](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/BajaF.jpeg)
+![Prototipo de baja](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/bajaF2.jpeg)
 
 # 5. Prototipo de alta fidelidad
 
-![Prototipo de alta]()
-![Prototipo de alta]()
-
+![Prototipo de alta](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/Figma.PNG)
+![Prototipo de alta](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/bajaF2.jpeg)
 
 
 # 6. objetivos de aprendizaje
@@ -130,3 +145,7 @@ Cada uno de ellos se ira solucionando a medida de que nuestros conocimientos cre
  El proyecto fue diseñado y realizado por:
   * Paula Lorena Ruiz
   * Leidy Paola Castro 
+
+# 8.Link de la pagina web 
+
+https://leidycm99.github.io/BOG002-data-lovers/
