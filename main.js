@@ -12,8 +12,9 @@ document.getElementById("ImagenUp").addEventListener("click", subir);//con event
 //***************************************** BOTONES*****************************************
 
 const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el input 
+
 const Boton = document.getElementById("Buscar");//enlazamos nuestro boton buscar
-      Boton.addEventListener("click",Buscando);//le creamos un evento click para que ejecute la funcion dada
+      Boton.addEventListener("click", Buscando);//le creamos un evento click para que ejecute la funcion dada
 
 const BotonMujeres = document.getElementById("GeneroMujeres");//Botones que nos ejecutan la función cuando se de el evento click
       BotonMujeres.addEventListener("click", BuscandoFemale);
@@ -24,8 +25,8 @@ const BotonH = document.getElementById("GeneroHombres");
 // *****************************************FILTRO DE BUSQUEDA**********************************
 
 function BuscandoDentroDeData(Buscando){//Creamos una función que filtrara la data sobre el parametro Buscando
-    let Resultado = Buscando.toUpperCase();//Declaramos buscando en una variable y la condicionamos a ser MAYUSCULA
-    const Tarjeta = document.getElementsByClassName("tarjeta");//Llamamos la clase que alojara lo filtrado
+        const Resultado = Buscando.toUpperCase();//Declaramos buscando en una variable y la condicionamos a ser MAYUSCULA
+        const Tarjeta = document.getElementsByClassName("tarjeta");//Llamamos la clase que alojara lo filtrado
     
     for (let i=0;i < Data.length;i++){//Recorremos la data
       if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {//si el contenido coincide con el Resultado
@@ -41,17 +42,17 @@ function BuscandoDentroDeData(Buscando){//Creamos una función que filtrara la d
 }
 
 function Buscando(){//creamos una función que re-usa a Buscando data
-  BuscandoDentroDeData(Busqueda.value)     //esta buscara el valor que se ingresa en el input busqueda
+         BuscandoDentroDeData(Busqueda.value)     //esta buscara el valor que se ingre en el input busqueda
   const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }
 
 function BuscandoFemale(){//creamos una función que re-usa a Buscando Female
- BuscandoDentroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
+         BuscandoDentroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }        
 
 function BuscandoMale(){//creamos una función que re-usa a Buscando Male
-  BuscandoDentroDeData(" MALE")//aqui buscara sobre la data toda la coincidencia con Male
+         BuscandoDentroDeData(" MALE")//aqui buscara sobre la data toda la coincidencia con Male
   const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }
   
@@ -85,19 +86,19 @@ function clonar(Nombres,Estado, Origen, Genero, Imagen, Episodios, especies) {//
   nombrePersonaje.innerHTML   = Nombres//imprimimos el dato requerido
   
   let estado_personaje        =document.getElementById("estado");
-  estado_personaje.innerHTML  = "Estado: "+ Estado
+  estado_personaje.innerHTML  = "Status: "+ Estado
 
   let lugar_personaje         =document.getElementById("lugarDeOrigen");
-  lugar_personaje.innerHTML   = "Lugar De Origen: "+ Origen
+  lugar_personaje.innerHTML   = "Origin: "+ Origen
                    
   let cantidad_episodios      =document.getElementById("cantidadDeDeEpisodios");
-  cantidad_episodios.innerHTML= "Cantidad de episodios: "+ Episodios
+  cantidad_episodios.innerHTML= "Number of episodes: "+ Episodios
   
   let genero_tarjeta          =document.getElementById("genero");
-  genero_tarjeta.innerHTML    = "Genero: "+ Genero
+  genero_tarjeta.innerHTML    = "Gender: "+ Genero
 
   let especie_tarjeta         =document.getElementById("especie");
-  especie_tarjeta .innerHTML  = "Especie: "+ especies;
+  especie_tarjeta .innerHTML  = "Specie: "+ especies;
 
   document.getElementById("imgPersonaje").src = Imagen
 
@@ -114,6 +115,7 @@ let Home=  document.getElementById("Home");
           document.getElementById("contenedorTarjetas").style.display = "block";
           document.getElementById("SomosQ").style.display = "none"; 
           document.getElementById("graficos").style.display = "none";
+          document.getElementById("Calculo").style.display = "none";
           document.getElementById("filtroDeEspecies").style.display = "none";  
           document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
           document.getElementById("contenedorEspecies").style.display = "none"; 
@@ -128,7 +130,8 @@ let QuienesSomos=  document.getElementById("Somos");
           document.getElementById("filtroDeEspecies").style.display = "none"; 
           document.getElementById("ContenedorFiltrosEspecie").style.display = "none";   
           document.getElementById("contenedorEspecies").style.display = "none"; 
-          document.getElementById("aside").style.display = "none";     
+          document.getElementById("aside").style.display = "none";  
+
   })
 
   
@@ -156,7 +159,8 @@ let QuienesSomos=  document.getElementById("Somos");
     const BotonGraficos = document.getElementById("Graphics");
           BotonGraficos.addEventListener("click", function MostrarGrafico(){
     document.getElementById("graficos").style.display = "block";
-    document.getElementById("chart").style.display = "flex"; 
+    document.getElementById("chart").style.display = "block"; 
+    document.getElementById("Calculo").style.display = "block";
     document.getElementById("chart1").style.display = "flex"; 
     document.getElementById("SomosQ").style.display = "none"; 
     document.getElementById("contenedorTarjetas").style.display="none";
@@ -217,19 +221,19 @@ let NombresZa = organizaZa(Data)
     nombrePersonaje.innerHTML   = Nombres;
       
     let estado_personaje        =document.getElementById("estado");
-    estado_personaje.innerHTML  = "Estado: "+ Estado;
+    estado_personaje.innerHTML  = "Status: "+ Estado;
     
     let lugar_personaje         =document.getElementById("lugarDeOrigen");
-    lugar_personaje.innerHTML   = "Lugar De Origen: "+ Origen
+    lugar_personaje.innerHTML   = "Origin: "+ Origen
                        
     let cantidad_episodios      =document.getElementById("cantidadDeDeEpisodios");
-    cantidad_episodios.innerHTML= "Cantidad de episodios: "+ Episodios
+    cantidad_episodios.innerHTML= "Number of episodes: "+ Episodios
       
     let genero_tarjeta          =document.getElementById("genero");
-    genero_tarjeta.innerHTML    = "Genero: "+ Genero
+    genero_tarjeta.innerHTML    = "Gender: "+ Genero
     
     let especie_tarjeta         =document.getElementById("especie");
-    especie_tarjeta .innerHTML  = "Especie: "+ especies;
+    especie_tarjeta .innerHTML  = "Specie: "+ especies;
     
     
     document.getElementById("imgPersonaje").src = imagen
@@ -258,7 +262,7 @@ for(let i=0;i < especiesfiltro.length; i++){//Recorro nuestra nueva data especie
 contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]); 
   }
 let botonVolverEspecies=document.createElement("button");
-    botonVolverEspecies.innerHTML="VOLVER"
+    botonVolverEspecies.innerHTML="BACK"
     botonVolverEspecies.setAttribute("type","button")
     botonVolverEspecies.setAttribute("class","volverEspecies")
 
@@ -413,24 +417,46 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
     cambio()
     titulos("Parasite")
   }
-  
-  // ***************************CANVAS ******************************
+  //  *************************CALCULOS PARA RICK Y MORTY  *************************
 
-fetch("https://rickandmortyapi.com/api/episode")//Fetch nos permite acceder a datos que nos proporciona http
-      .then(response => response.json() )//llamamos el archivo Json
+
+
+  // El porciento de las muertes en la serie 
+
+  const cantidad= Data.map(item => item.name);
+        let personajetotales = cantidad.length;
+
+  const CantidadMuertes = Data.filter(function(element){
+        return element.status === "Dead";
+  });
+
+  let MuertesTotales = CantidadMuertes.length
+
+
+  let PorcientoDeMuertes = 100 * MuertesTotales / personajetotales;
+      console.log(PorcientoDeMuertes)
+      document.getElementById("Calculo").innerHTML =  "¿Sabias que el " + parseInt(PorcientoDeMuertes)+"% de los personajes de las dos temporadas estan muertos?";
+  
+
+
+
+  // ************************************************   GRAFICAS    ***************************************************
+
+fetch("https://rickandmortyapi.com/api/episode")               //Fetch nos permite acceder a datos que nos proporciona http
+      .then(response => response.json() )                      //llamamos el archivo Json
       .then(data =>{
   
-  const canvas      = document.getElementById("canvas");//declaramos el Id donde imprimiremos Canvas
-  const LosEpisodios= data.results.map(item => item.name);// Recorremos la data, declaramos la variable que guarda el nombre del episodio 
+  const canvas      = document.getElementById("canvas");        //declaramos el Id donde imprimiremos Canvas
+  const LosEpisodios= data.results.map(item => item.name);      // Recorremos la data, declaramos la variable que guarda el nombre del episodio 
   const Personajes  = data.results.map(item => item.characters.length)//Recorremos la data, declaramos la variable donde guarda la cantidad de personajes según el episodio
-  const MyChart     = new Chart(canvas,{// Chart nos permite crear graficas
+  const MyChart     = new Chart(canvas,{                        // Chart nos permite crear graficas
     
-       type: "bar",//el tipo de grafica que usamos en este caso barras
+       type: "bar",                                             //el tipo de grafica que usamos en este caso barras
        data: {
-            labels: LosEpisodios,//Llamamos la data que vamos a graficar
+            labels: LosEpisodios,                               //Llamamos la data que vamos a graficar
             datasets:[
         {
-             label:"Cantidad de Personajes",
+             label:"Number of characters",
              data:Personajes,
              backgroundColor:[ "#48E71C","#f1f1f1","#f0b8b8","#7EC96D","#BDD771","#FFCB55",
           "#e67f83", "#d43d51", "#665191","#a05195","#003f5c", "#ffa600", "#19B974","#DE9E54","#333f6c","#A36B22","#2f4b7c","#d45087","#FFD588","#FB4F93" ],
@@ -443,18 +469,20 @@ fetch("https://rickandmortyapi.com/api/episode")//Fetch nos permite acceder a da
 
     })
 
-fetch("https://rickandmortyapi.com/api/character")//Fetch nos permite acceder a datos que nos proporciona http
-    .then(response => response.json() )//llamamos el archivo Json
+
+fetch("https://rickandmortyapi.com/api/character")                  //Fetch nos permite acceder a datos que nos proporciona http
+    .then(response => response.json() )                             //llamamos el archivo Json
     .then(data =>{
 
-const canvas1     = document.getElementById("canvas1");//declaramos el Id donde imprimiremos Canvas
-const statusApi =data.results.map(item => item.status);// Recorremos la data, declaramos la variable que guarda el nombre del episodio 
+
+const canvas1     =  document.getElementById("canvas1");           //declaramos el Id donde imprimiremos Canvas
+const statusApi   =  data.results.map(item => item.status);        // Recorremos la data, declaramos la variable que guarda el nombre del episodio 
 const dimensionsSet = new Set(statusApi);
-    const listaStatus = [...dimensionsSet];
+const listaStatus = [...dimensionsSet];
 
 const cantidadDePersonajes= statusDePersonajes(Data)
       
-const MyChart     = new Chart(canvas1,{// Chart nos permite crear graficas
+const MyChart    = new Chart(canvas1,{// Chart nos permite crear graficas
     
      type: "bar",//el tipo de grafica que usamos en este caso barras
      data: {

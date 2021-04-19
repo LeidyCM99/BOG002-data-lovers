@@ -5,12 +5,6 @@ if (trayendoBoton > 0) {
   window.scrollTo (0,0);
 } }
 
-// export const filtroEspecies=(filtro)=>{//Creamos una funcion con parametro filtro, asi la re-usaremos
-//   let especies= Data.filter(item=>{//Declaramos una varible para esta nueva data
-//     return item.species===filtro//retornara las especies que sean igual al parametro que demos
-//     })
-//     console.log(especies)
-// }
 
 export const organizaAz = (Data)=>Data.sort((personajes1,personajes2)=>{
    return (personajes1.name<personajes2.name)? -1 :1

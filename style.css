@@ -2,8 +2,7 @@
     background-color: black;
     text-decoration: none;  
     box-sizing: border-box;
-    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-    
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;  
 }
 html{
     height: 100vh;  width: auto;
@@ -186,6 +185,19 @@ body{
     }
 
 
+    main aside #links {
+        color: white;
+        margin: 0.5em;
+        /* display: flex; */
+        width: auto;
+        height: 45vh;
+        position: relative;
+        right: 2em; 
+        border-radius: 2%;
+        background-color:transparent;  
+        margin-bottom: 0em;
+        
+       }
 #btn-menu:checked ~ .menu{
         margin: 0;
 }
@@ -257,7 +269,8 @@ main #contenedorTarjetas{
    width:auto;
    padding-top: 5em;
    margin-left: -2em;
-    padding-left: 0%;
+   margin-bottom: 10em;
+   padding-left: 0%;
 
 } 
 main  #contenedorTarjetas{
@@ -280,6 +293,7 @@ main .contenedorEspecies{
     margin-top: 30%;
     margin-left: 5%;
     display: none;
+    margin-bottom: 10em;
 }
 main .ItemEspecie{
     margin-left: 2em;
@@ -299,10 +313,10 @@ main .ItemEspecie{
 }
  main #chart{
     display: flex;
-    top: 8em;
+    top: 1em;
     position: relative;
     margin-top: 4em;
-    height: 130vh;
+    height: 60vh;
     width: 90vw;
     background-color: transparent;
 }
@@ -316,16 +330,33 @@ main #canvas{
 }
 
 main #chart1{
-    margin-top:8em;
+    display: flex;
+    top: 1em;
+    position: relative;
+    margin-top: 4em;
+    height: 60vh;
+    width: 90vw;
     background-color: transparent;
   }
 main #canvas1{
     background-color: white;
     color:black;
-    padding: 2em;
-    width:100hv;
+    padding: 1em;
+    width:100vw;
     height:auto;
     font-size: 10px;
+}
+main #Calculo{
+    border: #ffffff double 6px;
+    background-color:#6cb995;
+    width: 60vw;
+    height: 20vh;
+    margin-top: 10em;
+    padding-top: 2em;
+    justify-content: center;
+    text-align: center;
+    display: none;
+    margin-left: 10%;
 }
 
 #titulo{
@@ -352,9 +383,10 @@ main{
   font-family:  'Hind', sans-serif;
   align-content: center;
   margin-top:2em;
-  margin-bottom: 12em;
+  margin-bottom: 0em;
   margin-left: 2em;
   width:95vw ;
+  /* height: auto; */
   top: 1.5em;
   left:1em;
   background-color: transparent;
@@ -458,18 +490,21 @@ aside{
     
 }
 
-
-.Links {
+.Links{
+    background: transparent;
+}
+#links {
  color: white;
  margin: 0.5em;
- display: flex;
+ /* display: flex; */
  width: auto;
- height: 30vh;
+ height: 65vh;
  position: relative;
  right: 2em; 
  border-radius: 2%;
  background-color:transparent;  
- margin-bottom: 2em;
+ margin-bottom: 0em;
+ 
 }
 
 .ListaDePersonajes{
@@ -478,10 +513,8 @@ aside{
     display: flex;
     flex-direction: column;
     width:20vw;
-    margin: 1em;
+    margin: 1.2em;
     padding: 4%;
-    display: flex;
-    flex-wrap: wrap;
     border-radius: 5px;
     
 }
@@ -547,17 +580,20 @@ aside{
 
 #contenedorTarjetas{
     margin-top: 6em;
+    margin-bottom: 30em;
+    padding-bottom: 10%;
     position: relative;
     top: 2em;
     left:2em ;
     display: block;
     grid-template-columns: repeat(3,1fr);
     width: 65vw;
+    height: auto;
     gap: 0.1em;
     margin:1%;
     background-color: transparent;
     /* display: none; */
-    
+ 
 }
 #fetch{
     color:white;
@@ -648,7 +684,7 @@ footer{
   background-image: -webkit-linear-gradient(#3a3a3a, #000000);
   background-image: linear-gradient(top, #353535, #000000);
   border-top: 1px solid rgba(50, 50, 50, 0.3);
-  width: 98vw;
+  width: 100%;
   position:fixed;
   clear: both;
   margin-top: 0px;
@@ -666,8 +702,8 @@ footer a{
 }
 
 .api{
-    width: 1.8em;
-    border-radius: 1em;
+    width: 30px;
+    border-radius: 80px;
 }
 
 .ListaDeNombres{
@@ -678,6 +714,7 @@ footer a{
 }
 #chart{
     background-color:#30966b;
+    font-size: 1.5rem;
     display: none;
     flex-wrap: wrap;
     position: relative;
@@ -685,26 +722,30 @@ footer a{
     height: 50vh;
     width: 50vw;
     top: auto;
+    justify-content: center;
 }
 
 #canvas{
     display: none;
     width: 70em;
     height: 70em;
-    display: flex;
+    /* display: flex; */
     position: relative;
     background-color:rgb(12, 12, 12);
 }
 
 #chart1{
-    background-color:#30966b;
+    background-color:#35aa79;
+    font-size: 1.5rem;
     display: none;
     flex-wrap: wrap;
     position: relative;
     margin: 1%;
     height: 50vh;
-    width: 40vw;
-    margin-top: 25em;
+    margin-bottom: 15%;
+    width: 50vw;
+    margin-top: 2em;
+    justify-content: center;
 }
 
 #canvas1{
@@ -713,7 +754,7 @@ footer a{
     height: 70em;
     display: flex;
     position:relative;
-    background-color:rgb(12, 12, 12);
+    background-color:rgb(8, 8, 8);
     padding: 1em 0em 3em;
     
     
@@ -818,10 +859,11 @@ transform: scale(1.1);
 border: 8px double rgb(0, 0, 0, 6);
  }
 
- .contenedorEspecies{
-     align-items: center;
-     top: 6em;
-     display: none;
+.contenedorEspecies{
+align-items: center;
+top: 6em;
+display: none;
+margin-bottom: 10em;
  }
 
  #titulo{
@@ -838,7 +880,15 @@ border: 8px double rgb(0, 0, 0, 6);
     padding: 0.5em; 
     margin:1%;
     display: none;
-
  } 
-
-
+#Calculo{
+    position: relative;
+    border: #67bea0 double 2px;
+    width: 30vw;
+    height: 20vh;
+    margin-top: 30em;
+    padding-top: 1.5em;
+    justify-content: center;
+    text-align: center;
+    display: none;
+}
