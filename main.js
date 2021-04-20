@@ -1,22 +1,23 @@
 
-import data from './data/rickandmorty/rickandmorty.js';//importamos la data accediendo a su ubicación
-const Data = data.results;//variable que guarda y accede al array [results]
-import {organizaAz, organizaZa,statusDePersonajes,subir} from './data.js';//importando las funciones a usar
+import data from './data/rickandmorty/rickandmorty.js';                     //importamos la data accediendo a su ubicación
+const Data = data.results;                                                  //variable que guarda y accede al array [results]
+import {organizaAz, organizaZa, statusDePersonajes, subir} from './data.js';//importando las funciones a usar
+
 
 
 // ****************************************BOTON PARA SUBIR ********************************
 
-document.getElementById("ImagenUp").addEventListener("click", subir);//con evento click condicionamos la imagen para hacer scroll al inicio de la pagina
+document.getElementById("ImagenUp").addEventListener("click", subir);         //con evento click condicionamos la imagen para hacer scroll al inicio de la pagina
 
 
 //***************************************** BOTONES*****************************************
 
-const Busqueda = document.getElementById("input-buscador");//guardamos el valor ingresado en el input 
+const Busqueda = document.getElementById("input-buscador");                   //guardamos el valor ingresado en el input 
 
-const Boton = document.getElementById("Buscar");//enlazamos nuestro boton buscar
-      Boton.addEventListener("click", Buscando);//le creamos un evento click para que ejecute la funcion dada
+const Boton = document.getElementById("Buscar");                              //enlazamos nuestro boton buscar
+      Boton.addEventListener("click", Buscando);                              //le creamos un evento click para que ejecute la funcion dada
 
-const BotonMujeres = document.getElementById("GeneroMujeres");//Botones que nos ejecutan la función cuando se de el evento click
+const BotonMujeres = document.getElementById("GeneroMujeres");                //Botones que nos ejecutan la función cuando se de el evento click
       BotonMujeres.addEventListener("click", BuscandoFemale);
 
 const BotonH = document.getElementById("GeneroHombres");
@@ -24,13 +25,13 @@ const BotonH = document.getElementById("GeneroHombres");
 
 // *****************************************FILTRO DE BUSQUEDA**********************************
 
-function BuscandoDentroDeData(Buscando){//Creamos una función que filtrara la data sobre el parametro Buscando
-        const Resultado = Buscando.toUpperCase();//Declaramos buscando en una variable y la condicionamos a ser MAYUSCULA
-        const Tarjeta = document.getElementsByClassName("tarjeta");//Llamamos la clase que alojara lo filtrado
+function BuscandoDentroDeData(Buscando){                                      //Creamos una función que filtrara la data sobre el parametro Buscando
+        const Resultado = Buscando.toUpperCase();                             //Declaramos buscando en una variable y la condicionamos a ser MAYUSCULA
+        const Tarjeta = document.getElementsByClassName("tarjeta");           //Llamamos la clase que alojara lo filtrado
     
-    for (let i=0;i < Data.length;i++){//Recorremos la data
-      if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {//si el contenido coincide con el Resultado
-        Tarjeta[i].style.display = "inline-flex";//la tarjeta se motrara
+    for (let i=0;i < Data.length;i++){                                        //Recorremos la data
+      if(Tarjeta[i].textContent.toUpperCase().includes(Resultado)) {          //si el contenido coincide con el Resultado
+        Tarjeta[i].style.display = "inline-flex";                             //la tarjeta se mostrara
         document.getElementById("tarjeta").style.display="none"
       } else {
         Tarjeta[i].style.display = "none"; //si no coinside la tarjeta no se motrara
@@ -38,30 +39,27 @@ function BuscandoDentroDeData(Buscando){//Creamos una función que filtrara la d
 
       }
     }
-      contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
+contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
 }
 
-function Buscando(){//creamos una función que re-usa a Buscando data
+function Buscando(){                              //creamos una función que re-usa a Buscando data
          BuscandoDentroDeData(Busqueda.value)     //esta buscara el valor que se ingre en el input busqueda
-  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
 }
 
-function BuscandoFemale(){//creamos una función que re-usa a Buscando Female
-         BuscandoDentroDeData("FEMALE")//aqui buscara sobre la data toda la coincidencia con Female
- const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
+function BuscandoFemale(){                       //creamos una función que re-usa a Buscando Female
+         BuscandoDentroDeData("FEMALE")          //aqui buscara sobre la data toda la coincidencia con Female
 }        
 
-function BuscandoMale(){//creamos una función que re-usa a Buscando Male
-         BuscandoDentroDeData(" MALE")//aqui buscara sobre la data toda la coincidencia con Male
-  const Tarjeta = document.getElementsByClassName("tarjeta");//se mostraran las que coincidan
+function BuscandoMale(){                        //creamos una función que re-usa a Buscando Male
+         BuscandoDentroDeData(" MALE")          //aqui buscara sobre la data toda la coincidencia con Male
 }
   
 // *****************************************CREACION DE TARJETAS*****************************************
 
 
-window.onload = function RecorriendoData() {// esta funcion se ejecuta en cada recarga de la pagina
-  for(let i=0;i < Data.length; i++){//recorremos la data
-     const Nombres   = Data[i].name;//accede a los datos especificos en el array en este caso name y los guarda en la nueva variable
+window.onload = function RecorriendoData() {    // esta funcion se ejecuta en cada recarga de la pagina
+  for(let i=0;i < Data.length; i++){            //recorremos la data
+     const Nombres   = Data[i].name;            //accede a los datos especificos en el array en este caso name y los guarda en la nueva variable
      const Estado    = Data[i].status;
      const Origen    = Data[i].origin.name;
      const Genero    = Data[i].gender;
@@ -77,13 +75,13 @@ window.onload = function RecorriendoData() {// esta funcion se ejecuta en cada r
 function clonar(Nombres,Estado, Origen, Genero, Imagen, Episodios, especies) {//Creamos esta función declarando los parametros a usar
 
   var contenedor = document.getElementById("tarjeta");//reservamos un id en html
-  var clon       = contenedor.cloneNode(true);//a contenedor le aplicamos el metodo cloneNode para clonar
+  var clon       = contenedor.cloneNode(true);        //a contenedor le aplicamos el metodo cloneNode para clonar
 
-  clon.style.display          = "inline-block";//aplicamos un estilo display y una margen para los nuevos div´s
+  clon.style.display          = "inline-block";       //aplicamos un estilo display y una margen para los nuevos div´s
   clon.style.margin           = "1em"        
   
   let nombrePersonaje         =document.getElementById("nombrePersonaje");//reservamos un id en html
-  nombrePersonaje.innerHTML   = Nombres//imprimimos el dato requerido
+  nombrePersonaje.innerHTML   = Nombres               //imprimimos el dato requerido
   
   let estado_personaje        =document.getElementById("estado");
   estado_personaje.innerHTML  = "Status: "+ Estado
@@ -103,7 +101,7 @@ function clonar(Nombres,Estado, Origen, Genero, Imagen, Episodios, especies) {//
   document.getElementById("imgPersonaje").src = Imagen
 
   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
-  contenedorDeTarjetas.appendChild(clon);//crea un nuevo nodo con el formato que le dimos
+  contenedorDeTarjetas.appendChild(clon);               //crea un nuevo nodo con el formato que le dimos
   
 }
   
@@ -181,33 +179,43 @@ let QuienesSomos=  document.getElementById("Somos");
  
   function az(){
 
-   let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");//llamamos al Id donde vamos a imprimir
-       contenedorDeTarjetas.innerHTML=""// lo vaciamos
-   let NombresAZ = organizaAz(Data)
-       console.log(NombresAZ)
-   for(let i=0;i < NombresAZ.length; i++){//recorremos la nueva data
-   clonar(NombresAZ[i].name, NombresAZ[i].status, NombresAZ[i].origin.name, NombresAZ[i].gender, NombresAZ[i].image,NombresAZ[i].episode.length,NombresAZ[i].species) 
-  //clonamos los datos a mostrar
-  }
-  contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
+      let contenedorDeTarjetas=document.getElementById("contenedorTarjetas"); //llamamos al Id donde vamos a imprimir
+          contenedorDeTarjetas.innerHTML=""                                   // lo vaciamos
+      let NombresAZ = organizaAz(Data)
+       for(let i=0;i < NombresAZ.length; i++){                                //recorremos la nueva data
+       clonar(NombresAZ[i].name, NombresAZ[i].status, NombresAZ[i].origin.name, NombresAZ[i].gender, NombresAZ[i].image,NombresAZ[i].episode.length,NombresAZ[i].species) 
+                                                                              //clonamos los datos a mostrar
+}     contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
 }
 
-let BotonOrganizarZa = document.getElementById("personajesZA");
-BotonOrganizarZa.addEventListener("click", za);
 
+let BotonOrganizarZa = document.getElementById("personajesZA");
+    BotonOrganizarZa.addEventListener("click", 
 
 function za(){
 
-let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
-    contenedorDeTarjetas.innerHTML=""
-let NombresZa = organizaZa(Data)
- for(let i=0;i < NombresZa .length; i++){
-  
- clonar(NombresZa[i].name,NombresZa[i].status,NombresZa[i].origin.name, NombresZa[i].gender, NombresZa[i].image, NombresZa[i].episode.length, NombresZa[i].species) 
- }
- contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
+      let contenedorDeTarjetas=document.getElementById("contenedorTarjetas");
+          contenedorDeTarjetas.innerHTML=""
+      let NombresZa = organizaZa(Data)
+      for(let i=0;i < NombresZa .length; i++){
+      clonar(NombresZa[i].name,NombresZa[i].status,NombresZa[i].origin.name, NombresZa[i].gender, NombresZa[i].image, NombresZa[i].episode.length, NombresZa[i].species) 
+ }    contenedorDeTarjetas.removeChild(contenedorDeTarjetas.childNodes[0]);
 
-}
+})
+
+
+// *********************************Cambiando titulo*********************************
+function titulos(especie){
+  let titulo=document.getElementById("titulo")
+  titulo.innerHTML=especie;
+ }
+ 
+ function cambio(){
+  document.getElementById("contenedorTarjetas").style.display = "none";
+  document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
+  document.getElementById("filtroDeEspecies").style.display = "block";  
+  document.getElementById("titulo").style.display = "block";  
+ }
  // *********************************Clonando especies *********************************
 
   function clonando(Nombres, Estado, Origen, Genero, imagen, Episodios, especies) {//Creamos esta función declarando los parametros a usar
@@ -245,13 +253,13 @@ let NombresZa = organizaZa(Data)
     
 // *********************************Filtrando especies *********************************
 
-function filtroEspecies(filtro){//Creamos una funcion con parametro filtro, asi la re-usaremos
-  let especiesfiltro= Data.filter(item=>{//Declaramos una varible para esta nueva data
-    return item.species===filtro//retornara las especies que sean igual al parametro que demos
+function filtroEspecies(filtro){                  //Creamos una funcion con parametro filtro, asi la re-usaremos
+  let especiesfiltro= Data.filter(item=>{         //Declaramos una varible para esta nueva data
+    return item.species===filtro                  //retornara las especies que sean igual al parametro que demos
     })
   
 let contenedorDeTarjetas=document.getElementById("filtroDeEspecies");// llamamos el Id donde se imprimira
-contenedorDeTarjetas.innerHTML=""//Vaciamos el Id
+    contenedorDeTarjetas.innerHTML=""                 //Vaciamos el Id
 
 
 for(let i=0;i < especiesfiltro.length; i++){//Recorro nuestra nueva data especies
@@ -280,26 +288,13 @@ let filtroDeEspecies=document.getElementById("filtroDeEspecies")// let boton=doc
 
 
 
-// *********************************Cambiando titulo*********************************
-function titulos(especie){
-  let titulo=document.getElementById("titulo")
-  titulo.innerHTML=especie;
- }
- 
- function cambio(){
-  document.getElementById("contenedorTarjetas").style.display = "none";
-  document.getElementById("ContenedorFiltrosEspecie").style.display = "none";  
-  document.getElementById("filtroDeEspecies").style.display = "block";  
-  document.getElementById("titulo").style.display = "block";  
- }
 
 // *********************************Filtrando especies *********************************
 
 let BotonHumans = document.getElementById("Humans");
 BotonHumans.addEventListener("click",humans);
-const Tarjeta = document.getElementsByClassName("tarjeta");
 
-  function humans(){//esta función re-usa filtrar
+  function humans(){        //esta función re-usa filtrar
    filtroEspecies("Human");//compara especies con Human y muestra las conincidencias
    titulos("Human")
    cambio()
@@ -308,7 +303,6 @@ const Tarjeta = document.getElementsByClassName("tarjeta");
 
 let BotonAliens = document.getElementById("Alien");
 BotonAliens.addEventListener("click",Aliens);
-const tarjetaAliens= document.getElementsByClassName("tarjeta");
 
   function Aliens(){
    filtroEspecies("Alien")
@@ -319,7 +313,6 @@ const tarjetaAliens= document.getElementsByClassName("tarjeta");
 
 let BotonRobots = document.getElementById("Robots");
 BotonRobots.addEventListener("click",Robots);
-const tarjetaRobots= document.getElementsByClassName("tarjeta");
 
  function Robots(){
    filtroEspecies("Robot")
@@ -330,7 +323,6 @@ const tarjetaRobots= document.getElementsByClassName("tarjeta");
 
 let BotonHumanoid = document.getElementById("humanoid");
 BotonHumanoid.addEventListener("click",humanoid);
-const TarjetaHumanoid = document.getElementsByClassName("tarjeta");
 
  function  humanoid(){
    filtroEspecies("Humanoid")
@@ -340,7 +332,6 @@ const TarjetaHumanoid = document.getElementsByClassName("tarjeta");
     
 let BotonUnknown = document.getElementById("unknown");
 BotonUnknown.addEventListener("click",unknown);
-const tarjetaUnknown= document.getElementsByClassName("tarjeta");
 
  function unknown(){
    filtroEspecies("unknown") 
@@ -350,7 +341,7 @@ const tarjetaUnknown= document.getElementsByClassName("tarjeta");
 
 let BotonPoopybutthole= document.getElementById("Poopybutthole");
 BotonPoopybutthole.addEventListener("click",Poopybutthole);
-const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
+
 
   function Poopybutthole(){
    filtroEspecies("Poopybutthole")
@@ -360,7 +351,7 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
 
  let BotonMytholog= document.getElementById("Mytholog");
  BotonMytholog.addEventListener("click",EspecieMytholog);
- const tarjetaMytholog= document.getElementsByClassName("tarjeta");
+
 
  function EspecieMytholog(){
    filtroEspecies("Mytholog")
@@ -370,7 +361,6 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
   
  let BotonVampire= document.getElementById("Vampire");
  BotonVampire.addEventListener("click",Vampire);
- const tarjetaVampire= document.getElementsByClassName("tarjeta");
  
  function Vampire(){
    filtroEspecies("Vampire")
@@ -380,7 +370,6 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
 
  let BotonCronenberg= document.getElementById("Cronenberg");
  BotonCronenberg.addEventListener("click",Cronenberg);
- const tarjetaCronenberg= document.getElementsByClassName("tarjeta");
    
  function Cronenberg(){
    filtroEspecies("Cronenberg")
@@ -390,7 +379,7 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
 
  let BotonAnimal= document.getElementById("Animal");
  BotonAnimal.addEventListener("click",Animal);
- const tarjetaAnimal= document.getElementsByClassName("tarjeta");
+
    
  function Animal(){
    filtroEspecies("Animal")
@@ -400,8 +389,7 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
   
   let BotonDisease= document.getElementById("Disease");
   BotonDisease.addEventListener("click",Disease);
-  const tarjetaDisease= document.getElementsByClassName("tarjeta");
-    
+  
   function Disease(){
     filtroEspecies("Disease")
     cambio()
@@ -410,35 +398,28 @@ const tarjetaPoopybutthole= document.getElementsByClassName("tarjeta");
  
   let BotonParasite= document.getElementById("Parasite");
   BotonParasite.addEventListener("click",Parasite);
-  const tarjetaParasite= document.getElementsByClassName("tarjeta");
+ 
     
   function Parasite(){
     filtroEspecies("Parasite")
     cambio()
     titulos("Parasite")
   }
-  //  *************************CALCULOS PARA RICK Y MORTY  *************************
 
-
+  //  ******************************************CALCULOS PARA RICK Y MORTY  ******************************************
 
   // El porciento de las muertes en la serie 
 
   const cantidad= Data.map(item => item.name);
-        let personajetotales = cantidad.length;
+        let PersonajesTotales = cantidad.length;
 
   const CantidadMuertes = Data.filter(function(element){
         return element.status === "Dead";
   });
 
   let MuertesTotales = CantidadMuertes.length
-
-
-  let PorcientoDeMuertes = 100 * MuertesTotales / personajetotales;
-      console.log(PorcientoDeMuertes)
-      document.getElementById("Calculo").innerHTML =  "¿Sabias que el " + parseInt(PorcientoDeMuertes)+"% de los personajes de las dos temporadas estan muertos?";
-  
-
-
+  let PorcientoDeMuertes = 100 * MuertesTotales / PersonajesTotales;
+  document.getElementById("Calculo").innerHTML = "Did you know that " + parseInt(PorcientoDeMuertes) + "% of the characters they are dead?";
 
   // ************************************************   GRAFICAS    ***************************************************
 
@@ -449,7 +430,8 @@ fetch("https://rickandmortyapi.com/api/episode")               //Fetch nos permi
   const canvas      = document.getElementById("canvas");        //declaramos el Id donde imprimiremos Canvas
   const LosEpisodios= data.results.map(item => item.name);      // Recorremos la data, declaramos la variable que guarda el nombre del episodio 
   const Personajes  = data.results.map(item => item.characters.length)//Recorremos la data, declaramos la variable donde guarda la cantidad de personajes según el episodio
-  const MyChart     = new Chart(canvas,{                        // Chart nos permite crear graficas
+   new Chart(canvas,
+    {                                                            // Chart nos permite crear graficas
     
        type: "bar",                                             //el tipo de grafica que usamos en este caso barras
        data: {
@@ -477,19 +459,19 @@ fetch("https://rickandmortyapi.com/api/character")                  //Fetch nos 
 
 const canvas1     =  document.getElementById("canvas1");           //declaramos el Id donde imprimiremos Canvas
 const statusApi   =  data.results.map(item => item.status);        // Recorremos la data, declaramos la variable que guarda el nombre del episodio 
-const dimensionsSet = new Set(statusApi);
-const listaStatus = [...dimensionsSet];
+const StatusSet = new Set(statusApi);
+const listaStatus = [...StatusSet];
 
-const cantidadDePersonajes= statusDePersonajes(Data)
+const cantidadDePersonajes= statusDePersonajes(Data);
       
-const MyChart    = new Chart(canvas1,{// Chart nos permite crear graficas
+ new Chart(canvas1,{                                                 // Chart nos permite crear graficas
     
-     type: "bar",//el tipo de grafica que usamos en este caso barras
+     type: "bar",                                                   //el tipo de grafica que usamos en este caso barras
      data: {
-          labels:listaStatus,//Llamamos la data que vamos a graficar
+          labels:listaStatus,                                       //Llamamos la data que vamos a graficar
           datasets:[
       {
-           label:"Cantidad de Personaje",
+           label:"Number of characters",
            data:cantidadDePersonajes,
            backgroundColor:[ "#48E71C","#d43d51", "#665191"],
            borderColor: ["#f1f1f1"],
