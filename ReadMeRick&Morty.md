@@ -107,6 +107,7 @@ Cada uno de ellos se ira solucionando a medida de que nuestros conocimientos cre
 ![Prototipo de alta](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/figma2.PNG)
 
 Para mobile
+![Prototipo de alta](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/AltaMobile.PNG)
 
 # 6. objetivos de aprendizaje
   * [x]Uso de HTML semántico.
