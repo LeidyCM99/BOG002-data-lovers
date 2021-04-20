@@ -688,6 +688,16 @@ footer a{
     color: white;
     width: 60vw;
 }
+
+
+#graficos{
+    width: 60%;
+    position: relative;
+    margin-bottom: 20%;
+    justify-content: center;
+   text-align: center;
+    top: 1em;
+}
 #chart{
     background-color:#30966b;
     font-size: 1.5rem;
@@ -854,7 +864,9 @@ margin-bottom: 10em;
  } 
 #Calculo{
     position: relative;
-    border: #67bea0 double 2px;
+    border: #67bea0 double 1px;
+    border-radius: 5%;
+    left: 25%;
     width: 20vw;
     height: 20vh;
     margin-top: 30em;
