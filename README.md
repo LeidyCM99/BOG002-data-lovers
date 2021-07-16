@@ -9,10 +9,10 @@
 * [2. Historias de usuario.](#2-Historias-de-usuario)
 * [3. Problemas de usabilidad.](#3-Problemas-de-usabilidad)
 * [4. Prototipo de baja.](#4-prototipo-baja)
-* [5. Prototipo de alta](#5-prototipo-alta)
+* [5. Prototipo de alta y producto final.](#5-prototipo-alta)
 * [6. Objetivos de aprendizaje.](#6-objetivos-de-aprendizaje)
-* [7. Desarrollares/autores](#7-Desarrollares/autores)
-* [8. Link de la pagina web](#8-pagina-web)
+* [7. Desarrollares/autores.](#7-Desarrollares/autores)
+* [8. Link de la pagina web.](#8-pagina-web)
 ***
 
 # 1. Resumen del Proyecto.Data fan´s
@@ -95,12 +95,12 @@ La pagina web se enfoca en los usuarios para que puedan consumir la data que les
 Cada uno de ellos se ira solucionando a medida de que nuestros conocimientos crezcan en el bootcamp para dar una mejor experiencia a usuarios finales.
 
 
-# 4. Prototipo de baja fidelidad
+# 4. Prototipo de baja fidelidad.
 
 ![Prototipo de baja](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/BajaF.jpeg)
 ![Prototipo de baja](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/bajaF2.jpeg)
 
-# 5. Prototipo de alta fidelidad
+# 5. Prototipo de alta fidelidad y producto final.
 
  Para desktop
 ![Prototipo de alta](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/Figma.PNG)
@@ -108,6 +108,9 @@ Cada uno de ellos se ira solucionando a medida de que nuestros conocimientos cre
 
 Para mobile
 ![Prototipo de alta](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/AltaMobile.PNG)
+
+Diseño final
+![Diseño final](https://raw.githubusercontent.com/LeidyCM99/BOG002-data-lovers/main/src/Img/AltaMobile.PNG./src/Img/diseño final.PNG)
 
 # 6. objetivos de aprendizaje
   * [x]Uso de HTML semántico.
@@ -120,21 +123,21 @@ Para mobile
   * [x]Manipulación dinámica del DOM. (appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
 ### JavaScript
 
-  * [x]Uso de condicionales (if-else | switch | operador ternario)
-  * [x]Uso de bucles (for | for..in | for..of | while)
+  * [x] Uso de condicionales (if-else | switch | operador ternario)
+  * [x] Uso de bucles (for | for..in | for..of | while)
   * [x] Uso de funciones (parámetros | argumentos | valor de retorno)
   * [x] Manipular arrays (filter | map | sort | reduce)
-  * []Manipular objects (key | value)
+  * [] Manipular objects (key | value)
   * [x] Uso ES modules (import | export)
   * [] Diferenciar entre expression y statements.
   * [x] Diferenciar entre tipos de datos primitivos y no primitivos.
-  * []Testing
+  * [] Testing
   * [] Testeo unitario.
 ### Estructura del código y guía de estilo
 
-   * []Organizar y dividir el código en módulos (Modularización)
-   * []Uso de identificadores descriptivos (Nomenclatura | Semántica)
-   * []Uso de linter (ESLINT)
+   * [] Organizar y dividir el código en módulos (Modularización)
+   * [] Uso de identificadores descriptivos (Nomenclatura | Semántica)
+   * [x] Uso de linter (ESLINT)
 ### Git y GitHub
 
   * [x] Uso de comandos de git (add | commit | pull | status | push)
