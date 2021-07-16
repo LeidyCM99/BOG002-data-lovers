@@ -59,7 +59,7 @@ function BuscandoMale(){                        //creamos una función que re-us
 
 window.onload = function RecorriendoData() {    // esta funcion se ejecuta en cada recarga de la pagina
   for(let i=0;i < Data.length; i++){            //recorremos la data
-     const Nombres   = Data[i].name;            //accede a los datos especificos en el array en este caso name y los guarda en la nueva variable
+     const Nombres   = Data[i]["name"];            //accede a los datos especificos en el array en este caso name y los guarda en la nueva variable
      const Estado    = Data[i].status;
      const Origen    = Data[i].origin.name;
      const Genero    = Data[i].gender;
@@ -412,10 +412,11 @@ BotonPoopybutthole.addEventListener("click",Poopybutthole);
 
   const cantidad= Data.map(item => item.name);
         let PersonajesTotales = cantidad.length;
+        console.log(cantidad)
 
   const CantidadMuertes = Data.filter(function(element){
         return element.status === "Dead";
-  });
+  }); 
 
   let MuertesTotales = CantidadMuertes.length
   let PorcientoDeMuertes = 100 * MuertesTotales / PersonajesTotales;
